@@ -81,6 +81,12 @@
     <Compile Include="MIDIEventArgs.cs" />
     <Compile Include="MIDIOutCaps.cs" />
     <Compile Include="MIDISync.cs" />
+    <Compile Include="PianoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PianoForm.Designer.cs">
+      <DependentUpon>PianoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Synthesizer.cs" />
@@ -88,6 +94,9 @@
     <Compile Include="WAV.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PianoForm.resx">
+      <DependentUpon>PianoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

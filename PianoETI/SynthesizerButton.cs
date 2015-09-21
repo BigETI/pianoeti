@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Audio;
 
 namespace PianoETI
 {
-    class SynthesizerButton
+    public class SynthesizerButton
     {
         public enum Mode
         {

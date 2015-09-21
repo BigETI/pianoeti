@@ -1,6 +1,6 @@
 ﻿namespace PianoETI
 {
-    class MIDIEventArgs
+    public class MIDIEventArgs
     {
         #region Attributes
         private MIDI midi;

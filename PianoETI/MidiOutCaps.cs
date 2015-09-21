@@ -6,7 +6,7 @@ namespace PianoETI
     /// <summary>
     /// MIDI Out structure
     /// </summary>
-    class MIDIOutCaps
+    public class MIDIOutCaps
     {
         public UInt16 wMid;
         public UInt16 wPid;

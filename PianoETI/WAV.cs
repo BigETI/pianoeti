@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace PianoETI
 {
-    class WAV
+    public class WAV
     {
         #region Attributes
         public static readonly byte[] header_data = { (byte)'R', (byte)'I', (byte)'F', (byte)'F' };

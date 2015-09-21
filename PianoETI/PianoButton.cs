@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace PianoETI
 {
-    class PianoButton
+    public class PianoButton : IDisposable
     {
         #region Attributes
         private MIDISync parent = null;
@@ -24,9 +24,9 @@ namespace PianoETI
             this.velocity = velocity;
             default_image = button.Image;
             this.pressed_image = pressed_image;
-            button.MouseDown += new MouseEventHandler(onMouseDown);
-            button.MouseUp += new MouseEventHandler(onMouseUp);
-            button.MouseLeave += new EventHandler(onMouseLeave);
+            button.MouseDown += onMouseDown;
+            button.MouseUp += onMouseUp;
+            button.MouseLeave += onMouseLeave;
         }
         #endregion
 
@@ -95,6 +95,15 @@ namespace PianoETI
         private void onMouseLeave(object sender, EventArgs e)
         {
             button.Image = default_image;
+        }
+        #endregion
+
+        #region Override
+        public void Dispose()
+        {
+            button.MouseDown -= onMouseDown;
+            button.MouseUp -= onMouseUp;
+            button.MouseLeave -= onMouseLeave;
         }
         #endregion
     }

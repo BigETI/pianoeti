@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace PianoETI
 {
-    class Synthesizer
+    public class Synthesizer
     {
         #region Attributes
         private Dictionary<PictureBox, SynthesizerButton> button_map = null;

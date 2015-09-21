@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace PianoETI
 {
-    class MIDISync
+    public class MIDISync
     {
         #region Attributes
         private MIDI midi = null;
@@ -36,6 +36,18 @@ namespace PianoETI
             if (!midi_control_map.ContainsKey(note))
                 midi_control_map.Add(note, new LinkedList<PianoButton>());
             midi_control_map[note].AddLast(new PianoButton(this, button, note, velocity, pressed_image));
+        }
+
+        public void removePianoButtons(MIDI.Note note)
+        {
+            if (midi_control_map.ContainsKey(note))
+            {
+                LinkedList<PianoButton> button_list = midi_control_map[note];
+                foreach (PianoButton i in button_list)
+                    i.Dispose();
+                button_list.Clear();
+                midi_control_map.Remove(note);
+            }
         }
         #endregion
 

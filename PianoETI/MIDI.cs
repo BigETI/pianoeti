@@ -7,7 +7,7 @@ namespace PianoETI
     /// <summary>
     /// MIDI class
     /// </summary>
-    class MIDI
+    public class MIDI
     {
         #region DLL imports
         [DllImport("winmm.dll")]
