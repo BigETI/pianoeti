@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace PianoETI
 {
@@ -32,14 +29,59 @@ namespace PianoETI
         protected static extern int midiOutClose(int handle);
         #endregion
 
-        #region Events
-        private delegate void MidiCallBack(int handle, int msg, int instance, int param1, int param2);
-        #endregion
-
         #region Enums
         public enum Instrument
         {
-            Piano = 0x90
+            PianoOffC1 = 0x80,
+            PianoOffC2 = 0x81,
+            PianoOffC3 = 0x82,
+            PianoOffC4 = 0x83,
+            PianoOffC5 = 0x84,
+            PianoOffC6 = 0x85,
+            PianoOffC7 = 0x86,
+            PianoOffC8 = 0x87,
+            PianoOffC9 = 0x88,
+            PianoOffC10 = 0x89,
+            PianoOffC11 = 0x8A,
+            PianoOffC12 = 0x8B,
+            PianoOffC13 = 0x8C,
+            PianoOffC14 = 0x8D,
+            PianoOffC15 = 0x8E,
+            PianoOffC16 = 0x8F,
+
+            PianoC1 = 0x90,
+            PianoC2 = 0x91,
+            PianoC3 = 0x92,
+            PianoC4 = 0x93,
+            PianoC5 = 0x94,
+            PianoC6 = 0x95,
+            PianoC7 = 0x96,
+            PianoC8 = 0x97,
+            PianoC9 = 0x98,
+            PianoC10 = 0x99,
+            PianoC11 = 0x9A,
+            PianoC12 = 0x9B,
+            PianoC13 = 0x9C,
+            PianoC14 = 0x9D,
+            PianoC15 = 0x9E,
+            PianoC16 = 0x9F,
+
+            PianoAftertouchC1 = 0xA0,
+            PianoAftertouchC2 = 0xA1,
+            PianoAftertouchC3 = 0xA2,
+            PianoAftertouchC4 = 0xA3,
+            PianoAftertouchC5 = 0xA4,
+            PianoAftertouchC6 = 0xA5,
+            PianoAftertouchC7 = 0xA6,
+            PianoAftertouchC8 = 0xA7,
+            PianoAftertouchC9 = 0xA8,
+            PianoAftertouchC10 = 0xA9,
+            PianoAftertouchC11 = 0xAA,
+            PianoAftertouchC12 = 0xAB,
+            PianoAftertouchC13 = 0xAC,
+            PianoAftertouchC14 = 0xAD,
+            PianoAftertouchC15 = 0xAE,
+            PianoAftertouchC16 = 0xAF,
         };
 
         public enum Note
@@ -58,8 +100,16 @@ namespace PianoETI
         }
         #endregion
 
+        #region Delegates
+        private delegate void MidiCallBack(int handle, int msg, int instance, int param1, int param2);
+
+        public delegate void MessageCallback(object sender, MIDIEventArgs e);
+        #endregion
+
         #region Attributes
         private int midi_handle = 0;
+
+        public event MessageCallback MessageEvent;
         #endregion
 
         #region Constructors
