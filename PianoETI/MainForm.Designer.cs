@@ -96,6 +96,10 @@
             this.pictureBoxSyntesizerA2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxSyntesizerA1 = new System.Windows.Forms.PictureBox();
             this.imageListSyntesizer = new System.Windows.Forms.ImageList(this.components);
+            this.toolStripMenuItemSoundboard = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemSoundboardNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemSoundboardSeperator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.someSoundboardFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panelSyntesizer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerE10)).BeginInit();
@@ -175,7 +179,7 @@
             // 
             this.toolStripMenuItemFileExit.Name = "toolStripMenuItemFileExit";
             this.toolStripMenuItemFileExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.toolStripMenuItemFileExit.Size = new System.Drawing.Size(134, 22);
+            this.toolStripMenuItemFileExit.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItemFileExit.Text = "Exit";
             this.toolStripMenuItemFileExit.Click += new System.EventHandler(this.toolStripMenuItemFileExit_Click);
             // 
@@ -188,7 +192,8 @@
             // toolStripMenuItemView
             // 
             this.toolStripMenuItemView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemViewPiano});
+            this.toolStripMenuItemViewPiano,
+            this.toolStripMenuItemSoundboard});
             this.toolStripMenuItemView.Name = "toolStripMenuItemView";
             this.toolStripMenuItemView.Size = new System.Drawing.Size(44, 20);
             this.toolStripMenuItemView.Text = "View";
@@ -782,6 +787,34 @@
             this.imageListSyntesizer.TransparentColor = System.Drawing.Color.Transparent;
             this.imageListSyntesizer.Images.SetKeyName(0, "synthesizer_pressed.png");
             // 
+            // toolStripMenuItemSoundboard
+            // 
+            this.toolStripMenuItemSoundboard.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemSoundboardNew,
+            this.toolStripMenuItemSoundboardSeperator1,
+            this.someSoundboardFileToolStripMenuItem});
+            this.toolStripMenuItemSoundboard.Name = "toolStripMenuItemSoundboard";
+            this.toolStripMenuItemSoundboard.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItemSoundboard.Text = "Soundboard";
+            // 
+            // toolStripMenuItemSoundboardNew
+            // 
+            this.toolStripMenuItemSoundboardNew.Name = "toolStripMenuItemSoundboardNew";
+            this.toolStripMenuItemSoundboardNew.Size = new System.Drawing.Size(189, 22);
+            this.toolStripMenuItemSoundboardNew.Text = "New soundboard";
+            this.toolStripMenuItemSoundboardNew.Click += new System.EventHandler(this.toolStripMenuItemSoundboardNew_Click);
+            // 
+            // toolStripMenuItemSoundboardSeperator1
+            // 
+            this.toolStripMenuItemSoundboardSeperator1.Name = "toolStripMenuItemSoundboardSeperator1";
+            this.toolStripMenuItemSoundboardSeperator1.Size = new System.Drawing.Size(186, 6);
+            // 
+            // someSoundboardFileToolStripMenuItem
+            // 
+            this.someSoundboardFileToolStripMenuItem.Name = "someSoundboardFileToolStripMenuItem";
+            this.someSoundboardFileToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.someSoundboardFileToolStripMenuItem.Text = "some soundboard file";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -920,6 +953,10 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemViewPianoHigh;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemViewPianoHigher;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemViewPianoHighest;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSoundboard;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSoundboardNew;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItemSoundboardSeperator1;
+        private System.Windows.Forms.ToolStripMenuItem someSoundboardFileToolStripMenuItem;
     }
 }
 

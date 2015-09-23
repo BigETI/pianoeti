@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PianoETI</RootNamespace>
     <AssemblyName>PianoETI</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -70,6 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fraction.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,8 +91,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Synthesizer.cs" />
-    <Compile Include="SynthesizerButton.cs" />
+    <Compile Include="Soundboard.cs" />
+    <Compile Include="SoundboardButton.cs" />
+    <Compile Include="SoundboardButtonConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoundboardButtonConfigForm.Designer.cs">
+      <DependentUpon>SoundboardButtonConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SoundboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoundboardForm.Designer.cs">
+      <DependentUpon>SoundboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SoundboardWizardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoundboardWizardForm.Designer.cs">
+      <DependentUpon>SoundboardWizardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WAV.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -108,6 +128,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SoundboardButtonConfigForm.resx">
+      <DependentUpon>SoundboardButtonConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoundboardForm.resx">
+      <DependentUpon>SoundboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoundboardWizardForm.resx">
+      <DependentUpon>SoundboardWizardForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
