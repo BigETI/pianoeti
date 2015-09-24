@@ -43,8 +43,13 @@
             this.toolStripMenuItemViewPianoHigh = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemViewPianoHigher = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemViewPianoHighest = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemSoundboard = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemSoundboardNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemSoundboardSeperator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.someSoundboardFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.panelSyntesizer = new System.Windows.Forms.Panel();
+            this.imageListSoundboardButton = new System.Windows.Forms.ImageList(this.components);
             this.pictureBoxSyntesizerE10 = new System.Windows.Forms.PictureBox();
             this.pictureBoxSyntesizerE9 = new System.Windows.Forms.PictureBox();
             this.pictureBoxSyntesizerE8 = new System.Windows.Forms.PictureBox();
@@ -95,11 +100,6 @@
             this.pictureBoxSyntesizerA3 = new System.Windows.Forms.PictureBox();
             this.pictureBoxSyntesizerA2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxSyntesizerA1 = new System.Windows.Forms.PictureBox();
-            this.imageListSyntesizer = new System.Windows.Forms.ImageList(this.components);
-            this.toolStripMenuItemSoundboard = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemSoundboardNew = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemSoundboardSeperator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.someSoundboardFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panelSyntesizer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerE10)).BeginInit();
@@ -179,7 +179,7 @@
             // 
             this.toolStripMenuItemFileExit.Name = "toolStripMenuItemFileExit";
             this.toolStripMenuItemFileExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.toolStripMenuItemFileExit.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItemFileExit.Size = new System.Drawing.Size(134, 22);
             this.toolStripMenuItemFileExit.Text = "Exit";
             this.toolStripMenuItemFileExit.Click += new System.EventHandler(this.toolStripMenuItemFileExit_Click);
             // 
@@ -209,7 +209,7 @@
             this.toolStripMenuItemViewPianoHigher,
             this.toolStripMenuItemViewPianoHighest});
             this.toolStripMenuItemViewPiano.Name = "toolStripMenuItemViewPiano";
-            this.toolStripMenuItemViewPiano.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItemViewPiano.Size = new System.Drawing.Size(139, 22);
             this.toolStripMenuItemViewPiano.Text = "Piano";
             // 
             // toolStripMenuItemViewPianoLowest
@@ -267,6 +267,34 @@
             this.toolStripMenuItemViewPianoHighest.Size = new System.Drawing.Size(198, 22);
             this.toolStripMenuItemViewPianoHighest.Text = "Highest Piano";
             this.toolStripMenuItemViewPianoHighest.Click += new System.EventHandler(this.toolStripMenuItemViewPianoGeneric_Click);
+            // 
+            // toolStripMenuItemSoundboard
+            // 
+            this.toolStripMenuItemSoundboard.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemSoundboardNew,
+            this.toolStripMenuItemSoundboardSeperator1,
+            this.someSoundboardFileToolStripMenuItem});
+            this.toolStripMenuItemSoundboard.Name = "toolStripMenuItemSoundboard";
+            this.toolStripMenuItemSoundboard.Size = new System.Drawing.Size(139, 22);
+            this.toolStripMenuItemSoundboard.Text = "Soundboard";
+            // 
+            // toolStripMenuItemSoundboardNew
+            // 
+            this.toolStripMenuItemSoundboardNew.Name = "toolStripMenuItemSoundboardNew";
+            this.toolStripMenuItemSoundboardNew.Size = new System.Drawing.Size(189, 22);
+            this.toolStripMenuItemSoundboardNew.Text = "New soundboard";
+            this.toolStripMenuItemSoundboardNew.Click += new System.EventHandler(this.toolStripMenuItemSoundboardNew_Click);
+            // 
+            // toolStripMenuItemSoundboardSeperator1
+            // 
+            this.toolStripMenuItemSoundboardSeperator1.Name = "toolStripMenuItemSoundboardSeperator1";
+            this.toolStripMenuItemSoundboardSeperator1.Size = new System.Drawing.Size(186, 6);
+            // 
+            // someSoundboardFileToolStripMenuItem
+            // 
+            this.someSoundboardFileToolStripMenuItem.Name = "someSoundboardFileToolStripMenuItem";
+            this.someSoundboardFileToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.someSoundboardFileToolStripMenuItem.Text = "some soundboard file";
             // 
             // toolStripMenuItemHelp
             // 
@@ -331,9 +359,15 @@
             this.panelSyntesizer.Size = new System.Drawing.Size(800, 400);
             this.panelSyntesizer.TabIndex = 5;
             // 
+            // imageListSoundboardButton
+            // 
+            this.imageListSoundboardButton.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListSoundboardButton.ImageStream")));
+            this.imageListSoundboardButton.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListSoundboardButton.Images.SetKeyName(0, "SoundBoardButton_pressed.png");
+            // 
             // pictureBoxSyntesizerE10
             // 
-            this.pictureBoxSyntesizerE10.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerE10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerE10.Image")));
             this.pictureBoxSyntesizerE10.Location = new System.Drawing.Point(720, 320);
             this.pictureBoxSyntesizerE10.Name = "pictureBoxSyntesizerE10";
             this.pictureBoxSyntesizerE10.Size = new System.Drawing.Size(80, 80);
@@ -342,7 +376,7 @@
             // 
             // pictureBoxSyntesizerE9
             // 
-            this.pictureBoxSyntesizerE9.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerE9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerE9.Image")));
             this.pictureBoxSyntesizerE9.Location = new System.Drawing.Point(640, 320);
             this.pictureBoxSyntesizerE9.Name = "pictureBoxSyntesizerE9";
             this.pictureBoxSyntesizerE9.Size = new System.Drawing.Size(80, 80);
@@ -351,7 +385,7 @@
             // 
             // pictureBoxSyntesizerE8
             // 
-            this.pictureBoxSyntesizerE8.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerE8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerE8.Image")));
             this.pictureBoxSyntesizerE8.Location = new System.Drawing.Point(560, 320);
             this.pictureBoxSyntesizerE8.Name = "pictureBoxSyntesizerE8";
             this.pictureBoxSyntesizerE8.Size = new System.Drawing.Size(80, 80);
@@ -360,7 +394,7 @@
             // 
             // pictureBoxSyntesizerE7
             // 
-            this.pictureBoxSyntesizerE7.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerE7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerE7.Image")));
             this.pictureBoxSyntesizerE7.Location = new System.Drawing.Point(480, 320);
             this.pictureBoxSyntesizerE7.Name = "pictureBoxSyntesizerE7";
             this.pictureBoxSyntesizerE7.Size = new System.Drawing.Size(80, 80);
@@ -369,7 +403,7 @@
             // 
             // pictureBoxSyntesizerE6
             // 
-            this.pictureBoxSyntesizerE6.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerE6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerE6.Image")));
             this.pictureBoxSyntesizerE6.Location = new System.Drawing.Point(400, 320);
             this.pictureBoxSyntesizerE6.Name = "pictureBoxSyntesizerE6";
             this.pictureBoxSyntesizerE6.Size = new System.Drawing.Size(80, 80);
@@ -378,7 +412,7 @@
             // 
             // pictureBoxSyntesizerE5
             // 
-            this.pictureBoxSyntesizerE5.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerE5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerE5.Image")));
             this.pictureBoxSyntesizerE5.Location = new System.Drawing.Point(320, 320);
             this.pictureBoxSyntesizerE5.Name = "pictureBoxSyntesizerE5";
             this.pictureBoxSyntesizerE5.Size = new System.Drawing.Size(80, 80);
@@ -387,7 +421,7 @@
             // 
             // pictureBoxSyntesizerE4
             // 
-            this.pictureBoxSyntesizerE4.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerE4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerE4.Image")));
             this.pictureBoxSyntesizerE4.Location = new System.Drawing.Point(240, 320);
             this.pictureBoxSyntesizerE4.Name = "pictureBoxSyntesizerE4";
             this.pictureBoxSyntesizerE4.Size = new System.Drawing.Size(80, 80);
@@ -396,7 +430,7 @@
             // 
             // pictureBoxSyntesizerE3
             // 
-            this.pictureBoxSyntesizerE3.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerE3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerE3.Image")));
             this.pictureBoxSyntesizerE3.Location = new System.Drawing.Point(160, 320);
             this.pictureBoxSyntesizerE3.Name = "pictureBoxSyntesizerE3";
             this.pictureBoxSyntesizerE3.Size = new System.Drawing.Size(80, 80);
@@ -405,7 +439,7 @@
             // 
             // pictureBoxSyntesizerE2
             // 
-            this.pictureBoxSyntesizerE2.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerE2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerE2.Image")));
             this.pictureBoxSyntesizerE2.Location = new System.Drawing.Point(80, 320);
             this.pictureBoxSyntesizerE2.Name = "pictureBoxSyntesizerE2";
             this.pictureBoxSyntesizerE2.Size = new System.Drawing.Size(80, 80);
@@ -414,7 +448,7 @@
             // 
             // pictureBoxSyntesizerD10
             // 
-            this.pictureBoxSyntesizerD10.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerD10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerD10.Image")));
             this.pictureBoxSyntesizerD10.Location = new System.Drawing.Point(720, 240);
             this.pictureBoxSyntesizerD10.Name = "pictureBoxSyntesizerD10";
             this.pictureBoxSyntesizerD10.Size = new System.Drawing.Size(80, 80);
@@ -423,7 +457,7 @@
             // 
             // pictureBoxSyntesizerD9
             // 
-            this.pictureBoxSyntesizerD9.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerD9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerD9.Image")));
             this.pictureBoxSyntesizerD9.Location = new System.Drawing.Point(640, 240);
             this.pictureBoxSyntesizerD9.Name = "pictureBoxSyntesizerD9";
             this.pictureBoxSyntesizerD9.Size = new System.Drawing.Size(80, 80);
@@ -432,7 +466,7 @@
             // 
             // pictureBoxSyntesizerD8
             // 
-            this.pictureBoxSyntesizerD8.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerD8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerD8.Image")));
             this.pictureBoxSyntesizerD8.Location = new System.Drawing.Point(560, 240);
             this.pictureBoxSyntesizerD8.Name = "pictureBoxSyntesizerD8";
             this.pictureBoxSyntesizerD8.Size = new System.Drawing.Size(80, 80);
@@ -441,7 +475,7 @@
             // 
             // pictureBoxSyntesizerD7
             // 
-            this.pictureBoxSyntesizerD7.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerD7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerD7.Image")));
             this.pictureBoxSyntesizerD7.Location = new System.Drawing.Point(480, 240);
             this.pictureBoxSyntesizerD7.Name = "pictureBoxSyntesizerD7";
             this.pictureBoxSyntesizerD7.Size = new System.Drawing.Size(80, 80);
@@ -450,7 +484,7 @@
             // 
             // pictureBoxSyntesizerD6
             // 
-            this.pictureBoxSyntesizerD6.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerD6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerD6.Image")));
             this.pictureBoxSyntesizerD6.Location = new System.Drawing.Point(400, 240);
             this.pictureBoxSyntesizerD6.Name = "pictureBoxSyntesizerD6";
             this.pictureBoxSyntesizerD6.Size = new System.Drawing.Size(80, 80);
@@ -459,7 +493,7 @@
             // 
             // pictureBoxSyntesizerD5
             // 
-            this.pictureBoxSyntesizerD5.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerD5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerD5.Image")));
             this.pictureBoxSyntesizerD5.Location = new System.Drawing.Point(320, 240);
             this.pictureBoxSyntesizerD5.Name = "pictureBoxSyntesizerD5";
             this.pictureBoxSyntesizerD5.Size = new System.Drawing.Size(80, 80);
@@ -468,7 +502,7 @@
             // 
             // pictureBoxSyntesizerD4
             // 
-            this.pictureBoxSyntesizerD4.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerD4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerD4.Image")));
             this.pictureBoxSyntesizerD4.Location = new System.Drawing.Point(240, 240);
             this.pictureBoxSyntesizerD4.Name = "pictureBoxSyntesizerD4";
             this.pictureBoxSyntesizerD4.Size = new System.Drawing.Size(80, 80);
@@ -477,7 +511,7 @@
             // 
             // pictureBoxSyntesizerD3
             // 
-            this.pictureBoxSyntesizerD3.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerD3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerD3.Image")));
             this.pictureBoxSyntesizerD3.Location = new System.Drawing.Point(160, 240);
             this.pictureBoxSyntesizerD3.Name = "pictureBoxSyntesizerD3";
             this.pictureBoxSyntesizerD3.Size = new System.Drawing.Size(80, 80);
@@ -486,7 +520,7 @@
             // 
             // pictureBoxSyntesizerD2
             // 
-            this.pictureBoxSyntesizerD2.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerD2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerD2.Image")));
             this.pictureBoxSyntesizerD2.Location = new System.Drawing.Point(80, 240);
             this.pictureBoxSyntesizerD2.Name = "pictureBoxSyntesizerD2";
             this.pictureBoxSyntesizerD2.Size = new System.Drawing.Size(80, 80);
@@ -495,7 +529,7 @@
             // 
             // pictureBoxSyntesizerC10
             // 
-            this.pictureBoxSyntesizerC10.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerC10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerC10.Image")));
             this.pictureBoxSyntesizerC10.Location = new System.Drawing.Point(720, 160);
             this.pictureBoxSyntesizerC10.Name = "pictureBoxSyntesizerC10";
             this.pictureBoxSyntesizerC10.Size = new System.Drawing.Size(80, 80);
@@ -504,7 +538,7 @@
             // 
             // pictureBoxSyntesizerC9
             // 
-            this.pictureBoxSyntesizerC9.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerC9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerC9.Image")));
             this.pictureBoxSyntesizerC9.Location = new System.Drawing.Point(640, 160);
             this.pictureBoxSyntesizerC9.Name = "pictureBoxSyntesizerC9";
             this.pictureBoxSyntesizerC9.Size = new System.Drawing.Size(80, 80);
@@ -513,7 +547,7 @@
             // 
             // pictureBoxSyntesizerC8
             // 
-            this.pictureBoxSyntesizerC8.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerC8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerC8.Image")));
             this.pictureBoxSyntesizerC8.Location = new System.Drawing.Point(560, 160);
             this.pictureBoxSyntesizerC8.Name = "pictureBoxSyntesizerC8";
             this.pictureBoxSyntesizerC8.Size = new System.Drawing.Size(80, 80);
@@ -522,7 +556,7 @@
             // 
             // pictureBoxSyntesizerC7
             // 
-            this.pictureBoxSyntesizerC7.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerC7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerC7.Image")));
             this.pictureBoxSyntesizerC7.Location = new System.Drawing.Point(480, 160);
             this.pictureBoxSyntesizerC7.Name = "pictureBoxSyntesizerC7";
             this.pictureBoxSyntesizerC7.Size = new System.Drawing.Size(80, 80);
@@ -531,7 +565,7 @@
             // 
             // pictureBoxSyntesizerC6
             // 
-            this.pictureBoxSyntesizerC6.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerC6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerC6.Image")));
             this.pictureBoxSyntesizerC6.Location = new System.Drawing.Point(400, 160);
             this.pictureBoxSyntesizerC6.Name = "pictureBoxSyntesizerC6";
             this.pictureBoxSyntesizerC6.Size = new System.Drawing.Size(80, 80);
@@ -540,7 +574,7 @@
             // 
             // pictureBoxSyntesizerC5
             // 
-            this.pictureBoxSyntesizerC5.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerC5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerC5.Image")));
             this.pictureBoxSyntesizerC5.Location = new System.Drawing.Point(320, 160);
             this.pictureBoxSyntesizerC5.Name = "pictureBoxSyntesizerC5";
             this.pictureBoxSyntesizerC5.Size = new System.Drawing.Size(80, 80);
@@ -549,7 +583,7 @@
             // 
             // pictureBoxSyntesizerC4
             // 
-            this.pictureBoxSyntesizerC4.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerC4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerC4.Image")));
             this.pictureBoxSyntesizerC4.Location = new System.Drawing.Point(240, 160);
             this.pictureBoxSyntesizerC4.Name = "pictureBoxSyntesizerC4";
             this.pictureBoxSyntesizerC4.Size = new System.Drawing.Size(80, 80);
@@ -558,7 +592,7 @@
             // 
             // pictureBoxSyntesizerC3
             // 
-            this.pictureBoxSyntesizerC3.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerC3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerC3.Image")));
             this.pictureBoxSyntesizerC3.Location = new System.Drawing.Point(160, 160);
             this.pictureBoxSyntesizerC3.Name = "pictureBoxSyntesizerC3";
             this.pictureBoxSyntesizerC3.Size = new System.Drawing.Size(80, 80);
@@ -567,7 +601,7 @@
             // 
             // pictureBoxSyntesizerC2
             // 
-            this.pictureBoxSyntesizerC2.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerC2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerC2.Image")));
             this.pictureBoxSyntesizerC2.Location = new System.Drawing.Point(80, 160);
             this.pictureBoxSyntesizerC2.Name = "pictureBoxSyntesizerC2";
             this.pictureBoxSyntesizerC2.Size = new System.Drawing.Size(80, 80);
@@ -576,7 +610,7 @@
             // 
             // pictureBoxSyntesizerE1
             // 
-            this.pictureBoxSyntesizerE1.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerE1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerE1.Image")));
             this.pictureBoxSyntesizerE1.Location = new System.Drawing.Point(0, 320);
             this.pictureBoxSyntesizerE1.Name = "pictureBoxSyntesizerE1";
             this.pictureBoxSyntesizerE1.Size = new System.Drawing.Size(80, 80);
@@ -585,7 +619,7 @@
             // 
             // pictureBoxSyntesizerD1
             // 
-            this.pictureBoxSyntesizerD1.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerD1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerD1.Image")));
             this.pictureBoxSyntesizerD1.Location = new System.Drawing.Point(0, 240);
             this.pictureBoxSyntesizerD1.Name = "pictureBoxSyntesizerD1";
             this.pictureBoxSyntesizerD1.Size = new System.Drawing.Size(80, 80);
@@ -594,7 +628,7 @@
             // 
             // pictureBoxSyntesizerC1
             // 
-            this.pictureBoxSyntesizerC1.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerC1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerC1.Image")));
             this.pictureBoxSyntesizerC1.Location = new System.Drawing.Point(0, 160);
             this.pictureBoxSyntesizerC1.Name = "pictureBoxSyntesizerC1";
             this.pictureBoxSyntesizerC1.Size = new System.Drawing.Size(80, 80);
@@ -603,7 +637,7 @@
             // 
             // pictureBoxSyntesizerB10
             // 
-            this.pictureBoxSyntesizerB10.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerB10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerB10.Image")));
             this.pictureBoxSyntesizerB10.Location = new System.Drawing.Point(720, 80);
             this.pictureBoxSyntesizerB10.Name = "pictureBoxSyntesizerB10";
             this.pictureBoxSyntesizerB10.Size = new System.Drawing.Size(80, 80);
@@ -612,7 +646,7 @@
             // 
             // pictureBoxSyntesizerB9
             // 
-            this.pictureBoxSyntesizerB9.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerB9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerB9.Image")));
             this.pictureBoxSyntesizerB9.Location = new System.Drawing.Point(640, 80);
             this.pictureBoxSyntesizerB9.Name = "pictureBoxSyntesizerB9";
             this.pictureBoxSyntesizerB9.Size = new System.Drawing.Size(80, 80);
@@ -621,7 +655,7 @@
             // 
             // pictureBoxSyntesizerB8
             // 
-            this.pictureBoxSyntesizerB8.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerB8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerB8.Image")));
             this.pictureBoxSyntesizerB8.Location = new System.Drawing.Point(560, 80);
             this.pictureBoxSyntesizerB8.Name = "pictureBoxSyntesizerB8";
             this.pictureBoxSyntesizerB8.Size = new System.Drawing.Size(80, 80);
@@ -630,7 +664,7 @@
             // 
             // pictureBoxSyntesizerB7
             // 
-            this.pictureBoxSyntesizerB7.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerB7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerB7.Image")));
             this.pictureBoxSyntesizerB7.Location = new System.Drawing.Point(480, 80);
             this.pictureBoxSyntesizerB7.Name = "pictureBoxSyntesizerB7";
             this.pictureBoxSyntesizerB7.Size = new System.Drawing.Size(80, 80);
@@ -639,7 +673,7 @@
             // 
             // pictureBoxSyntesizerB6
             // 
-            this.pictureBoxSyntesizerB6.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerB6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerB6.Image")));
             this.pictureBoxSyntesizerB6.Location = new System.Drawing.Point(400, 80);
             this.pictureBoxSyntesizerB6.Name = "pictureBoxSyntesizerB6";
             this.pictureBoxSyntesizerB6.Size = new System.Drawing.Size(80, 80);
@@ -648,7 +682,7 @@
             // 
             // pictureBoxSyntesizerB5
             // 
-            this.pictureBoxSyntesizerB5.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerB5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerB5.Image")));
             this.pictureBoxSyntesizerB5.Location = new System.Drawing.Point(320, 80);
             this.pictureBoxSyntesizerB5.Name = "pictureBoxSyntesizerB5";
             this.pictureBoxSyntesizerB5.Size = new System.Drawing.Size(80, 80);
@@ -657,7 +691,7 @@
             // 
             // pictureBoxSyntesizerB4
             // 
-            this.pictureBoxSyntesizerB4.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerB4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerB4.Image")));
             this.pictureBoxSyntesizerB4.Location = new System.Drawing.Point(240, 80);
             this.pictureBoxSyntesizerB4.Name = "pictureBoxSyntesizerB4";
             this.pictureBoxSyntesizerB4.Size = new System.Drawing.Size(80, 80);
@@ -666,7 +700,7 @@
             // 
             // pictureBoxSyntesizerB3
             // 
-            this.pictureBoxSyntesizerB3.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerB3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerB3.Image")));
             this.pictureBoxSyntesizerB3.Location = new System.Drawing.Point(160, 80);
             this.pictureBoxSyntesizerB3.Name = "pictureBoxSyntesizerB3";
             this.pictureBoxSyntesizerB3.Size = new System.Drawing.Size(80, 80);
@@ -675,7 +709,7 @@
             // 
             // pictureBoxSyntesizerB2
             // 
-            this.pictureBoxSyntesizerB2.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerB2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerB2.Image")));
             this.pictureBoxSyntesizerB2.Location = new System.Drawing.Point(80, 80);
             this.pictureBoxSyntesizerB2.Name = "pictureBoxSyntesizerB2";
             this.pictureBoxSyntesizerB2.Size = new System.Drawing.Size(80, 80);
@@ -684,7 +718,7 @@
             // 
             // pictureBoxSyntesizerB1
             // 
-            this.pictureBoxSyntesizerB1.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerB1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerB1.Image")));
             this.pictureBoxSyntesizerB1.Location = new System.Drawing.Point(0, 80);
             this.pictureBoxSyntesizerB1.Name = "pictureBoxSyntesizerB1";
             this.pictureBoxSyntesizerB1.Size = new System.Drawing.Size(80, 80);
@@ -693,7 +727,7 @@
             // 
             // pictureBoxSyntesizerA10
             // 
-            this.pictureBoxSyntesizerA10.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerA10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerA10.Image")));
             this.pictureBoxSyntesizerA10.Location = new System.Drawing.Point(720, 0);
             this.pictureBoxSyntesizerA10.Name = "pictureBoxSyntesizerA10";
             this.pictureBoxSyntesizerA10.Size = new System.Drawing.Size(80, 80);
@@ -702,7 +736,7 @@
             // 
             // pictureBoxSyntesizerA9
             // 
-            this.pictureBoxSyntesizerA9.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerA9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerA9.Image")));
             this.pictureBoxSyntesizerA9.Location = new System.Drawing.Point(640, 0);
             this.pictureBoxSyntesizerA9.Name = "pictureBoxSyntesizerA9";
             this.pictureBoxSyntesizerA9.Size = new System.Drawing.Size(80, 80);
@@ -711,7 +745,7 @@
             // 
             // pictureBoxSyntesizerA8
             // 
-            this.pictureBoxSyntesizerA8.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerA8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerA8.Image")));
             this.pictureBoxSyntesizerA8.Location = new System.Drawing.Point(560, 0);
             this.pictureBoxSyntesizerA8.Name = "pictureBoxSyntesizerA8";
             this.pictureBoxSyntesizerA8.Size = new System.Drawing.Size(80, 80);
@@ -720,7 +754,7 @@
             // 
             // pictureBoxSyntesizerA7
             // 
-            this.pictureBoxSyntesizerA7.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerA7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerA7.Image")));
             this.pictureBoxSyntesizerA7.Location = new System.Drawing.Point(480, 0);
             this.pictureBoxSyntesizerA7.Name = "pictureBoxSyntesizerA7";
             this.pictureBoxSyntesizerA7.Size = new System.Drawing.Size(80, 80);
@@ -729,7 +763,7 @@
             // 
             // pictureBoxSyntesizerA6
             // 
-            this.pictureBoxSyntesizerA6.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerA6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerA6.Image")));
             this.pictureBoxSyntesizerA6.Location = new System.Drawing.Point(400, 0);
             this.pictureBoxSyntesizerA6.Name = "pictureBoxSyntesizerA6";
             this.pictureBoxSyntesizerA6.Size = new System.Drawing.Size(80, 80);
@@ -738,7 +772,7 @@
             // 
             // pictureBoxSyntesizerA5
             // 
-            this.pictureBoxSyntesizerA5.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerA5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerA5.Image")));
             this.pictureBoxSyntesizerA5.Location = new System.Drawing.Point(320, 0);
             this.pictureBoxSyntesizerA5.Name = "pictureBoxSyntesizerA5";
             this.pictureBoxSyntesizerA5.Size = new System.Drawing.Size(80, 80);
@@ -747,7 +781,7 @@
             // 
             // pictureBoxSyntesizerA4
             // 
-            this.pictureBoxSyntesizerA4.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerA4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerA4.Image")));
             this.pictureBoxSyntesizerA4.Location = new System.Drawing.Point(240, 0);
             this.pictureBoxSyntesizerA4.Name = "pictureBoxSyntesizerA4";
             this.pictureBoxSyntesizerA4.Size = new System.Drawing.Size(80, 80);
@@ -756,7 +790,7 @@
             // 
             // pictureBoxSyntesizerA3
             // 
-            this.pictureBoxSyntesizerA3.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerA3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerA3.Image")));
             this.pictureBoxSyntesizerA3.Location = new System.Drawing.Point(160, 0);
             this.pictureBoxSyntesizerA3.Name = "pictureBoxSyntesizerA3";
             this.pictureBoxSyntesizerA3.Size = new System.Drawing.Size(80, 80);
@@ -765,7 +799,7 @@
             // 
             // pictureBoxSyntesizerA2
             // 
-            this.pictureBoxSyntesizerA2.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerA2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerA2.Image")));
             this.pictureBoxSyntesizerA2.Location = new System.Drawing.Point(80, 0);
             this.pictureBoxSyntesizerA2.Name = "pictureBoxSyntesizerA2";
             this.pictureBoxSyntesizerA2.Size = new System.Drawing.Size(80, 80);
@@ -774,46 +808,12 @@
             // 
             // pictureBoxSyntesizerA1
             // 
-            this.pictureBoxSyntesizerA1.Image = global::PianoETI.Properties.Resources.synthesizer;
+            this.pictureBoxSyntesizerA1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerA1.Image")));
             this.pictureBoxSyntesizerA1.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSyntesizerA1.Name = "pictureBoxSyntesizerA1";
             this.pictureBoxSyntesizerA1.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxSyntesizerA1.TabIndex = 0;
             this.pictureBoxSyntesizerA1.TabStop = false;
-            // 
-            // imageListSyntesizer
-            // 
-            this.imageListSyntesizer.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListSyntesizer.ImageStream")));
-            this.imageListSyntesizer.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListSyntesizer.Images.SetKeyName(0, "synthesizer_pressed.png");
-            // 
-            // toolStripMenuItemSoundboard
-            // 
-            this.toolStripMenuItemSoundboard.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemSoundboardNew,
-            this.toolStripMenuItemSoundboardSeperator1,
-            this.someSoundboardFileToolStripMenuItem});
-            this.toolStripMenuItemSoundboard.Name = "toolStripMenuItemSoundboard";
-            this.toolStripMenuItemSoundboard.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItemSoundboard.Text = "Soundboard";
-            // 
-            // toolStripMenuItemSoundboardNew
-            // 
-            this.toolStripMenuItemSoundboardNew.Name = "toolStripMenuItemSoundboardNew";
-            this.toolStripMenuItemSoundboardNew.Size = new System.Drawing.Size(189, 22);
-            this.toolStripMenuItemSoundboardNew.Text = "New soundboard";
-            this.toolStripMenuItemSoundboardNew.Click += new System.EventHandler(this.toolStripMenuItemSoundboardNew_Click);
-            // 
-            // toolStripMenuItemSoundboardSeperator1
-            // 
-            this.toolStripMenuItemSoundboardSeperator1.Name = "toolStripMenuItemSoundboardSeperator1";
-            this.toolStripMenuItemSoundboardSeperator1.Size = new System.Drawing.Size(186, 6);
-            // 
-            // someSoundboardFileToolStripMenuItem
-            // 
-            this.someSoundboardFileToolStripMenuItem.Name = "someSoundboardFileToolStripMenuItem";
-            this.someSoundboardFileToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.someSoundboardFileToolStripMenuItem.Text = "some soundboard file";
             // 
             // MainForm
             // 
@@ -941,7 +941,7 @@
         private System.Windows.Forms.PictureBox pictureBoxSyntesizerA3;
         private System.Windows.Forms.PictureBox pictureBoxSyntesizerA2;
         private System.Windows.Forms.PictureBox pictureBoxSyntesizerA1;
-        private System.Windows.Forms.ImageList imageListSyntesizer;
+        private System.Windows.Forms.ImageList imageListSoundboardButton;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemEdit;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemView;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemHelp;

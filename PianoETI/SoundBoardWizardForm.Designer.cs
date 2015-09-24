@@ -35,24 +35,18 @@
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBoxButtons = new System.Windows.Forms.GroupBox();
+            this.toolStripMenuItemCancel = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemEditNew = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.groupBoxButtons = new System.Windows.Forms.GroupBox();
             this.contextMenuStripButton = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button9 = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.contextMenuStripMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemMainNew = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
-            this.groupBoxButtons.SuspendLayout();
             this.contextMenuStripButton.SuspendLayout();
             this.contextMenuStripMain.SuspendLayout();
             this.SuspendLayout();
@@ -101,34 +95,18 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemClose});
+            this.toolStripMenuItemCancel});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // toolStripMenuItemClose
+            // toolStripMenuItemCancel
             // 
-            this.toolStripMenuItemClose.Name = "toolStripMenuItemClose";
-            this.toolStripMenuItemClose.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F4)));
-            this.toolStripMenuItemClose.Size = new System.Drawing.Size(154, 22);
-            this.toolStripMenuItemClose.Text = "Close";
-            // 
-            // groupBoxButtons
-            // 
-            this.groupBoxButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxButtons.Controls.Add(this.button9);
-            this.groupBoxButtons.Controls.Add(this.button7);
-            this.groupBoxButtons.Controls.Add(this.button4);
-            this.groupBoxButtons.Controls.Add(this.button2);
-            this.groupBoxButtons.Controls.Add(this.button1);
-            this.groupBoxButtons.Location = new System.Drawing.Point(12, 56);
-            this.groupBoxButtons.Name = "groupBoxButtons";
-            this.groupBoxButtons.Size = new System.Drawing.Size(406, 164);
-            this.groupBoxButtons.TabIndex = 3;
-            this.groupBoxButtons.TabStop = false;
-            this.groupBoxButtons.Text = "Button configuration";
+            this.toolStripMenuItemCancel.Name = "toolStripMenuItemCancel";
+            this.toolStripMenuItemCancel.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F4)));
+            this.toolStripMenuItemCancel.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItemCancel.Text = "Cancel";
+            this.toolStripMenuItemCancel.Click += new System.EventHandler(this.toolStripMenuItemCancel_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -146,37 +124,17 @@
             this.toolStripMenuItemEditNew.Text = "Add new button";
             this.toolStripMenuItemEditNew.Click += new System.EventHandler(this.toolStripMenuItemEditNew_Click);
             // 
-            // button1
+            // groupBoxButtons
             // 
-            this.button1.Location = new System.Drawing.Point(7, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 40);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(53, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(40, 40);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(99, 20);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(40, 40);
-            this.button4.TabIndex = 2;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(7, 112);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(40, 40);
-            this.button7.TabIndex = 7;
-            this.button7.UseVisualStyleBackColor = true;
+            this.groupBoxButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxButtons.Location = new System.Drawing.Point(12, 56);
+            this.groupBoxButtons.Name = "groupBoxButtons";
+            this.groupBoxButtons.Size = new System.Drawing.Size(406, 164);
+            this.groupBoxButtons.TabIndex = 3;
+            this.groupBoxButtons.TabStop = false;
+            this.groupBoxButtons.Text = "Button configuration";
             // 
             // contextMenuStripButton
             // 
@@ -197,14 +155,6 @@
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
             this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.removeToolStripMenuItem.Text = "Remove";
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(7, 66);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(40, 40);
-            this.button9.TabIndex = 8;
-            this.button9.UseVisualStyleBackColor = true;
             // 
             // buttonOK
             // 
@@ -262,9 +212,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Soundboard Wizard";
             this.TopMost = true;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SoundboardWizardForm_FormClosed);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            this.groupBoxButtons.ResumeLayout(false);
             this.contextMenuStripButton.ResumeLayout(false);
             this.contextMenuStripMain.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -280,18 +230,13 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemClose;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCancel;
         private System.Windows.Forms.GroupBox groupBoxButtons;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemEditNew;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripButton;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripMain;

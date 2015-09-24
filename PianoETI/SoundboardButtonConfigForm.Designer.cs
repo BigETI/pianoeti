@@ -48,8 +48,8 @@
             this.checkBoxLoop = new System.Windows.Forms.CheckBox();
             this.buttonStartTest = new System.Windows.Forms.Button();
             this.buttonStopTest = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownNumerator = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownDivisor = new System.Windows.Forms.NumericUpDown();
             this.labelFraction = new System.Windows.Forms.Label();
             this.labelSlash = new System.Windows.Forms.Label();
             this.groupBoxVolume.SuspendLayout();
@@ -58,8 +58,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPitch)).BeginInit();
             this.groupBoxMode.SuspendLayout();
             this.contextMenuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumerator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDivisor)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog
@@ -83,22 +83,22 @@
             this.groupBoxVolume.Controls.Add(this.trackBarVolume);
             this.groupBoxVolume.Location = new System.Drawing.Point(12, 38);
             this.groupBoxVolume.Name = "groupBoxVolume";
-            this.groupBoxVolume.Size = new System.Drawing.Size(439, 70);
+            this.groupBoxVolume.Size = new System.Drawing.Size(433, 70);
             this.groupBoxVolume.TabIndex = 3;
             this.groupBoxVolume.TabStop = false;
             this.groupBoxVolume.Text = "Volume";
             // 
             // trackBarVolume
             // 
-            this.trackBarVolume.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBarVolume.Location = new System.Drawing.Point(6, 19);
+            this.trackBarVolume.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trackBarVolume.Location = new System.Drawing.Point(3, 16);
             this.trackBarVolume.Maximum = 100;
             this.trackBarVolume.Name = "trackBarVolume";
-            this.trackBarVolume.Size = new System.Drawing.Size(427, 45);
+            this.trackBarVolume.Size = new System.Drawing.Size(427, 51);
             this.trackBarVolume.TabIndex = 3;
             this.trackBarVolume.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.trackBarVolume.Value = 100;
+            this.trackBarVolume.ValueChanged += new System.EventHandler(this.trackBarVolume_ValueChanged);
             // 
             // buttonLoadFile
             // 
@@ -127,22 +127,22 @@
             this.groupBoxPitch.Controls.Add(this.trackBarPitch);
             this.groupBoxPitch.Location = new System.Drawing.Point(12, 114);
             this.groupBoxPitch.Name = "groupBoxPitch";
-            this.groupBoxPitch.Size = new System.Drawing.Size(439, 70);
+            this.groupBoxPitch.Size = new System.Drawing.Size(433, 70);
             this.groupBoxPitch.TabIndex = 6;
             this.groupBoxPitch.TabStop = false;
             this.groupBoxPitch.Text = "Pitch";
             // 
             // trackBarPitch
             // 
-            this.trackBarPitch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBarPitch.Location = new System.Drawing.Point(6, 19);
+            this.trackBarPitch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trackBarPitch.Location = new System.Drawing.Point(3, 16);
             this.trackBarPitch.Maximum = 100;
             this.trackBarPitch.Minimum = -100;
             this.trackBarPitch.Name = "trackBarPitch";
-            this.trackBarPitch.Size = new System.Drawing.Size(427, 45);
+            this.trackBarPitch.Size = new System.Drawing.Size(427, 51);
             this.trackBarPitch.TabIndex = 3;
             this.trackBarPitch.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.trackBarPitch.ValueChanged += new System.EventHandler(this.trackBarPitch_ValueChanged);
             // 
             // groupBoxMode
             // 
@@ -153,7 +153,7 @@
             this.groupBoxMode.Controls.Add(this.radioButtonModePressOnly);
             this.groupBoxMode.Location = new System.Drawing.Point(12, 190);
             this.groupBoxMode.Name = "groupBoxMode";
-            this.groupBoxMode.Size = new System.Drawing.Size(439, 42);
+            this.groupBoxMode.Size = new System.Drawing.Size(433, 42);
             this.groupBoxMode.TabIndex = 8;
             this.groupBoxMode.TabStop = false;
             this.groupBoxMode.Text = "Mode";
@@ -167,6 +167,7 @@
             this.radioButtonClick.TabIndex = 10;
             this.radioButtonClick.Text = "Click mode";
             this.radioButtonClick.UseVisualStyleBackColor = true;
+            this.radioButtonClick.Click += new System.EventHandler(this.radioButtonModeGeneric_Click);
             // 
             // radioButtonToggle
             // 
@@ -177,6 +178,7 @@
             this.radioButtonToggle.TabIndex = 9;
             this.radioButtonToggle.Text = "Toggle mode";
             this.radioButtonToggle.UseVisualStyleBackColor = true;
+            this.radioButtonToggle.Click += new System.EventHandler(this.radioButtonModeGeneric_Click);
             // 
             // radioButtonModePressOnly
             // 
@@ -189,6 +191,7 @@
             this.radioButtonModePressOnly.TabStop = true;
             this.radioButtonModePressOnly.Text = "Press only mode";
             this.radioButtonModePressOnly.UseVisualStyleBackColor = true;
+            this.radioButtonModePressOnly.Click += new System.EventHandler(this.radioButtonModeGeneric_Click);
             // 
             // contextMenuStrip
             // 
@@ -206,7 +209,7 @@
             // buttonCancel
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonCancel.Location = new System.Drawing.Point(12, 487);
+            this.buttonCancel.Location = new System.Drawing.Point(12, 366);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(93, 23);
             this.buttonCancel.TabIndex = 11;
@@ -218,9 +221,9 @@
             // 
             this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOK.Location = new System.Drawing.Point(111, 487);
+            this.buttonOK.Location = new System.Drawing.Point(111, 366);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(340, 23);
+            this.buttonOK.Size = new System.Drawing.Size(334, 23);
             this.buttonOK.TabIndex = 10;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
@@ -235,12 +238,15 @@
             this.checkBoxLoop.TabIndex = 12;
             this.checkBoxLoop.Text = "Enable Loop";
             this.checkBoxLoop.UseVisualStyleBackColor = true;
+            this.checkBoxLoop.CheckedChanged += new System.EventHandler(this.checkBoxLoop_CheckedChanged);
             // 
             // buttonStartTest
             // 
-            this.buttonStartTest.Location = new System.Drawing.Point(12, 307);
+            this.buttonStartTest.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonStartTest.Location = new System.Drawing.Point(12, 287);
             this.buttonStartTest.Name = "buttonStartTest";
-            this.buttonStartTest.Size = new System.Drawing.Size(439, 23);
+            this.buttonStartTest.Size = new System.Drawing.Size(433, 23);
             this.buttonStartTest.TabIndex = 13;
             this.buttonStartTest.Text = "Test";
             this.buttonStartTest.UseVisualStyleBackColor = true;
@@ -248,37 +254,61 @@
             // 
             // buttonStopTest
             // 
-            this.buttonStopTest.Location = new System.Drawing.Point(12, 336);
+            this.buttonStopTest.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonStopTest.Location = new System.Drawing.Point(12, 316);
             this.buttonStopTest.Name = "buttonStopTest";
-            this.buttonStopTest.Size = new System.Drawing.Size(439, 23);
+            this.buttonStopTest.Size = new System.Drawing.Size(433, 23);
             this.buttonStopTest.TabIndex = 14;
             this.buttonStopTest.Text = "Stop";
             this.buttonStopTest.UseVisualStyleBackColor = true;
             this.buttonStopTest.Click += new System.EventHandler(this.buttonStopTest_Click);
             // 
-            // numericUpDown1
+            // numericUpDownNumerator
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(60, 261);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(40, 20);
-            this.numericUpDown1.TabIndex = 15;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.numericUpDownNumerator.Location = new System.Drawing.Point(60, 261);
+            this.numericUpDownNumerator.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numericUpDownNumerator.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(124, 261);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(40, 20);
-            this.numericUpDown2.TabIndex = 16;
-            this.numericUpDown2.Value = new decimal(new int[] {
+            this.numericUpDownNumerator.Name = "numericUpDownNumerator";
+            this.numericUpDownNumerator.Size = new System.Drawing.Size(40, 20);
+            this.numericUpDownNumerator.TabIndex = 15;
+            this.numericUpDownNumerator.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.numericUpDownNumerator.ValueChanged += new System.EventHandler(this.numericUpDownNumerator_ValueChanged);
+            // 
+            // numericUpDownDivisor
+            // 
+            this.numericUpDownDivisor.Location = new System.Drawing.Point(124, 261);
+            this.numericUpDownDivisor.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numericUpDownDivisor.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownDivisor.Name = "numericUpDownDivisor";
+            this.numericUpDownDivisor.Size = new System.Drawing.Size(40, 20);
+            this.numericUpDownDivisor.TabIndex = 16;
+            this.numericUpDownDivisor.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownDivisor.ValueChanged += new System.EventHandler(this.numericUpDownDivisor_ValueChanged);
             // 
             // labelFraction
             // 
@@ -302,12 +332,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 522);
+            this.ClientSize = new System.Drawing.Size(457, 401);
             this.ContextMenuStrip = this.contextMenuStrip;
             this.Controls.Add(this.labelSlash);
             this.Controls.Add(this.labelFraction);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.numericUpDownDivisor);
+            this.Controls.Add(this.numericUpDownNumerator);
             this.Controls.Add(this.buttonStopTest);
             this.Controls.Add(this.buttonStartTest);
             this.Controls.Add(this.checkBoxLoop);
@@ -320,7 +350,6 @@
             this.Controls.Add(this.groupBoxVolume);
             this.Controls.Add(this.labelLoadFile);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.MinimumSize = new System.Drawing.Size(479, 393);
             this.Name = "SoundboardButtonConfigForm";
             this.Text = "Configurate soundboard button";
             this.TopMost = true;
@@ -336,8 +365,8 @@
             this.groupBoxMode.ResumeLayout(false);
             this.groupBoxMode.PerformLayout();
             this.contextMenuStrip.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumerator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDivisor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,8 +393,8 @@
         private System.Windows.Forms.CheckBox checkBoxLoop;
         private System.Windows.Forms.Button buttonStartTest;
         private System.Windows.Forms.Button buttonStopTest;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDownNumerator;
+        private System.Windows.Forms.NumericUpDown numericUpDownDivisor;
         private System.Windows.Forms.Label labelFraction;
         private System.Windows.Forms.Label labelSlash;
     }

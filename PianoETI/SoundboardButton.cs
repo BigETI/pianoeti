@@ -15,7 +15,8 @@ namespace PianoETI
         };
 
         #region Attributes
-        private PictureBox button = null;
+        private Soundboard parent = null;
+        private PictureBox picture_box = null;
         private Mode button_mode = Mode.PressOnly;
         private float pitch = 0.0f;
         private float volume = 1.0f;
@@ -30,23 +31,19 @@ namespace PianoETI
         #endregion
 
         #region Constructors
-        public SoundboardButton(PictureBox button, Mode button_mode, float pitch, float volume, bool loop, Fraction fraction, Image pressed_image, string file_name)
+        public SoundboardButton(Soundboard parent, Mode button_mode, float pitch, float volume, bool loop, Fraction fraction, Image pressed_image, string file_name, PictureBox picture_box)
         {
-            this.button = button;
+            this.parent = parent;
             this.button_mode = button_mode;
             this.pitch = pitch;
             this.volume = volume;
             this.loop = loop;
+            PictureBox = picture_box;
             this.fraction = new Fraction(fraction);
             if (this.fraction.get() > 1.0)
                 this.fraction = new Fraction(1);
-            default_image = button.Image;
             this.pressed_image = pressed_image;
-            this.file_name = file_name;
-            loadSound(file_name);
-            button.MouseDown += onButtonMouseDown;
-            button.MouseUp += onButtonMouseUp;
-            button.MouseLeave += onButtonMouseLeave;
+            FileName = file_name;
         }
         #endregion
 
@@ -89,7 +86,7 @@ namespace PianoETI
 
         public void play()
         {
-            button.Image = pressed_image;
+            if (picture_box != null) picture_box.Image = pressed_image;
             try
             {
                 if (sound_effect_instance != null)
@@ -117,12 +114,18 @@ namespace PianoETI
         {
             if (sound_effect_instance != null)
                 sound_effect_instance.Stop();
-            button.Image = default_image;
+            if (picture_box != null) picture_box.Image = default_image;
             playing = false;
         }
 
-        public void loadSound(string content_name)
+        public void reloadSoundEffect()
         {
+            if (sound_effect_instance != null)
+            {
+                sound_effect_instance.Stop();
+                sound_effect_instance.Dispose();
+                sound_effect_instance = null;
+            }
             if (sound_effect != null)
             {
                 sound_effect.Dispose();
@@ -133,6 +136,8 @@ namespace PianoETI
                 WAV wav = new WAV(file_name);
                 int len = (int)(((wav.PCM.Length / ((wav.Channels > 0) ? (((int)(wav.Channels)) * 2) : 1)) * fraction.Numerator) / fraction.Divisor);
                 sound_effect = new SoundEffect(wav.PCM, 0, len, (int)(wav.SampleRate), wav.Channels, 0, len);
+                if (playing)
+                    play();
             }
             catch
             {
@@ -142,9 +147,12 @@ namespace PianoETI
 
         public void dispose()
         {
-            button.MouseDown -= onButtonMouseDown;
-            button.MouseUp -= onButtonMouseUp;
-            button.MouseLeave -= onButtonMouseLeave;
+            if (picture_box != null)
+            {
+                picture_box.MouseDown -= onButtonMouseDown;
+                picture_box.MouseUp -= onButtonMouseUp;
+                picture_box.MouseLeave -= onButtonMouseLeave;
+            }
             stop();
             if (sound_effect != null)
                 sound_effect.Dispose();
@@ -152,11 +160,41 @@ namespace PianoETI
         #endregion
 
         #region Getter/Setter
-        public PictureBox Button
+        public PictureBox PictureBox
         {
             get
             {
-                return button;
+                return picture_box;
+            }
+            set
+            {
+                if (picture_box != value)
+                {
+                    if (picture_box != null)
+                    {
+                        picture_box.MouseDown -= onButtonMouseDown;
+                        picture_box.MouseUp -= onButtonMouseUp;
+                        picture_box.MouseLeave -= onButtonMouseLeave;
+                        picture_box.Image = default_image;
+                    }
+                    picture_box = value;
+                    if (picture_box != null)
+                    {
+                        picture_box.MouseDown += onButtonMouseDown;
+                        picture_box.MouseUp += onButtonMouseUp;
+                        picture_box.MouseLeave += onButtonMouseLeave;
+                        default_image = picture_box.Image;
+                    }
+                    parent.assignPictureBox(this, picture_box);
+                }
+            }
+        }
+
+        public Soundboard Parent
+        {
+            get
+            {
+                return parent;
             }
         }
 
@@ -165,6 +203,11 @@ namespace PianoETI
             get
             {
                 return button_mode;
+            }
+            set
+            {
+                stop();
+                button_mode = value;
             }
         }
 
@@ -216,6 +259,13 @@ namespace PianoETI
             {
                 return fraction;
             }
+            set
+            {
+                fraction = new Fraction(value);
+                if (fraction.Divisor < fraction.Numerator)
+                    fraction = new Fraction(1);
+                reloadSoundEffect();
+            }
         }
 
         public string FileName
@@ -223,6 +273,11 @@ namespace PianoETI
             get
             {
                 return file_name;
+            }
+            set
+            {
+                file_name = value;
+                reloadSoundEffect();
             }
         }
 
@@ -278,7 +333,7 @@ namespace PianoETI
                     stop();
                     break;
                 case Mode.Click:
-                    button.Image = default_image;
+                    picture_box.Image = default_image;
                     break;
             }
         }
@@ -291,7 +346,7 @@ namespace PianoETI
                     stop();
                     break;
                 case Mode.Click:
-                    button.Image = default_image;
+                    picture_box.Image = default_image;
                     break;
             }
         }

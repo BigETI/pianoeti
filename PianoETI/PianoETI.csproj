@@ -147,6 +147,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\SoundboardButton.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -156,9 +157,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PianoETI_large.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\synthesizer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

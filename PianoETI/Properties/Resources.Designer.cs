@@ -83,9 +83,9 @@ namespace PianoETI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap synthesizer {
+        internal static System.Drawing.Bitmap SoundboardButton {
             get {
-                object obj = ResourceManager.GetObject("synthesizer", resourceCulture);
+                object obj = ResourceManager.GetObject("SoundboardButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

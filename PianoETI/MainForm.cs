@@ -75,24 +75,24 @@ namespace PianoETI
             toolStripMenuItemViewPianoHighest.Tag = PianoForm.PitchType.Highest;
 
             soundboard = new Soundboard();
-            soundboard.registerButton(pictureBoxSyntesizerA1, SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSyntesizer.Images[0], "./sounds/smw-boss.wav");
-            soundboard.registerButton(pictureBoxSyntesizerA2, SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSyntesizer.Images[0], "./sounds/mariorpg-forestmaze.wav");
-            soundboard.registerButton(pictureBoxSyntesizerA3, SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSyntesizer.Images[0], "./sounds/smw-bowserscastle.wav");
-            soundboard.registerButton(pictureBoxSyntesizerA4, SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSyntesizer.Images[0], "./sounds/smw-castle.wav");
-            soundboard.registerButton(pictureBoxSyntesizerA5, SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSyntesizer.Images[0], "./sounds/smw-cave.wav");
-            soundboard.registerButton(pictureBoxSyntesizerA6, SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSyntesizer.Images[0], "./sounds/smw-forestofillusion.wav");
-            soundboard.registerButton(pictureBoxSyntesizerA7, SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSyntesizer.Images[0], "./sounds/smw-ghosthouse.wav");
-            soundboard.registerButton(pictureBoxSyntesizerA8, SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSyntesizer.Images[0], "./sounds/smw-overworld.wav");
-            soundboard.registerButton(pictureBoxSyntesizerA9, SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSyntesizer.Images[0], "./sounds/smw-sky.wav");
-            soundboard.registerButton(pictureBoxSyntesizerA10, SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSyntesizer.Images[0], "./sounds/smw-special.wav");
-            soundboard.registerButton(pictureBoxSyntesizerB1, SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSyntesizer.Images[0], "./sounds/smw-starroad.wav");
-            soundboard.registerButton(pictureBoxSyntesizerB2, SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSyntesizer.Images[0], "./sounds/smw-switch.wav");
-            soundboard.registerButton(pictureBoxSyntesizerB3, SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSyntesizer.Images[0], "./sounds/smw-vanilladome.wav");
-            soundboard.registerButton(pictureBoxSyntesizerB4, SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSyntesizer.Images[0], "./sounds/smw-water.wav");
-            soundboard.registerButton(pictureBoxSyntesizerB5, SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSyntesizer.Images[0], "./sounds/smw-worldmap.wav");
-            soundboard.registerButton(pictureBoxSyntesizerB6, SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSyntesizer.Images[0], "./sounds/smw-yoshisisland.wav");
-            soundboard.registerButton(pictureBoxSyntesizerC1, SoundboardButton.Mode.Click, 1.0f, 1.0f, false, new Fraction(1), imageListSyntesizer.Images[0], "./sounds/smw_1-up.wav");
-            soundboard.registerButton(pictureBoxSyntesizerC2, SoundboardButton.Mode.Click, 1.0f, 1.0f, false, new Fraction(1), imageListSyntesizer.Images[0], "./sounds/smw_jump.wav");
+            soundboard.createButton(SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSoundboardButton.Images[0], "./sounds/smw-boss.wav", pictureBoxSyntesizerA1);
+            soundboard.createButton(SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSoundboardButton.Images[0], "./sounds/mariorpg-forestmaze.wav", pictureBoxSyntesizerA2);
+            soundboard.createButton(SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSoundboardButton.Images[0], "./sounds/smw-bowserscastle.wav", pictureBoxSyntesizerA3);
+            soundboard.createButton(SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSoundboardButton.Images[0], "./sounds/smw-castle.wav", pictureBoxSyntesizerA4);
+            soundboard.createButton(SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSoundboardButton.Images[0], "./sounds/smw-cave.wav", pictureBoxSyntesizerA5);
+            soundboard.createButton(SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSoundboardButton.Images[0], "./sounds/smw-forestofillusion.wav", pictureBoxSyntesizerA6);
+            soundboard.createButton(SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSoundboardButton.Images[0], "./sounds/smw-ghosthouse.wav", pictureBoxSyntesizerA7);
+            soundboard.createButton(SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSoundboardButton.Images[0], "./sounds/smw-overworld.wav", pictureBoxSyntesizerA8);
+            soundboard.createButton(SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSoundboardButton.Images[0], "./sounds/smw-sky.wav", pictureBoxSyntesizerA9);
+            soundboard.createButton(SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSoundboardButton.Images[0], "./sounds/smw-special.wav", pictureBoxSyntesizerA10);
+            soundboard.createButton(SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSoundboardButton.Images[0], "./sounds/smw-starroad.wav", pictureBoxSyntesizerB1);
+            soundboard.createButton(SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSoundboardButton.Images[0], "./sounds/smw-switch.wav", pictureBoxSyntesizerB2);
+            soundboard.createButton(SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSoundboardButton.Images[0], "./sounds/smw-vanilladome.wav", pictureBoxSyntesizerB3);
+            soundboard.createButton(SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSoundboardButton.Images[0], "./sounds/smw-water.wav", pictureBoxSyntesizerB4);
+            soundboard.createButton(SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSoundboardButton.Images[0], "./sounds/smw-worldmap.wav", pictureBoxSyntesizerB5);
+            soundboard.createButton(SoundboardButton.Mode.Toggle, 1.0f, 1.0f, true, new Fraction(1), imageListSoundboardButton.Images[0], "./sounds/smw-yoshisisland.wav", pictureBoxSyntesizerB6);
+            soundboard.createButton(SoundboardButton.Mode.Click, 1.0f, 1.0f, false, new Fraction(1), imageListSoundboardButton.Images[0], "./sounds/smw_1-up.wav", pictureBoxSyntesizerB7);
+            soundboard.createButton(SoundboardButton.Mode.Click, 1.0f, 1.0f, false, new Fraction(1), imageListSoundboardButton.Images[0], "./sounds/smw_jump.wav", pictureBoxSyntesizerB8);
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)

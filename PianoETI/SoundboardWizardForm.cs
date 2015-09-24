@@ -14,7 +14,10 @@ namespace PianoETI
     {
         #region Attributes
         private SoundboardForm parent = null;
+
         private Soundboard soundboard = null;
+
+        private Button[] button_arr = null;
         #endregion
 
         #region Constructors
@@ -27,15 +30,42 @@ namespace PianoETI
         #endregion
 
         #region Methods
+        private void updateButtons()
+        {
+            int count = 0;
+            if (button_arr != null)
+            {
+                for (int i = 0; i < button_arr.Length; i++)
+                {
+                    groupBoxButtons.Controls.Remove(button_arr[i]);
+                    button_arr[i].Dispose();
+                }
+                button_arr = null;
+            }
+            if (soundboard.Count > 0)
+            {
+                button_arr = new Button[soundboard.Count];
+                foreach (var i in soundboard.ButtonMap)
+                {
+                    button_arr[count] = new Button();
+                    groupBoxButtons.Controls.Add(button_arr[count]);
+                    button_arr[count].Location = new Point(6 + ((count % 10) * 46), 19 + ((count / 10) * 46));
+                    button_arr[count].Name = "button_arr[" + count + "]";
+                    button_arr[count].Size = new Size(40, 40);
+                    button_arr[count].TabIndex = count;
+                    button_arr[count].UseVisualStyleBackColor = true;
+                    button_arr[count].Tag = i.Key;
+                    button_arr[count].Click += onButtonClick;
+                    count++;
+                }
+            }
+        }
+
         private void addNewButton()
         {
-            SoundboardButtonConfigForm sbcf = new SoundboardButtonConfigForm(this);
-            DialogResult result = sbcf.ShowDialog();
+            (new SoundboardButtonConfigForm(soundboard)).ShowDialog();
             DialogResult = DialogResult.None;
-            if (result == DialogResult.OK)
-            {
-                //
-            }
+            updateButtons();
         }
         #endregion
 
@@ -59,6 +89,7 @@ namespace PianoETI
                 {
                     MessageBox.Show("Die Datei \"" + openFileDialog.FileName + "\" konnte nicht geöffnet werden.");
                 }
+                updateButtons();
             }
             DialogResult = DialogResult.None;
         }
@@ -81,7 +112,6 @@ namespace PianoETI
             DialogResult = DialogResult.OK;
             Close();
         }
-        #endregion
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
@@ -98,5 +128,29 @@ namespace PianoETI
         {
             addNewButton();
         }
+
+        private void SoundboardWizardForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (DialogResult != DialogResult.OK)
+            {
+                soundboard.dispose();
+                soundboard = null;
+            }
+        }
+
+        private void toolStripMenuItemCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            Close();
+        }
+
+        private void onButtonClick(object sender, EventArgs e)
+        {
+            (new SoundboardButtonConfigForm(soundboard, (SoundboardButton)(((Button)sender).Tag))).ShowDialog();
+            DialogResult = DialogResult.None;
+        }
+        #endregion
+
+        
     }
 }
