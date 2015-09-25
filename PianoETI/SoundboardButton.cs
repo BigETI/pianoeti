@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Xna.Framework.Audio;
+using System.IO;
 
 namespace PianoETI
 {
@@ -133,11 +134,14 @@ namespace PianoETI
             }
             try
             {
-                WAV wav = new WAV(file_name);
-                int len = (int)(((wav.PCM.Length / ((wav.Channels > 0) ? (((int)(wav.Channels)) * 2) : 1)) * fraction.Numerator) / fraction.Divisor);
-                sound_effect = new SoundEffect(wav.PCM, 0, len, (int)(wav.SampleRate), wav.Channels, 0, len);
-                if (playing)
-                    play();
+                if (File.Exists(file_name))
+                {
+                    WAV wav = new WAV(file_name);
+                    int len = (int)(((wav.PCM.Length / ((wav.Channels > 0) ? (((int)(wav.Channels)) * 2) : 1)) * fraction.Numerator) / fraction.Divisor);
+                    sound_effect = new SoundEffect(wav.PCM, 0, len, (int)(wav.SampleRate), wav.Channels, 0, len);
+                    if (playing)
+                        play();
+                }
             }
             catch
             {

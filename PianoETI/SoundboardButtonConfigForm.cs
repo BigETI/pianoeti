@@ -30,6 +30,8 @@ namespace PianoETI
 
         private bool create_new = false;
 
+        private bool allow_update = true;
+
         public SoundboardButtonConfigForm(Soundboard soundboard, SoundboardButton soundboard_button = null)
         {
             this.soundboard = soundboard;
@@ -49,6 +51,31 @@ namespace PianoETI
                 backup_fraction = soundboard_button.Fraction;
             }
             InitializeComponent();
+        }
+
+        public void updateControls()
+        {
+            allow_update = false;
+            labelLoadFileFileName.Text = (soundboard_button.FileName.Trim() == "") ? "undefined..." : soundboard_button.FileName;
+            trackBarVolume.Value = (int)(soundboard_button.Volume * 100.0);
+            trackBarPitch.Value = (int)(soundboard_button.Pitch * 100.0);
+            switch (soundboard_button.ButtonMode)
+            {
+                case SoundboardButton.Mode.PressOnly:
+                    radioButtonModePressOnly.Checked = true;
+                    break;
+                case SoundboardButton.Mode.Toggle:
+                    radioButtonToggle.Checked = true;
+                    break;
+                case SoundboardButton.Mode.Click:
+                    radioButtonClick.Checked = true;
+                    break;
+            }
+            checkBoxLoop.Checked = soundboard_button.Loop;
+            numericUpDownNumerator.Value = 1;
+            numericUpDownDivisor.Value = soundboard_button.Fraction.Divisor;
+            numericUpDownNumerator.Value = soundboard_button.Fraction.Numerator;
+            allow_update = true;
         }
 
         public Soundboard Soundboard
@@ -72,6 +99,7 @@ namespace PianoETI
             radioButtonModePressOnly.Tag = SoundboardButton.Mode.PressOnly;
             radioButtonToggle.Tag = SoundboardButton.Mode.Toggle;
             radioButtonClick.Tag = SoundboardButton.Mode.Click;
+            updateControls();
         }
 
         private void SoundboardButtonConfigForm_Shown(object sender, EventArgs e)
@@ -137,36 +165,69 @@ namespace PianoETI
 
         private void trackBarVolume_ValueChanged(object sender, EventArgs e)
         {
-            soundboard_button.Volume = ((float)(trackBarVolume.Value)) * 0.01f;
+            if (allow_update)
+                soundboard_button.Volume = ((float)(trackBarVolume.Value)) * 0.01f;
         }
 
         private void trackBarPitch_ValueChanged(object sender, EventArgs e)
         {
-            soundboard_button.Pitch = ((float)(trackBarPitch.Value)) * 0.01f;
+            if (allow_update)
+                soundboard_button.Pitch = ((float)(trackBarPitch.Value)) * 0.01f;
         }
 
         private void radioButtonModeGeneric_Click(object sender, EventArgs e)
         {
-            soundboard_button.ButtonMode = (SoundboardButton.Mode)(((RadioButton)sender).Tag);
+            if (allow_update)
+                soundboard_button.ButtonMode = (SoundboardButton.Mode)(((RadioButton)sender).Tag);
         }
 
         private void checkBoxLoop_CheckedChanged(object sender, EventArgs e)
         {
-            soundboard_button.Loop = checkBoxLoop.Checked;
+            if (allow_update)
+                soundboard_button.Loop = checkBoxLoop.Checked;
         }
 
         private void numericUpDownNumerator_ValueChanged(object sender, EventArgs e)
         {
-            if (numericUpDownDivisor.Value < numericUpDownNumerator.Value)
-                numericUpDownDivisor.Value = numericUpDownNumerator.Value;
-            soundboard_button.Fraction = new Fraction((int)(numericUpDownNumerator.Value), (uint)(numericUpDownDivisor.Value));
+            if (allow_update)
+            {
+                if (numericUpDownDivisor.Value < numericUpDownNumerator.Value)
+                    numericUpDownDivisor.Value = numericUpDownNumerator.Value;
+                soundboard_button.Fraction = new Fraction((int)(numericUpDownNumerator.Value), (uint)(numericUpDownDivisor.Value));
+            }
         }
 
         private void numericUpDownDivisor_ValueChanged(object sender, EventArgs e)
         {
-            if (numericUpDownDivisor.Value < numericUpDownNumerator.Value)
-                numericUpDownDivisor.Value = numericUpDownNumerator.Value;
-            soundboard_button.Fraction = new Fraction((int)(numericUpDownNumerator.Value), (uint)(numericUpDownDivisor.Value));
+            if (allow_update)
+            {
+                if (numericUpDownDivisor.Value < numericUpDownNumerator.Value)
+                    numericUpDownDivisor.Value = numericUpDownNumerator.Value;
+                soundboard_button.Fraction = new Fraction((int)(numericUpDownNumerator.Value), (uint)(numericUpDownDivisor.Value));
+            }
+        }
+
+        private void toolStripMenuItemRevert_Click(object sender, EventArgs e)
+        {
+            if (create_new)
+            {
+                soundboard_button.FileName = "";
+                soundboard_button.Volume = 1.0f;
+                soundboard_button.Pitch = 0.0f;
+                soundboard_button.ButtonMode = SoundboardButton.Mode.PressOnly;
+                soundboard_button.Loop = backup_loop;
+                soundboard_button.Fraction = backup_fraction;
+            }
+            else
+            {
+                soundboard_button.FileName = backup_file_name;
+                soundboard_button.Volume = backup_volume;
+                soundboard_button.Pitch = backup_pitch;
+                soundboard_button.ButtonMode = backup_button_mode;
+                soundboard_button.Loop = backup_loop;
+                soundboard_button.Fraction = backup_fraction;
+            }
+            updateControls();
         }
     }
 }

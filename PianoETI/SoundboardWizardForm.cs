@@ -85,7 +85,7 @@ namespace PianoETI
             // Load
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                if (!parent.Soundboard.loadFromFile(openFileDialog.FileName))
+                if (!soundboard.loadFromFile(openFileDialog.FileName))
                 {
                     MessageBox.Show("Die Datei \"" + openFileDialog.FileName + "\" konnte nicht geöffnet werden.");
                 }
@@ -99,7 +99,7 @@ namespace PianoETI
             // Save
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                if (!parent.Soundboard.saveToFile(saveFileDialog.FileName))
+                if (!soundboard.saveToFile(saveFileDialog.FileName))
                 {
                     MessageBox.Show("Die Datei \"" + saveFileDialog.FileName + "\" konnte nicht gespeichert werden.");
                 }

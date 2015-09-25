@@ -42,7 +42,7 @@
             this.radioButtonToggle = new System.Windows.Forms.RadioButton();
             this.radioButtonModePressOnly = new System.Windows.Forms.RadioButton();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.revertToDefaultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemRevert = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
             this.checkBoxLoop = new System.Windows.Forms.CheckBox();
@@ -196,15 +196,16 @@
             // contextMenuStrip
             // 
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.revertToDefaultToolStripMenuItem});
+            this.toolStripMenuItemRevert});
             this.contextMenuStrip.Name = "contextMenuStrip";
             this.contextMenuStrip.Size = new System.Drawing.Size(162, 26);
             // 
-            // revertToDefaultToolStripMenuItem
+            // toolStripMenuItemRevert
             // 
-            this.revertToDefaultToolStripMenuItem.Name = "revertToDefaultToolStripMenuItem";
-            this.revertToDefaultToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.revertToDefaultToolStripMenuItem.Text = "Revert to default";
+            this.toolStripMenuItemRevert.Name = "toolStripMenuItemRevert";
+            this.toolStripMenuItemRevert.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItemRevert.Text = "Revert to default";
+            this.toolStripMenuItemRevert.Click += new System.EventHandler(this.toolStripMenuItemRevert_Click);
             // 
             // buttonCancel
             // 
@@ -351,6 +352,7 @@
             this.Controls.Add(this.labelLoadFile);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "SoundboardButtonConfigForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configurate soundboard button";
             this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SoundboardButtonConfigForm_FormClosed);
@@ -387,7 +389,7 @@
         private System.Windows.Forms.RadioButton radioButtonToggle;
         private System.Windows.Forms.RadioButton radioButtonModePressOnly;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem revertToDefaultToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemRevert;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.CheckBox checkBoxLoop;
