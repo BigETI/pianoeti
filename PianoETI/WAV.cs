@@ -35,7 +35,6 @@ namespace PianoETI
                     channels = (AudioChannels)(buf[0] | (((uint)(buf[1])) << 8));
 
                     fs.Read(buf, 0x0, 0x4);
-                    //sample_rate = buf[2] | (((uint)(buf[3])) << 8) | (((uint)(buf[0])) << 16) | (((uint)(buf[1])) << 24);
                     sample_rate = buf[0] | (((uint)(buf[1])) << 8) | (((uint)(buf[2])) << 16) | (((uint)(buf[3])) << 24);
 
                     fs.Seek(0x2C, SeekOrigin.Begin);

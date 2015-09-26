@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemFileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemEdit = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,129 +43,42 @@
             this.toolStripMenuItemViewPianoHigh = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemViewPianoHigher = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemViewPianoHighest = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemSoundboard = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemViewSoundboard = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSoundboardNew = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSoundboardSeperator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.someSoundboardFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemLoadFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelSyntesizer = new System.Windows.Forms.Panel();
-            this.imageListSoundboardButton = new System.Windows.Forms.ImageList(this.components);
-            this.pictureBoxSyntesizerE10 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerE9 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerE8 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerE7 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerE6 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerE5 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerE4 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerE3 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerE2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerD10 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerD9 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerD8 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerD7 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerD6 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerD5 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerD4 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerD3 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerD2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerC10 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerC9 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerC8 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerC7 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerC6 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerC5 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerC4 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerC3 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerC2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerE1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerD1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerC1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerB10 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerB9 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerB8 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerB7 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerB6 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerB5 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerB4 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerB3 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerB2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerB1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerA10 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerA9 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerA8 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerA7 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerA6 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerA5 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerA4 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerA3 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerA2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSyntesizerA1 = new System.Windows.Forms.PictureBox();
-            this.menuStrip1.SuspendLayout();
-            this.panelSyntesizer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerE10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerE9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerE8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerE7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerE6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerE5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerE4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerE3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerE2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerD10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerD9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerD8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerD7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerD6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerD5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerD4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerD3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerD2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerC10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerC9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerC8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerC7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerC6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerC5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerC4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerC3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerC2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerE1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerD1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerC1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerB10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerB9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerB8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerB7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerB6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerB5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerB4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerB3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerB2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerB1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerA10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerA9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerA8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerA7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerA6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerA5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerA4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerA3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerA2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerA1)).BeginInit();
+            this.groupBoxSelectPiano = new System.Windows.Forms.GroupBox();
+            this.buttonHighestPiano = new System.Windows.Forms.Button();
+            this.buttonHigherPiano = new System.Windows.Forms.Button();
+            this.buttonHighPiano = new System.Windows.Forms.Button();
+            this.buttonMediumPiano = new System.Windows.Forms.Button();
+            this.buttonLowPiano = new System.Windows.Forms.Button();
+            this.buttonLowerPiano = new System.Windows.Forms.Button();
+            this.buttonLowestPiano = new System.Windows.Forms.Button();
+            this.groupBoxMain = new System.Windows.Forms.GroupBox();
+            this.buttonRefreshFilesList = new System.Windows.Forms.Button();
+            this.buttonLoadSoundboard = new System.Windows.Forms.Button();
+            this.buttonCreateNewSoundboard = new System.Windows.Forms.Button();
+            this.listViewFiles = new System.Windows.Forms.ListView();
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.menuStrip.SuspendLayout();
+            this.groupBoxSelectPiano.SuspendLayout();
+            this.groupBoxMain.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemFile,
             this.toolStripMenuItemEdit,
-            this.toolStripMenuItemView,
-            this.toolStripMenuItemHelp});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.toolStripMenuItemView});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip.TabIndex = 0;
+            this.menuStrip.Text = "menuStrip1";
             // 
             // toolStripMenuItemFile
             // 
@@ -193,7 +106,7 @@
             // 
             this.toolStripMenuItemView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemViewPiano,
-            this.toolStripMenuItemSoundboard});
+            this.toolStripMenuItemViewSoundboard});
             this.toolStripMenuItemView.Name = "toolStripMenuItemView";
             this.toolStripMenuItemView.Size = new System.Drawing.Size(44, 20);
             this.toolStripMenuItemView.Text = "View";
@@ -209,7 +122,7 @@
             this.toolStripMenuItemViewPianoHigher,
             this.toolStripMenuItemViewPianoHighest});
             this.toolStripMenuItemViewPiano.Name = "toolStripMenuItemViewPiano";
-            this.toolStripMenuItemViewPiano.Size = new System.Drawing.Size(139, 22);
+            this.toolStripMenuItemViewPiano.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItemViewPiano.Text = "Piano";
             // 
             // toolStripMenuItemViewPianoLowest
@@ -217,7 +130,7 @@
             this.toolStripMenuItemViewPianoLowest.Name = "toolStripMenuItemViewPianoLowest";
             this.toolStripMenuItemViewPianoLowest.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F1)));
             this.toolStripMenuItemViewPianoLowest.Size = new System.Drawing.Size(198, 22);
-            this.toolStripMenuItemViewPianoLowest.Text = "Lowest Piano";
+            this.toolStripMenuItemViewPianoLowest.Text = "Lowest piano";
             this.toolStripMenuItemViewPianoLowest.Click += new System.EventHandler(this.toolStripMenuItemViewPianoGeneric_Click);
             // 
             // toolStripMenuItemViewPianoLower
@@ -225,7 +138,7 @@
             this.toolStripMenuItemViewPianoLower.Name = "toolStripMenuItemViewPianoLower";
             this.toolStripMenuItemViewPianoLower.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F2)));
             this.toolStripMenuItemViewPianoLower.Size = new System.Drawing.Size(198, 22);
-            this.toolStripMenuItemViewPianoLower.Text = "Lower Piano";
+            this.toolStripMenuItemViewPianoLower.Text = "Lower piano";
             this.toolStripMenuItemViewPianoLower.Click += new System.EventHandler(this.toolStripMenuItemViewPianoGeneric_Click);
             // 
             // toolStripMenuItemViewPianoLow
@@ -233,7 +146,7 @@
             this.toolStripMenuItemViewPianoLow.Name = "toolStripMenuItemViewPianoLow";
             this.toolStripMenuItemViewPianoLow.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F3)));
             this.toolStripMenuItemViewPianoLow.Size = new System.Drawing.Size(198, 22);
-            this.toolStripMenuItemViewPianoLow.Text = "Low Piano";
+            this.toolStripMenuItemViewPianoLow.Text = "Low piano";
             this.toolStripMenuItemViewPianoLow.Click += new System.EventHandler(this.toolStripMenuItemViewPianoGeneric_Click);
             // 
             // toolStripMenuItemViewPianoMedium
@@ -241,7 +154,7 @@
             this.toolStripMenuItemViewPianoMedium.Name = "toolStripMenuItemViewPianoMedium";
             this.toolStripMenuItemViewPianoMedium.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F4)));
             this.toolStripMenuItemViewPianoMedium.Size = new System.Drawing.Size(198, 22);
-            this.toolStripMenuItemViewPianoMedium.Text = "Medium Piano";
+            this.toolStripMenuItemViewPianoMedium.Text = "Medium piano";
             this.toolStripMenuItemViewPianoMedium.Click += new System.EventHandler(this.toolStripMenuItemViewPianoGeneric_Click);
             // 
             // toolStripMenuItemViewPianoHigh
@@ -249,7 +162,7 @@
             this.toolStripMenuItemViewPianoHigh.Name = "toolStripMenuItemViewPianoHigh";
             this.toolStripMenuItemViewPianoHigh.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F5)));
             this.toolStripMenuItemViewPianoHigh.Size = new System.Drawing.Size(198, 22);
-            this.toolStripMenuItemViewPianoHigh.Text = "High Piano";
+            this.toolStripMenuItemViewPianoHigh.Text = "High piano";
             this.toolStripMenuItemViewPianoHigh.Click += new System.EventHandler(this.toolStripMenuItemViewPianoGeneric_Click);
             // 
             // toolStripMenuItemViewPianoHigher
@@ -257,7 +170,7 @@
             this.toolStripMenuItemViewPianoHigher.Name = "toolStripMenuItemViewPianoHigher";
             this.toolStripMenuItemViewPianoHigher.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F6)));
             this.toolStripMenuItemViewPianoHigher.Size = new System.Drawing.Size(198, 22);
-            this.toolStripMenuItemViewPianoHigher.Text = "Higher Piano";
+            this.toolStripMenuItemViewPianoHigher.Text = "Higher piano";
             this.toolStripMenuItemViewPianoHigher.Click += new System.EventHandler(this.toolStripMenuItemViewPianoGeneric_Click);
             // 
             // toolStripMenuItemViewPianoHighest
@@ -265,36 +178,38 @@
             this.toolStripMenuItemViewPianoHighest.Name = "toolStripMenuItemViewPianoHighest";
             this.toolStripMenuItemViewPianoHighest.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F7)));
             this.toolStripMenuItemViewPianoHighest.Size = new System.Drawing.Size(198, 22);
-            this.toolStripMenuItemViewPianoHighest.Text = "Highest Piano";
+            this.toolStripMenuItemViewPianoHighest.Text = "Highest piano";
             this.toolStripMenuItemViewPianoHighest.Click += new System.EventHandler(this.toolStripMenuItemViewPianoGeneric_Click);
             // 
-            // toolStripMenuItemSoundboard
+            // toolStripMenuItemViewSoundboard
             // 
-            this.toolStripMenuItemSoundboard.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemViewSoundboard.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemSoundboardNew,
             this.toolStripMenuItemSoundboardSeperator1,
-            this.someSoundboardFileToolStripMenuItem});
-            this.toolStripMenuItemSoundboard.Name = "toolStripMenuItemSoundboard";
-            this.toolStripMenuItemSoundboard.Size = new System.Drawing.Size(139, 22);
-            this.toolStripMenuItemSoundboard.Text = "Soundboard";
+            this.toolStripMenuItemLoadFile});
+            this.toolStripMenuItemViewSoundboard.Name = "toolStripMenuItemViewSoundboard";
+            this.toolStripMenuItemViewSoundboard.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItemViewSoundboard.Text = "Soundboard";
             // 
             // toolStripMenuItemSoundboardNew
             // 
             this.toolStripMenuItemSoundboardNew.Name = "toolStripMenuItemSoundboardNew";
-            this.toolStripMenuItemSoundboardNew.Size = new System.Drawing.Size(189, 22);
+            this.toolStripMenuItemSoundboardNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F1)));
+            this.toolStripMenuItemSoundboardNew.Size = new System.Drawing.Size(268, 22);
             this.toolStripMenuItemSoundboardNew.Text = "New soundboard";
             this.toolStripMenuItemSoundboardNew.Click += new System.EventHandler(this.toolStripMenuItemSoundboardNew_Click);
             // 
             // toolStripMenuItemSoundboardSeperator1
             // 
             this.toolStripMenuItemSoundboardSeperator1.Name = "toolStripMenuItemSoundboardSeperator1";
-            this.toolStripMenuItemSoundboardSeperator1.Size = new System.Drawing.Size(186, 6);
+            this.toolStripMenuItemSoundboardSeperator1.Size = new System.Drawing.Size(265, 6);
             // 
-            // someSoundboardFileToolStripMenuItem
+            // toolStripMenuItemLoadFile
             // 
-            this.someSoundboardFileToolStripMenuItem.Name = "someSoundboardFileToolStripMenuItem";
-            this.someSoundboardFileToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.someSoundboardFileToolStripMenuItem.Text = "some soundboard file";
+            this.toolStripMenuItemLoadFile.Name = "toolStripMenuItemLoadFile";
+            this.toolStripMenuItemLoadFile.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F2)));
+            this.toolStripMenuItemLoadFile.Size = new System.Drawing.Size(268, 22);
+            this.toolStripMenuItemLoadFile.Text = "Load soundboard template";
             // 
             // toolStripMenuItemHelp
             // 
@@ -302,584 +217,199 @@
             this.toolStripMenuItemHelp.Size = new System.Drawing.Size(44, 20);
             this.toolStripMenuItemHelp.Text = "Help";
             // 
-            // panelSyntesizer
-            // 
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerE10);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerE9);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerE8);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerE7);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerE6);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerE5);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerE4);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerE3);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerE2);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerD10);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerD9);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerD8);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerD7);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerD6);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerD5);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerD4);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerD3);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerD2);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerC10);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerC9);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerC8);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerC7);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerC6);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerC5);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerC4);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerC3);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerC2);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerE1);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerD1);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerC1);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerB10);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerB9);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerB8);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerB7);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerB6);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerB5);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerB4);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerB3);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerB2);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerB1);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerA10);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerA9);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerA8);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerA7);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerA6);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerA5);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerA4);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerA3);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerA2);
-            this.panelSyntesizer.Controls.Add(this.pictureBoxSyntesizerA1);
-            this.panelSyntesizer.Location = new System.Drawing.Point(0, 27);
-            this.panelSyntesizer.Name = "panelSyntesizer";
-            this.panelSyntesizer.Size = new System.Drawing.Size(800, 400);
-            this.panelSyntesizer.TabIndex = 5;
-            // 
-            // imageListSoundboardButton
-            // 
-            this.imageListSoundboardButton.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListSoundboardButton.ImageStream")));
-            this.imageListSoundboardButton.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListSoundboardButton.Images.SetKeyName(0, "SoundBoardButton_pressed.png");
-            // 
-            // pictureBoxSyntesizerE10
-            // 
-            this.pictureBoxSyntesizerE10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerE10.Image")));
-            this.pictureBoxSyntesizerE10.Location = new System.Drawing.Point(720, 320);
-            this.pictureBoxSyntesizerE10.Name = "pictureBoxSyntesizerE10";
-            this.pictureBoxSyntesizerE10.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerE10.TabIndex = 49;
-            this.pictureBoxSyntesizerE10.TabStop = false;
-            // 
-            // pictureBoxSyntesizerE9
-            // 
-            this.pictureBoxSyntesizerE9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerE9.Image")));
-            this.pictureBoxSyntesizerE9.Location = new System.Drawing.Point(640, 320);
-            this.pictureBoxSyntesizerE9.Name = "pictureBoxSyntesizerE9";
-            this.pictureBoxSyntesizerE9.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerE9.TabIndex = 48;
-            this.pictureBoxSyntesizerE9.TabStop = false;
-            // 
-            // pictureBoxSyntesizerE8
-            // 
-            this.pictureBoxSyntesizerE8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerE8.Image")));
-            this.pictureBoxSyntesizerE8.Location = new System.Drawing.Point(560, 320);
-            this.pictureBoxSyntesizerE8.Name = "pictureBoxSyntesizerE8";
-            this.pictureBoxSyntesizerE8.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerE8.TabIndex = 47;
-            this.pictureBoxSyntesizerE8.TabStop = false;
-            // 
-            // pictureBoxSyntesizerE7
-            // 
-            this.pictureBoxSyntesizerE7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerE7.Image")));
-            this.pictureBoxSyntesizerE7.Location = new System.Drawing.Point(480, 320);
-            this.pictureBoxSyntesizerE7.Name = "pictureBoxSyntesizerE7";
-            this.pictureBoxSyntesizerE7.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerE7.TabIndex = 46;
-            this.pictureBoxSyntesizerE7.TabStop = false;
-            // 
-            // pictureBoxSyntesizerE6
-            // 
-            this.pictureBoxSyntesizerE6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerE6.Image")));
-            this.pictureBoxSyntesizerE6.Location = new System.Drawing.Point(400, 320);
-            this.pictureBoxSyntesizerE6.Name = "pictureBoxSyntesizerE6";
-            this.pictureBoxSyntesizerE6.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerE6.TabIndex = 45;
-            this.pictureBoxSyntesizerE6.TabStop = false;
-            // 
-            // pictureBoxSyntesizerE5
-            // 
-            this.pictureBoxSyntesizerE5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerE5.Image")));
-            this.pictureBoxSyntesizerE5.Location = new System.Drawing.Point(320, 320);
-            this.pictureBoxSyntesizerE5.Name = "pictureBoxSyntesizerE5";
-            this.pictureBoxSyntesizerE5.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerE5.TabIndex = 44;
-            this.pictureBoxSyntesizerE5.TabStop = false;
-            // 
-            // pictureBoxSyntesizerE4
-            // 
-            this.pictureBoxSyntesizerE4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerE4.Image")));
-            this.pictureBoxSyntesizerE4.Location = new System.Drawing.Point(240, 320);
-            this.pictureBoxSyntesizerE4.Name = "pictureBoxSyntesizerE4";
-            this.pictureBoxSyntesizerE4.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerE4.TabIndex = 43;
-            this.pictureBoxSyntesizerE4.TabStop = false;
-            // 
-            // pictureBoxSyntesizerE3
-            // 
-            this.pictureBoxSyntesizerE3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerE3.Image")));
-            this.pictureBoxSyntesizerE3.Location = new System.Drawing.Point(160, 320);
-            this.pictureBoxSyntesizerE3.Name = "pictureBoxSyntesizerE3";
-            this.pictureBoxSyntesizerE3.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerE3.TabIndex = 42;
-            this.pictureBoxSyntesizerE3.TabStop = false;
-            // 
-            // pictureBoxSyntesizerE2
-            // 
-            this.pictureBoxSyntesizerE2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerE2.Image")));
-            this.pictureBoxSyntesizerE2.Location = new System.Drawing.Point(80, 320);
-            this.pictureBoxSyntesizerE2.Name = "pictureBoxSyntesizerE2";
-            this.pictureBoxSyntesizerE2.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerE2.TabIndex = 41;
-            this.pictureBoxSyntesizerE2.TabStop = false;
-            // 
-            // pictureBoxSyntesizerD10
-            // 
-            this.pictureBoxSyntesizerD10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerD10.Image")));
-            this.pictureBoxSyntesizerD10.Location = new System.Drawing.Point(720, 240);
-            this.pictureBoxSyntesizerD10.Name = "pictureBoxSyntesizerD10";
-            this.pictureBoxSyntesizerD10.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerD10.TabIndex = 40;
-            this.pictureBoxSyntesizerD10.TabStop = false;
-            // 
-            // pictureBoxSyntesizerD9
-            // 
-            this.pictureBoxSyntesizerD9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerD9.Image")));
-            this.pictureBoxSyntesizerD9.Location = new System.Drawing.Point(640, 240);
-            this.pictureBoxSyntesizerD9.Name = "pictureBoxSyntesizerD9";
-            this.pictureBoxSyntesizerD9.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerD9.TabIndex = 39;
-            this.pictureBoxSyntesizerD9.TabStop = false;
-            // 
-            // pictureBoxSyntesizerD8
-            // 
-            this.pictureBoxSyntesizerD8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerD8.Image")));
-            this.pictureBoxSyntesizerD8.Location = new System.Drawing.Point(560, 240);
-            this.pictureBoxSyntesizerD8.Name = "pictureBoxSyntesizerD8";
-            this.pictureBoxSyntesizerD8.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerD8.TabIndex = 38;
-            this.pictureBoxSyntesizerD8.TabStop = false;
-            // 
-            // pictureBoxSyntesizerD7
-            // 
-            this.pictureBoxSyntesizerD7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerD7.Image")));
-            this.pictureBoxSyntesizerD7.Location = new System.Drawing.Point(480, 240);
-            this.pictureBoxSyntesizerD7.Name = "pictureBoxSyntesizerD7";
-            this.pictureBoxSyntesizerD7.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerD7.TabIndex = 37;
-            this.pictureBoxSyntesizerD7.TabStop = false;
-            // 
-            // pictureBoxSyntesizerD6
-            // 
-            this.pictureBoxSyntesizerD6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerD6.Image")));
-            this.pictureBoxSyntesizerD6.Location = new System.Drawing.Point(400, 240);
-            this.pictureBoxSyntesizerD6.Name = "pictureBoxSyntesizerD6";
-            this.pictureBoxSyntesizerD6.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerD6.TabIndex = 36;
-            this.pictureBoxSyntesizerD6.TabStop = false;
-            // 
-            // pictureBoxSyntesizerD5
-            // 
-            this.pictureBoxSyntesizerD5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerD5.Image")));
-            this.pictureBoxSyntesizerD5.Location = new System.Drawing.Point(320, 240);
-            this.pictureBoxSyntesizerD5.Name = "pictureBoxSyntesizerD5";
-            this.pictureBoxSyntesizerD5.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerD5.TabIndex = 35;
-            this.pictureBoxSyntesizerD5.TabStop = false;
-            // 
-            // pictureBoxSyntesizerD4
-            // 
-            this.pictureBoxSyntesizerD4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerD4.Image")));
-            this.pictureBoxSyntesizerD4.Location = new System.Drawing.Point(240, 240);
-            this.pictureBoxSyntesizerD4.Name = "pictureBoxSyntesizerD4";
-            this.pictureBoxSyntesizerD4.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerD4.TabIndex = 34;
-            this.pictureBoxSyntesizerD4.TabStop = false;
-            // 
-            // pictureBoxSyntesizerD3
-            // 
-            this.pictureBoxSyntesizerD3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerD3.Image")));
-            this.pictureBoxSyntesizerD3.Location = new System.Drawing.Point(160, 240);
-            this.pictureBoxSyntesizerD3.Name = "pictureBoxSyntesizerD3";
-            this.pictureBoxSyntesizerD3.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerD3.TabIndex = 33;
-            this.pictureBoxSyntesizerD3.TabStop = false;
-            // 
-            // pictureBoxSyntesizerD2
-            // 
-            this.pictureBoxSyntesizerD2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerD2.Image")));
-            this.pictureBoxSyntesizerD2.Location = new System.Drawing.Point(80, 240);
-            this.pictureBoxSyntesizerD2.Name = "pictureBoxSyntesizerD2";
-            this.pictureBoxSyntesizerD2.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerD2.TabIndex = 32;
-            this.pictureBoxSyntesizerD2.TabStop = false;
-            // 
-            // pictureBoxSyntesizerC10
-            // 
-            this.pictureBoxSyntesizerC10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerC10.Image")));
-            this.pictureBoxSyntesizerC10.Location = new System.Drawing.Point(720, 160);
-            this.pictureBoxSyntesizerC10.Name = "pictureBoxSyntesizerC10";
-            this.pictureBoxSyntesizerC10.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerC10.TabIndex = 31;
-            this.pictureBoxSyntesizerC10.TabStop = false;
-            // 
-            // pictureBoxSyntesizerC9
-            // 
-            this.pictureBoxSyntesizerC9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerC9.Image")));
-            this.pictureBoxSyntesizerC9.Location = new System.Drawing.Point(640, 160);
-            this.pictureBoxSyntesizerC9.Name = "pictureBoxSyntesizerC9";
-            this.pictureBoxSyntesizerC9.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerC9.TabIndex = 30;
-            this.pictureBoxSyntesizerC9.TabStop = false;
-            // 
-            // pictureBoxSyntesizerC8
-            // 
-            this.pictureBoxSyntesizerC8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerC8.Image")));
-            this.pictureBoxSyntesizerC8.Location = new System.Drawing.Point(560, 160);
-            this.pictureBoxSyntesizerC8.Name = "pictureBoxSyntesizerC8";
-            this.pictureBoxSyntesizerC8.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerC8.TabIndex = 29;
-            this.pictureBoxSyntesizerC8.TabStop = false;
-            // 
-            // pictureBoxSyntesizerC7
-            // 
-            this.pictureBoxSyntesizerC7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerC7.Image")));
-            this.pictureBoxSyntesizerC7.Location = new System.Drawing.Point(480, 160);
-            this.pictureBoxSyntesizerC7.Name = "pictureBoxSyntesizerC7";
-            this.pictureBoxSyntesizerC7.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerC7.TabIndex = 28;
-            this.pictureBoxSyntesizerC7.TabStop = false;
-            // 
-            // pictureBoxSyntesizerC6
-            // 
-            this.pictureBoxSyntesizerC6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerC6.Image")));
-            this.pictureBoxSyntesizerC6.Location = new System.Drawing.Point(400, 160);
-            this.pictureBoxSyntesizerC6.Name = "pictureBoxSyntesizerC6";
-            this.pictureBoxSyntesizerC6.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerC6.TabIndex = 27;
-            this.pictureBoxSyntesizerC6.TabStop = false;
-            // 
-            // pictureBoxSyntesizerC5
-            // 
-            this.pictureBoxSyntesizerC5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerC5.Image")));
-            this.pictureBoxSyntesizerC5.Location = new System.Drawing.Point(320, 160);
-            this.pictureBoxSyntesizerC5.Name = "pictureBoxSyntesizerC5";
-            this.pictureBoxSyntesizerC5.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerC5.TabIndex = 26;
-            this.pictureBoxSyntesizerC5.TabStop = false;
-            // 
-            // pictureBoxSyntesizerC4
-            // 
-            this.pictureBoxSyntesizerC4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerC4.Image")));
-            this.pictureBoxSyntesizerC4.Location = new System.Drawing.Point(240, 160);
-            this.pictureBoxSyntesizerC4.Name = "pictureBoxSyntesizerC4";
-            this.pictureBoxSyntesizerC4.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerC4.TabIndex = 25;
-            this.pictureBoxSyntesizerC4.TabStop = false;
-            // 
-            // pictureBoxSyntesizerC3
-            // 
-            this.pictureBoxSyntesizerC3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerC3.Image")));
-            this.pictureBoxSyntesizerC3.Location = new System.Drawing.Point(160, 160);
-            this.pictureBoxSyntesizerC3.Name = "pictureBoxSyntesizerC3";
-            this.pictureBoxSyntesizerC3.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerC3.TabIndex = 24;
-            this.pictureBoxSyntesizerC3.TabStop = false;
-            // 
-            // pictureBoxSyntesizerC2
-            // 
-            this.pictureBoxSyntesizerC2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerC2.Image")));
-            this.pictureBoxSyntesizerC2.Location = new System.Drawing.Point(80, 160);
-            this.pictureBoxSyntesizerC2.Name = "pictureBoxSyntesizerC2";
-            this.pictureBoxSyntesizerC2.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerC2.TabIndex = 23;
-            this.pictureBoxSyntesizerC2.TabStop = false;
-            // 
-            // pictureBoxSyntesizerE1
-            // 
-            this.pictureBoxSyntesizerE1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerE1.Image")));
-            this.pictureBoxSyntesizerE1.Location = new System.Drawing.Point(0, 320);
-            this.pictureBoxSyntesizerE1.Name = "pictureBoxSyntesizerE1";
-            this.pictureBoxSyntesizerE1.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerE1.TabIndex = 22;
-            this.pictureBoxSyntesizerE1.TabStop = false;
-            // 
-            // pictureBoxSyntesizerD1
-            // 
-            this.pictureBoxSyntesizerD1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerD1.Image")));
-            this.pictureBoxSyntesizerD1.Location = new System.Drawing.Point(0, 240);
-            this.pictureBoxSyntesizerD1.Name = "pictureBoxSyntesizerD1";
-            this.pictureBoxSyntesizerD1.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerD1.TabIndex = 21;
-            this.pictureBoxSyntesizerD1.TabStop = false;
-            // 
-            // pictureBoxSyntesizerC1
-            // 
-            this.pictureBoxSyntesizerC1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerC1.Image")));
-            this.pictureBoxSyntesizerC1.Location = new System.Drawing.Point(0, 160);
-            this.pictureBoxSyntesizerC1.Name = "pictureBoxSyntesizerC1";
-            this.pictureBoxSyntesizerC1.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerC1.TabIndex = 20;
-            this.pictureBoxSyntesizerC1.TabStop = false;
-            // 
-            // pictureBoxSyntesizerB10
-            // 
-            this.pictureBoxSyntesizerB10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerB10.Image")));
-            this.pictureBoxSyntesizerB10.Location = new System.Drawing.Point(720, 80);
-            this.pictureBoxSyntesizerB10.Name = "pictureBoxSyntesizerB10";
-            this.pictureBoxSyntesizerB10.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerB10.TabIndex = 19;
-            this.pictureBoxSyntesizerB10.TabStop = false;
-            // 
-            // pictureBoxSyntesizerB9
-            // 
-            this.pictureBoxSyntesizerB9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerB9.Image")));
-            this.pictureBoxSyntesizerB9.Location = new System.Drawing.Point(640, 80);
-            this.pictureBoxSyntesizerB9.Name = "pictureBoxSyntesizerB9";
-            this.pictureBoxSyntesizerB9.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerB9.TabIndex = 18;
-            this.pictureBoxSyntesizerB9.TabStop = false;
-            // 
-            // pictureBoxSyntesizerB8
-            // 
-            this.pictureBoxSyntesizerB8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerB8.Image")));
-            this.pictureBoxSyntesizerB8.Location = new System.Drawing.Point(560, 80);
-            this.pictureBoxSyntesizerB8.Name = "pictureBoxSyntesizerB8";
-            this.pictureBoxSyntesizerB8.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerB8.TabIndex = 17;
-            this.pictureBoxSyntesizerB8.TabStop = false;
-            // 
-            // pictureBoxSyntesizerB7
-            // 
-            this.pictureBoxSyntesizerB7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerB7.Image")));
-            this.pictureBoxSyntesizerB7.Location = new System.Drawing.Point(480, 80);
-            this.pictureBoxSyntesizerB7.Name = "pictureBoxSyntesizerB7";
-            this.pictureBoxSyntesizerB7.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerB7.TabIndex = 16;
-            this.pictureBoxSyntesizerB7.TabStop = false;
-            // 
-            // pictureBoxSyntesizerB6
-            // 
-            this.pictureBoxSyntesizerB6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerB6.Image")));
-            this.pictureBoxSyntesizerB6.Location = new System.Drawing.Point(400, 80);
-            this.pictureBoxSyntesizerB6.Name = "pictureBoxSyntesizerB6";
-            this.pictureBoxSyntesizerB6.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerB6.TabIndex = 15;
-            this.pictureBoxSyntesizerB6.TabStop = false;
-            // 
-            // pictureBoxSyntesizerB5
-            // 
-            this.pictureBoxSyntesizerB5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerB5.Image")));
-            this.pictureBoxSyntesizerB5.Location = new System.Drawing.Point(320, 80);
-            this.pictureBoxSyntesizerB5.Name = "pictureBoxSyntesizerB5";
-            this.pictureBoxSyntesizerB5.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerB5.TabIndex = 14;
-            this.pictureBoxSyntesizerB5.TabStop = false;
-            // 
-            // pictureBoxSyntesizerB4
-            // 
-            this.pictureBoxSyntesizerB4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerB4.Image")));
-            this.pictureBoxSyntesizerB4.Location = new System.Drawing.Point(240, 80);
-            this.pictureBoxSyntesizerB4.Name = "pictureBoxSyntesizerB4";
-            this.pictureBoxSyntesizerB4.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerB4.TabIndex = 13;
-            this.pictureBoxSyntesizerB4.TabStop = false;
-            // 
-            // pictureBoxSyntesizerB3
-            // 
-            this.pictureBoxSyntesizerB3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerB3.Image")));
-            this.pictureBoxSyntesizerB3.Location = new System.Drawing.Point(160, 80);
-            this.pictureBoxSyntesizerB3.Name = "pictureBoxSyntesizerB3";
-            this.pictureBoxSyntesizerB3.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerB3.TabIndex = 12;
-            this.pictureBoxSyntesizerB3.TabStop = false;
-            // 
-            // pictureBoxSyntesizerB2
-            // 
-            this.pictureBoxSyntesizerB2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerB2.Image")));
-            this.pictureBoxSyntesizerB2.Location = new System.Drawing.Point(80, 80);
-            this.pictureBoxSyntesizerB2.Name = "pictureBoxSyntesizerB2";
-            this.pictureBoxSyntesizerB2.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerB2.TabIndex = 11;
-            this.pictureBoxSyntesizerB2.TabStop = false;
-            // 
-            // pictureBoxSyntesizerB1
-            // 
-            this.pictureBoxSyntesizerB1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerB1.Image")));
-            this.pictureBoxSyntesizerB1.Location = new System.Drawing.Point(0, 80);
-            this.pictureBoxSyntesizerB1.Name = "pictureBoxSyntesizerB1";
-            this.pictureBoxSyntesizerB1.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerB1.TabIndex = 10;
-            this.pictureBoxSyntesizerB1.TabStop = false;
-            // 
-            // pictureBoxSyntesizerA10
-            // 
-            this.pictureBoxSyntesizerA10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerA10.Image")));
-            this.pictureBoxSyntesizerA10.Location = new System.Drawing.Point(720, 0);
-            this.pictureBoxSyntesizerA10.Name = "pictureBoxSyntesizerA10";
-            this.pictureBoxSyntesizerA10.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerA10.TabIndex = 9;
-            this.pictureBoxSyntesizerA10.TabStop = false;
-            // 
-            // pictureBoxSyntesizerA9
-            // 
-            this.pictureBoxSyntesizerA9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerA9.Image")));
-            this.pictureBoxSyntesizerA9.Location = new System.Drawing.Point(640, 0);
-            this.pictureBoxSyntesizerA9.Name = "pictureBoxSyntesizerA9";
-            this.pictureBoxSyntesizerA9.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerA9.TabIndex = 8;
-            this.pictureBoxSyntesizerA9.TabStop = false;
-            // 
-            // pictureBoxSyntesizerA8
-            // 
-            this.pictureBoxSyntesizerA8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerA8.Image")));
-            this.pictureBoxSyntesizerA8.Location = new System.Drawing.Point(560, 0);
-            this.pictureBoxSyntesizerA8.Name = "pictureBoxSyntesizerA8";
-            this.pictureBoxSyntesizerA8.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerA8.TabIndex = 7;
-            this.pictureBoxSyntesizerA8.TabStop = false;
-            // 
-            // pictureBoxSyntesizerA7
-            // 
-            this.pictureBoxSyntesizerA7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerA7.Image")));
-            this.pictureBoxSyntesizerA7.Location = new System.Drawing.Point(480, 0);
-            this.pictureBoxSyntesizerA7.Name = "pictureBoxSyntesizerA7";
-            this.pictureBoxSyntesizerA7.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerA7.TabIndex = 6;
-            this.pictureBoxSyntesizerA7.TabStop = false;
-            // 
-            // pictureBoxSyntesizerA6
-            // 
-            this.pictureBoxSyntesizerA6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerA6.Image")));
-            this.pictureBoxSyntesizerA6.Location = new System.Drawing.Point(400, 0);
-            this.pictureBoxSyntesizerA6.Name = "pictureBoxSyntesizerA6";
-            this.pictureBoxSyntesizerA6.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerA6.TabIndex = 5;
-            this.pictureBoxSyntesizerA6.TabStop = false;
-            // 
-            // pictureBoxSyntesizerA5
-            // 
-            this.pictureBoxSyntesizerA5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerA5.Image")));
-            this.pictureBoxSyntesizerA5.Location = new System.Drawing.Point(320, 0);
-            this.pictureBoxSyntesizerA5.Name = "pictureBoxSyntesizerA5";
-            this.pictureBoxSyntesizerA5.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerA5.TabIndex = 4;
-            this.pictureBoxSyntesizerA5.TabStop = false;
-            // 
-            // pictureBoxSyntesizerA4
-            // 
-            this.pictureBoxSyntesizerA4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerA4.Image")));
-            this.pictureBoxSyntesizerA4.Location = new System.Drawing.Point(240, 0);
-            this.pictureBoxSyntesizerA4.Name = "pictureBoxSyntesizerA4";
-            this.pictureBoxSyntesizerA4.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerA4.TabIndex = 3;
-            this.pictureBoxSyntesizerA4.TabStop = false;
-            // 
-            // pictureBoxSyntesizerA3
-            // 
-            this.pictureBoxSyntesizerA3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerA3.Image")));
-            this.pictureBoxSyntesizerA3.Location = new System.Drawing.Point(160, 0);
-            this.pictureBoxSyntesizerA3.Name = "pictureBoxSyntesizerA3";
-            this.pictureBoxSyntesizerA3.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerA3.TabIndex = 2;
-            this.pictureBoxSyntesizerA3.TabStop = false;
-            // 
-            // pictureBoxSyntesizerA2
-            // 
-            this.pictureBoxSyntesizerA2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerA2.Image")));
-            this.pictureBoxSyntesizerA2.Location = new System.Drawing.Point(80, 0);
-            this.pictureBoxSyntesizerA2.Name = "pictureBoxSyntesizerA2";
-            this.pictureBoxSyntesizerA2.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerA2.TabIndex = 1;
-            this.pictureBoxSyntesizerA2.TabStop = false;
-            // 
-            // pictureBoxSyntesizerA1
-            // 
-            this.pictureBoxSyntesizerA1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSyntesizerA1.Image")));
-            this.pictureBoxSyntesizerA1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxSyntesizerA1.Name = "pictureBoxSyntesizerA1";
-            this.pictureBoxSyntesizerA1.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxSyntesizerA1.TabIndex = 0;
-            this.pictureBoxSyntesizerA1.TabStop = false;
+            // groupBoxSelectPiano
+            // 
+            this.groupBoxSelectPiano.Controls.Add(this.buttonHighestPiano);
+            this.groupBoxSelectPiano.Controls.Add(this.buttonHigherPiano);
+            this.groupBoxSelectPiano.Controls.Add(this.buttonHighPiano);
+            this.groupBoxSelectPiano.Controls.Add(this.buttonMediumPiano);
+            this.groupBoxSelectPiano.Controls.Add(this.buttonLowPiano);
+            this.groupBoxSelectPiano.Controls.Add(this.buttonLowerPiano);
+            this.groupBoxSelectPiano.Controls.Add(this.buttonLowestPiano);
+            this.groupBoxSelectPiano.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBoxSelectPiano.Location = new System.Drawing.Point(0, 24);
+            this.groupBoxSelectPiano.Name = "groupBoxSelectPiano";
+            this.groupBoxSelectPiano.Size = new System.Drawing.Size(200, 222);
+            this.groupBoxSelectPiano.TabIndex = 1;
+            this.groupBoxSelectPiano.TabStop = false;
+            this.groupBoxSelectPiano.Text = "Select piano";
+            // 
+            // buttonHighestPiano
+            // 
+            this.buttonHighestPiano.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonHighestPiano.Location = new System.Drawing.Point(6, 193);
+            this.buttonHighestPiano.Name = "buttonHighestPiano";
+            this.buttonHighestPiano.Size = new System.Drawing.Size(188, 23);
+            this.buttonHighestPiano.TabIndex = 6;
+            this.buttonHighestPiano.Text = "Highest piano";
+            this.buttonHighestPiano.UseVisualStyleBackColor = true;
+            this.buttonHighestPiano.Click += new System.EventHandler(this.buttonGenericPiano_Click);
+            // 
+            // buttonHigherPiano
+            // 
+            this.buttonHigherPiano.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonHigherPiano.Location = new System.Drawing.Point(6, 164);
+            this.buttonHigherPiano.Name = "buttonHigherPiano";
+            this.buttonHigherPiano.Size = new System.Drawing.Size(188, 23);
+            this.buttonHigherPiano.TabIndex = 5;
+            this.buttonHigherPiano.Text = "Higher piano";
+            this.buttonHigherPiano.UseVisualStyleBackColor = true;
+            this.buttonHigherPiano.Click += new System.EventHandler(this.buttonGenericPiano_Click);
+            // 
+            // buttonHighPiano
+            // 
+            this.buttonHighPiano.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonHighPiano.Location = new System.Drawing.Point(6, 135);
+            this.buttonHighPiano.Name = "buttonHighPiano";
+            this.buttonHighPiano.Size = new System.Drawing.Size(188, 23);
+            this.buttonHighPiano.TabIndex = 4;
+            this.buttonHighPiano.Text = "High piano";
+            this.buttonHighPiano.UseVisualStyleBackColor = true;
+            this.buttonHighPiano.Click += new System.EventHandler(this.buttonGenericPiano_Click);
+            // 
+            // buttonMediumPiano
+            // 
+            this.buttonMediumPiano.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonMediumPiano.Location = new System.Drawing.Point(6, 106);
+            this.buttonMediumPiano.Name = "buttonMediumPiano";
+            this.buttonMediumPiano.Size = new System.Drawing.Size(188, 23);
+            this.buttonMediumPiano.TabIndex = 3;
+            this.buttonMediumPiano.Text = "Medium piano";
+            this.buttonMediumPiano.UseVisualStyleBackColor = true;
+            this.buttonMediumPiano.Click += new System.EventHandler(this.buttonGenericPiano_Click);
+            // 
+            // buttonLowPiano
+            // 
+            this.buttonLowPiano.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonLowPiano.Location = new System.Drawing.Point(6, 77);
+            this.buttonLowPiano.Name = "buttonLowPiano";
+            this.buttonLowPiano.Size = new System.Drawing.Size(188, 23);
+            this.buttonLowPiano.TabIndex = 2;
+            this.buttonLowPiano.Text = "Low piano";
+            this.buttonLowPiano.UseVisualStyleBackColor = true;
+            this.buttonLowPiano.Click += new System.EventHandler(this.buttonGenericPiano_Click);
+            // 
+            // buttonLowerPiano
+            // 
+            this.buttonLowerPiano.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonLowerPiano.Location = new System.Drawing.Point(6, 48);
+            this.buttonLowerPiano.Name = "buttonLowerPiano";
+            this.buttonLowerPiano.Size = new System.Drawing.Size(188, 23);
+            this.buttonLowerPiano.TabIndex = 1;
+            this.buttonLowerPiano.Text = "Lower piano";
+            this.buttonLowerPiano.UseVisualStyleBackColor = true;
+            this.buttonLowerPiano.Click += new System.EventHandler(this.buttonGenericPiano_Click);
+            // 
+            // buttonLowestPiano
+            // 
+            this.buttonLowestPiano.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonLowestPiano.Location = new System.Drawing.Point(6, 19);
+            this.buttonLowestPiano.Name = "buttonLowestPiano";
+            this.buttonLowestPiano.Size = new System.Drawing.Size(188, 23);
+            this.buttonLowestPiano.TabIndex = 0;
+            this.buttonLowestPiano.Text = "Lowest piano";
+            this.buttonLowestPiano.UseVisualStyleBackColor = true;
+            this.buttonLowestPiano.Click += new System.EventHandler(this.buttonGenericPiano_Click);
+            // 
+            // groupBoxMain
+            // 
+            this.groupBoxMain.Controls.Add(this.buttonRefreshFilesList);
+            this.groupBoxMain.Controls.Add(this.buttonLoadSoundboard);
+            this.groupBoxMain.Controls.Add(this.buttonCreateNewSoundboard);
+            this.groupBoxMain.Controls.Add(this.listViewFiles);
+            this.groupBoxMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxMain.Location = new System.Drawing.Point(200, 24);
+            this.groupBoxMain.Name = "groupBoxMain";
+            this.groupBoxMain.Size = new System.Drawing.Size(600, 222);
+            this.groupBoxMain.TabIndex = 2;
+            this.groupBoxMain.TabStop = false;
+            this.groupBoxMain.Text = "Soundboard";
+            // 
+            // buttonRefreshFilesList
+            // 
+            this.buttonRefreshFilesList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRefreshFilesList.Location = new System.Drawing.Point(444, 77);
+            this.buttonRefreshFilesList.Name = "buttonRefreshFilesList";
+            this.buttonRefreshFilesList.Size = new System.Drawing.Size(150, 23);
+            this.buttonRefreshFilesList.TabIndex = 3;
+            this.buttonRefreshFilesList.Text = "Refresh list";
+            this.buttonRefreshFilesList.UseVisualStyleBackColor = true;
+            this.buttonRefreshFilesList.Click += new System.EventHandler(this.buttonRefreshFilesList_Click);
+            // 
+            // buttonLoadSoundboard
+            // 
+            this.buttonLoadSoundboard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonLoadSoundboard.Location = new System.Drawing.Point(444, 48);
+            this.buttonLoadSoundboard.Name = "buttonLoadSoundboard";
+            this.buttonLoadSoundboard.Size = new System.Drawing.Size(150, 23);
+            this.buttonLoadSoundboard.TabIndex = 2;
+            this.buttonLoadSoundboard.Text = "Load soundboard";
+            this.buttonLoadSoundboard.UseVisualStyleBackColor = true;
+            this.buttonLoadSoundboard.Click += new System.EventHandler(this.buttonLoadSoundboard_Click);
+            // 
+            // buttonCreateNewSoundboard
+            // 
+            this.buttonCreateNewSoundboard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCreateNewSoundboard.Location = new System.Drawing.Point(444, 19);
+            this.buttonCreateNewSoundboard.Name = "buttonCreateNewSoundboard";
+            this.buttonCreateNewSoundboard.Size = new System.Drawing.Size(150, 23);
+            this.buttonCreateNewSoundboard.TabIndex = 1;
+            this.buttonCreateNewSoundboard.Text = "Create new soundboard";
+            this.buttonCreateNewSoundboard.UseVisualStyleBackColor = true;
+            this.buttonCreateNewSoundboard.Click += new System.EventHandler(this.buttonCreateNewSoundboard_Click);
+            // 
+            // listViewFiles
+            // 
+            this.listViewFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewFiles.LargeImageList = this.imageList;
+            this.listViewFiles.Location = new System.Drawing.Point(6, 19);
+            this.listViewFiles.Name = "listViewFiles";
+            this.listViewFiles.Size = new System.Drawing.Size(432, 197);
+            this.listViewFiles.SmallImageList = this.imageList;
+            this.listViewFiles.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.listViewFiles.TabIndex = 0;
+            this.listViewFiles.UseCompatibleStateImageBehavior = false;
+            this.listViewFiles.View = System.Windows.Forms.View.SmallIcon;
+            this.listViewFiles.DoubleClick += new System.EventHandler(this.listViewFiles_DoubleClick);
+            // 
+            // imageList
+            // 
+            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.Images.SetKeyName(0, "PianoETI_icon_32_32.png");
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.Filter = "PianoETI soundboard template file (*.pest)|*.pest";
+            this.openFileDialog.InitialDirectory = "./templates/";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 427);
-            this.Controls.Add(this.panelSyntesizer);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.ClientSize = new System.Drawing.Size(800, 246);
+            this.Controls.Add(this.groupBoxMain);
+            this.Controls.Add(this.groupBoxSelectPiano);
+            this.Controls.Add(this.menuStrip);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip;
             this.Name = "MainForm";
             this.Text = "PianoETI - Unknown Version";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.panelSyntesizer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerE10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerE9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerE8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerE7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerE6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerE5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerE4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerE3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerE2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerD10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerD9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerD8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerD7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerD6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerD5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerD4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerD3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerD2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerC10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerC9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerC8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerC7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerC6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerC5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerC4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerC3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerC2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerE1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerD1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerC1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerB10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerB9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerB8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerB7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerB6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerB5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerB4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerB3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerB2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerB1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerA10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerA9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerA8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerA7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerA6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerA5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerA4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerA3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerA2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyntesizerA1)).EndInit();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
+            this.groupBoxSelectPiano.ResumeLayout(false);
+            this.groupBoxMain.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -887,61 +417,9 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFile;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFileExit;
-        private System.Windows.Forms.Panel panelSyntesizer;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerE10;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerE9;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerE8;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerE7;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerE6;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerE5;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerE4;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerE3;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerE2;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerD10;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerD9;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerD8;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerD7;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerD6;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerD5;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerD4;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerD3;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerD2;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerC10;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerC9;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerC8;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerC7;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerC6;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerC5;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerC4;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerC3;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerC2;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerE1;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerD1;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerC1;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerB10;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerB9;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerB8;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerB7;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerB6;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerB5;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerB4;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerB3;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerB2;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerB1;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerA10;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerA9;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerA8;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerA7;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerA6;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerA5;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerA4;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerA3;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerA2;
-        private System.Windows.Forms.PictureBox pictureBoxSyntesizerA1;
-        private System.Windows.Forms.ImageList imageListSoundboardButton;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemEdit;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemView;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemHelp;
@@ -953,10 +431,25 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemViewPianoHigh;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemViewPianoHigher;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemViewPianoHighest;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSoundboard;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemViewSoundboard;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSoundboardNew;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItemSoundboardSeperator1;
-        private System.Windows.Forms.ToolStripMenuItem someSoundboardFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemLoadFile;
+        private System.Windows.Forms.GroupBox groupBoxSelectPiano;
+        private System.Windows.Forms.Button buttonHighestPiano;
+        private System.Windows.Forms.Button buttonHigherPiano;
+        private System.Windows.Forms.Button buttonHighPiano;
+        private System.Windows.Forms.Button buttonMediumPiano;
+        private System.Windows.Forms.Button buttonLowPiano;
+        private System.Windows.Forms.Button buttonLowerPiano;
+        private System.Windows.Forms.Button buttonLowestPiano;
+        private System.Windows.Forms.GroupBox groupBoxMain;
+        private System.Windows.Forms.ListView listViewFiles;
+        private System.Windows.Forms.Button buttonRefreshFilesList;
+        private System.Windows.Forms.Button buttonLoadSoundboard;
+        private System.Windows.Forms.Button buttonCreateNewSoundboard;
+        private System.Windows.Forms.ImageList imageList;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 

@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PianoForm));
+            this.imageListPianoLarge = new System.Windows.Forms.ImageList(this.components);
+            this.imageListPianoSmall = new System.Windows.Forms.ImageList(this.components);
             this.pictureBoxDF3 = new System.Windows.Forms.PictureBox();
             this.pictureBoxCF3 = new System.Windows.Forms.PictureBox();
             this.pictureBoxE3 = new System.Windows.Forms.PictureBox();
@@ -54,8 +56,6 @@
             this.pictureBoxA1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxG1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxF1 = new System.Windows.Forms.PictureBox();
-            this.imageListPianoLarge = new System.Windows.Forms.ImageList(this.components);
-            this.imageListPianoSmall = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDF3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCF3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxE3)).BeginInit();
@@ -81,6 +81,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxG1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxF1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // imageListPianoLarge
+            // 
+            this.imageListPianoLarge.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListPianoLarge.ImageStream")));
+            this.imageListPianoLarge.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListPianoLarge.Images.SetKeyName(0, "PianoETI_large_pressed.png");
+            // 
+            // imageListPianoSmall
+            // 
+            this.imageListPianoSmall.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListPianoSmall.ImageStream")));
+            this.imageListPianoSmall.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListPianoSmall.Images.SetKeyName(0, "PianoETI_small_pressed.png");
             // 
             // pictureBoxDF3
             // 
@@ -299,18 +311,6 @@
             this.pictureBoxF1.TabIndex = 27;
             this.pictureBoxF1.TabStop = false;
             // 
-            // imageListPianoLarge
-            // 
-            this.imageListPianoLarge.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListPianoLarge.ImageStream")));
-            this.imageListPianoLarge.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListPianoLarge.Images.SetKeyName(0, "PianoETI_large_pressed.png");
-            // 
-            // imageListPianoSmall
-            // 
-            this.imageListPianoSmall.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListPianoSmall.ImageStream")));
-            this.imageListPianoSmall.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListPianoSmall.Images.SetKeyName(0, "PianoETI_small_pressed.png");
-            // 
             // PianoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,7 +340,7 @@
             this.Controls.Add(this.pictureBoxA1);
             this.Controls.Add(this.pictureBoxG1);
             this.Controls.Add(this.pictureBoxF1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(576, 239);
             this.MinimumSize = new System.Drawing.Size(576, 239);
             this.Name = "PianoForm";

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SoundboardWizardForm));
             this.buttonLoad = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -39,14 +40,19 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemEditNew = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxButtons = new System.Windows.Forms.GroupBox();
+            this.pictureBoxNewButton = new System.Windows.Forms.PictureBox();
             this.contextMenuStripButton = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemRemove = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonOK = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.contextMenuStripMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemMainNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBoxProfileName = new System.Windows.Forms.TextBox();
+            this.labelProfileName = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
+            this.groupBoxButtons.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewButton)).BeginInit();
             this.contextMenuStripButton.SuspendLayout();
             this.contextMenuStripMain.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +70,7 @@
             // openFileDialog
             // 
             this.openFileDialog.Filter = "PianoETI soundboard template file (*.pest)|*.pest";
-            this.openFileDialog.InitialDirectory = "./soundboard_templates/";
+            this.openFileDialog.InitialDirectory = "./templates/";
             // 
             // buttonSave
             // 
@@ -129,38 +135,52 @@
             this.groupBoxButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxButtons.Location = new System.Drawing.Point(12, 56);
+            this.groupBoxButtons.Controls.Add(this.pictureBoxNewButton);
+            this.groupBoxButtons.Location = new System.Drawing.Point(12, 82);
             this.groupBoxButtons.Name = "groupBoxButtons";
-            this.groupBoxButtons.Size = new System.Drawing.Size(406, 164);
+            this.groupBoxButtons.Size = new System.Drawing.Size(406, 338);
             this.groupBoxButtons.TabIndex = 3;
             this.groupBoxButtons.TabStop = false;
             this.groupBoxButtons.Text = "Button configuration";
             // 
+            // pictureBoxNewButton
+            // 
+            this.pictureBoxNewButton.Image = global::PianoETI.Properties.Resources.add_button;
+            this.pictureBoxNewButton.Location = new System.Drawing.Point(6, 19);
+            this.pictureBoxNewButton.Name = "pictureBoxNewButton";
+            this.pictureBoxNewButton.Size = new System.Drawing.Size(40, 40);
+            this.pictureBoxNewButton.TabIndex = 0;
+            this.pictureBoxNewButton.TabStop = false;
+            this.pictureBoxNewButton.Click += new System.EventHandler(this.pictureBoxNewButton_Click);
+            // 
             // contextMenuStripButton
             // 
             this.contextMenuStripButton.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editToolStripMenuItem1,
-            this.removeToolStripMenuItem});
+            this.toolStripMenuItemEdit,
+            this.toolStripMenuItemRemove});
             this.contextMenuStripButton.Name = "contextMenuStripButton";
             this.contextMenuStripButton.Size = new System.Drawing.Size(118, 48);
             // 
-            // editToolStripMenuItem1
+            // toolStripMenuItemEdit
             // 
-            this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
-            this.editToolStripMenuItem1.Text = "Edit";
+            this.toolStripMenuItemEdit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.toolStripMenuItemEdit.Name = "toolStripMenuItemEdit";
+            this.toolStripMenuItemEdit.Size = new System.Drawing.Size(117, 22);
+            this.toolStripMenuItemEdit.Text = "Edit";
+            this.toolStripMenuItemEdit.Click += new System.EventHandler(this.toolStripMenuItemEdit_Click);
             // 
-            // removeToolStripMenuItem
+            // toolStripMenuItemRemove
             // 
-            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.removeToolStripMenuItem.Text = "Remove";
+            this.toolStripMenuItemRemove.Name = "toolStripMenuItemRemove";
+            this.toolStripMenuItemRemove.Size = new System.Drawing.Size(117, 22);
+            this.toolStripMenuItemRemove.Text = "Remove";
+            this.toolStripMenuItemRemove.Click += new System.EventHandler(this.toolStripMenuItemRemove_Click);
             // 
             // buttonOK
             // 
             this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOK.Location = new System.Drawing.Point(111, 226);
+            this.buttonOK.Location = new System.Drawing.Point(111, 426);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(307, 23);
             this.buttonOK.TabIndex = 5;
@@ -171,7 +191,7 @@
             // buttonCancel
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonCancel.Location = new System.Drawing.Point(12, 226);
+            this.buttonCancel.Location = new System.Drawing.Point(12, 426);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(93, 23);
             this.buttonCancel.TabIndex = 7;
@@ -194,11 +214,30 @@
             this.toolStripMenuItemMainNew.Text = "Add new Button";
             this.toolStripMenuItemMainNew.Click += new System.EventHandler(this.toolStripMenuItemMainNew_Click);
             // 
+            // textBoxProfileName
+            // 
+            this.textBoxProfileName.Location = new System.Drawing.Point(54, 56);
+            this.textBoxProfileName.Name = "textBoxProfileName";
+            this.textBoxProfileName.Size = new System.Drawing.Size(364, 20);
+            this.textBoxProfileName.TabIndex = 8;
+            this.textBoxProfileName.TextChanged += new System.EventHandler(this.textBoxProfileName_TextChanged);
+            // 
+            // labelProfileName
+            // 
+            this.labelProfileName.AutoSize = true;
+            this.labelProfileName.Location = new System.Drawing.Point(12, 59);
+            this.labelProfileName.Name = "labelProfileName";
+            this.labelProfileName.Size = new System.Drawing.Size(36, 13);
+            this.labelProfileName.TabIndex = 9;
+            this.labelProfileName.Text = "Profile";
+            // 
             // SoundboardWizardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 261);
+            this.ClientSize = new System.Drawing.Size(430, 461);
+            this.Controls.Add(this.labelProfileName);
+            this.Controls.Add(this.textBoxProfileName);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.groupBoxButtons);
@@ -206,6 +245,7 @@
             this.Controls.Add(this.buttonLoad);
             this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
             this.MinimumSize = new System.Drawing.Size(446, 300);
             this.Name = "SoundboardWizardForm";
@@ -213,8 +253,11 @@
             this.Text = "Soundboard Wizard";
             this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SoundboardWizardForm_FormClosed);
+            this.Load += new System.EventHandler(this.SoundboardWizardForm_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.groupBoxButtons.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewButton)).EndInit();
             this.contextMenuStripButton.ResumeLayout(false);
             this.contextMenuStripMain.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -235,11 +278,14 @@
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemEditNew;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripButton;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemEdit;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemRemove;
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripMain;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemMainNew;
+        private System.Windows.Forms.TextBox textBoxProfileName;
+        private System.Windows.Forms.Label labelProfileName;
+        private System.Windows.Forms.PictureBox pictureBoxNewButton;
     }
 }

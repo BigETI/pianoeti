@@ -4,14 +4,27 @@ using System.Windows.Forms;
 
 namespace PianoETI
 {
+    /// <summary>
+    /// <see cref="MIDISync"/> class
+    /// </summary>
     public class MIDISync
     {
         #region Attributes
+        /// <summary>
+        /// <see cref="MIDI"/> instance
+        /// </summary>
         private MIDI midi = null;
+
+        /// <summary>
+        /// <see cref="MIDI.Note"/> <see cref="LinkedList{PianoButton}"/> dictionary
+        /// </summary>
         private Dictionary<MIDI.Note, LinkedList<PianoButton>> midi_control_map = null;
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// Creates a <see cref="MIDISync"/> instance
+        /// </summary>
         public MIDISync()
         {
             midi_control_map = new Dictionary<MIDI.Note, LinkedList<PianoButton>>();
@@ -21,16 +34,29 @@ namespace PianoETI
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Opens the MIDI handle
+        /// </summary>
         public void open()
         {
             midi.open();
         }
 
+        /// <summary>
+        /// Closes the MIDI handle
+        /// </summary>
         public void close()
         {
             midi.close();
         }
 
+        /// <summary>
+        /// Registers a piano button
+        /// </summary>
+        /// <param name="button">Button <see cref="PictureBox"/></param>
+        /// <param name="note">Note <see cref="MIDI.Note"/></param>
+        /// <param name="velocity">Velocity (0 - 127)</param>
+        /// <param name="pressed_image">Pressed image <see cref="Image"/></param>
         public void registerPianoButton(PictureBox button, MIDI.Note note, byte velocity, Image pressed_image)
         {
             if (!midi_control_map.ContainsKey(note))
@@ -38,6 +64,10 @@ namespace PianoETI
             midi_control_map[note].AddLast(new PianoButton(this, button, note, velocity, pressed_image));
         }
 
+        /// <summary>
+        /// Removes a piano button
+        /// </summary>
+        /// <param name="note">Note <see cref="MIDI.Note"/></param>
         public void removePianoButtons(MIDI.Note note)
         {
             if (midi_control_map.ContainsKey(note))
@@ -52,6 +82,9 @@ namespace PianoETI
         #endregion
 
         #region Getter/Setter
+        /// <summary>
+        /// MIDI instance
+        /// </summary>
         public MIDI MIDI
         {
             get
@@ -62,6 +95,11 @@ namespace PianoETI
         #endregion
 
         #region Events
+        /// <summary>
+        /// <see cref="MIDI"/> MessageEvent event (To-Do)
+        /// </summary>
+        /// <param name="sender">Sender <see cref="MIDI"/></param>
+        /// <param name="e">Arguments</param>
         private void onMessage(object sender, MIDIEventArgs e)
         {
             if (midi_control_map.ContainsKey(e.Note))

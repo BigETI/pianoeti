@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PianoETI
@@ -38,7 +31,7 @@ namespace PianoETI
             if (soundboard_button == null)
             {
                 create_new = true;
-                this.soundboard_button = soundboard.createButton(SoundboardButton.Mode.PressOnly, 0.0f, 1.0f, false, new Fraction(1), Properties.Resources.SoundboardButton, "");
+                this.soundboard_button = soundboard.createButton(SoundboardButton.Mode.PressOnly, 0.0f, 1.0f, false, new Fraction(1), Properties.Resources.SoundboardButton_pressed, "");
             }
             else
             {

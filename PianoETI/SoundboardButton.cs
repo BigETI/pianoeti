@@ -32,6 +32,21 @@ namespace PianoETI
         #endregion
 
         #region Constructors
+        public SoundboardButton(Soundboard parent, SoundboardButton soundboard_button)
+        {
+            this.parent = parent;
+            button_mode = soundboard_button.button_mode;
+            pitch = soundboard_button.pitch;
+            volume = soundboard_button.volume;
+            loop = soundboard_button.loop;
+            PictureBox = soundboard_button.picture_box;
+            fraction = new Fraction(soundboard_button.fraction);
+            if (fraction.get() > 1.0)
+                fraction = new Fraction(1);
+            pressed_image = soundboard_button.pressed_image;
+            FileName = soundboard_button.file_name;
+        }
+
         public SoundboardButton(Soundboard parent, Mode button_mode, float pitch, float volume, bool loop, Fraction fraction, Image pressed_image, string file_name, PictureBox picture_box)
         {
             this.parent = parent;

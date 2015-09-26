@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace PianoETI
 {
     /// <summary>
-    /// MIDI Out structure
+    /// <see cref="MIDIOutCaps"/> class
     /// </summary>
     public class MIDIOutCaps
     {

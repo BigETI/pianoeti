@@ -5,7 +5,7 @@ using System.Text;
 namespace PianoETI
 {
     /// <summary>
-    /// MIDI class
+    /// <see cref="MIDI"/> class
     /// </summary>
     public class MIDI
     {
@@ -30,6 +30,9 @@ namespace PianoETI
         #endregion
 
         #region Enums
+        /// <summary>
+        /// MIDI Instrument
+        /// </summary>
         public enum Instrument
         {
             PianoOffC1 = 0x80,
@@ -84,6 +87,9 @@ namespace PianoETI
             PianoAftertouchC16 = 0xAF,
         };
 
+        /// <summary>
+        /// MIDI note
+        /// </summary>
         public enum Note
         {
             CM1, CFM1, DM1, DFM1, EM1, FM1, FFM1, GM1, GFM1, AM1, AFM1, BM1,
@@ -101,18 +107,40 @@ namespace PianoETI
         #endregion
 
         #region Delegates
+        /// <summary>
+        /// MIDI callback
+        /// </summary>
+        /// <param name="handle">MIDI handle</param>
+        /// <param name="msg">MIDI message</param>
+        /// <param name="instance">MIDI instance</param>
+        /// <param name="param1">MIDI 1. param</param>
+        /// <param name="param2">MIDI 2. param</param>
         private delegate void MidiCallBack(int handle, int msg, int instance, int param1, int param2);
 
+        /// <summary>
+        /// Message callback
+        /// </summary>
+        /// <param name="sender">Sender <see cref="MIDI"/></param>
+        /// <param name="e">Arguments <see cref="MIDIEventArgs"/></param>
         public delegate void MessageCallback(object sender, MIDIEventArgs e);
         #endregion
 
         #region Attributes
+        /// <summary>
+        /// MIDI handle
+        /// </summary>
         private int midi_handle = 0;
 
+        /// <summary>
+        /// MIDI Message event
+        /// </summary>
         public event MessageCallback MessageEvent;
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// Creates a <see cref="MIDI"/> instance
+        /// </summary>
         public MIDI()
         {
             open();
@@ -120,6 +148,9 @@ namespace PianoETI
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Close MIDI handle
+        /// </summary>
         public void close()
         {
             if (midi_handle != 0)
@@ -127,17 +158,30 @@ namespace PianoETI
                 midi_handle = 0;
         }
 
+        /// <summary>
+        /// Open MIDI handle
+        /// </summary>
         public void open()
         {
             if (midi_handle == 0)
                 midiOutOpen(ref midi_handle, 0, null, 0, 0);
         }
 
+        /// <summary>
+        /// Is handle open?
+        /// </summary>
+        /// <returns>"true" if successful, otherwise "false"</returns>
         public bool isOpen()
         {
             return (midi_handle != 0);
         }
 
+        /// <summary>
+        /// Plays MIDI note
+        /// </summary>
+        /// <param name="instrument">MIDI Instrument <see cref="Instrument"/></param>
+        /// <param name="note">MIDI note <see cref="Note"/></param>
+        /// <param name="velocity">Velocity (0 - 127)</param>
         public void playNote(Instrument instrument, Note note, byte velocity)
         {
             if (midi_handle != 0)

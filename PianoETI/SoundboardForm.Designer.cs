@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SoundboardForm));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemFileClose = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSettings = new System.Windows.Forms.ToolStripMenuItem();
-            this.imageListSoundboardButton = new System.Windows.Forms.ImageList(this.components);
             this.panelMain = new System.Windows.Forms.Panel();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -78,15 +76,9 @@
             // 
             this.toolStripMenuItemSettings.Name = "toolStripMenuItemSettings";
             this.toolStripMenuItemSettings.ShortcutKeys = System.Windows.Forms.Keys.F4;
-            this.toolStripMenuItemSettings.Size = new System.Drawing.Size(135, 22);
+            this.toolStripMenuItemSettings.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItemSettings.Text = "Settings";
             this.toolStripMenuItemSettings.Click += new System.EventHandler(this.toolStripMenuItemSettings_Click);
-            // 
-            // imageListSoundboardButton
-            // 
-            this.imageListSoundboardButton.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListSoundboardButton.ImageStream")));
-            this.imageListSoundboardButton.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListSoundboardButton.Images.SetKeyName(0, "SoundBoardButton_pressed.png");
             // 
             // panelMain
             // 
@@ -103,7 +95,7 @@
             this.ClientSize = new System.Drawing.Size(668, 430);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.menuStrip);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
             this.Name = "SoundboardForm";
             this.Text = "Soundboard";
@@ -124,7 +116,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFileClose;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSettings;
-        private System.Windows.Forms.ImageList imageListSoundboardButton;
         private System.Windows.Forms.Panel panelMain;
     }
 }

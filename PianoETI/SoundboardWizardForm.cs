@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PianoETI
@@ -21,10 +15,10 @@ namespace PianoETI
         #endregion
 
         #region Constructors
-        public SoundboardWizardForm(SoundboardForm parent)
+        public SoundboardWizardForm(SoundboardForm parent, Soundboard soundboard = null)
         {
             this.parent = parent;
-            soundboard = new Soundboard();
+            this.soundboard = new Soundboard(soundboard);
             InitializeComponent();
         }
         #endregion
@@ -54,11 +48,13 @@ namespace PianoETI
                     button_arr[count].Size = new Size(40, 40);
                     button_arr[count].TabIndex = count;
                     button_arr[count].UseVisualStyleBackColor = true;
+                    button_arr[count].ContextMenuStrip = contextMenuStripButton;
                     button_arr[count].Tag = i.Key;
                     button_arr[count].Click += onButtonClick;
                     count++;
                 }
             }
+            pictureBoxNewButton.Location = new Point(6 + ((count % 10) * 46), 19 + ((count / 10) * 46));
         }
 
         private void addNewButton()
@@ -66,6 +62,12 @@ namespace PianoETI
             (new SoundboardButtonConfigForm(soundboard)).ShowDialog();
             DialogResult = DialogResult.None;
             updateButtons();
+        }
+
+        void editButton(Button button)
+        {
+            (new SoundboardButtonConfigForm(soundboard, (SoundboardButton)(button.Tag))).ShowDialog();
+            DialogResult = DialogResult.None;
         }
         #endregion
 
@@ -90,6 +92,7 @@ namespace PianoETI
                     MessageBox.Show("Die Datei \"" + openFileDialog.FileName + "\" konnte nicht geöffnet werden.");
                 }
                 updateButtons();
+                textBoxProfileName.Text = soundboard.ProfileName;
             }
             DialogResult = DialogResult.None;
         }
@@ -146,11 +149,43 @@ namespace PianoETI
 
         private void onButtonClick(object sender, EventArgs e)
         {
-            (new SoundboardButtonConfigForm(soundboard, (SoundboardButton)(((Button)sender).Tag))).ShowDialog();
-            DialogResult = DialogResult.None;
+            editButton((Button)sender);
+        }
+
+        private void textBoxProfileName_TextChanged(object sender, EventArgs e)
+        {
+            soundboard.ProfileName = textBoxProfileName.Text;
+            if (soundboard.ProfileName != textBoxProfileName.Text)
+            {
+                int selection_start = textBoxProfileName.SelectionStart;
+                textBoxProfileName.Text = soundboard.ProfileName;
+                textBoxProfileName.Select(selection_start, 0);
+            }
+        }
+
+        private void SoundboardWizardForm_Load(object sender, EventArgs e)
+        {
+            updateButtons();
+            textBoxProfileName.Text = soundboard.ProfileName;
         }
         #endregion
 
-        
+        private void pictureBoxNewButton_Click(object sender, EventArgs e)
+        {
+            addNewButton();
+        }
+
+        private void toolStripMenuItemEdit_Click(object sender, EventArgs e)
+        {
+            editButton((Button)(contextMenuStripButton.SourceControl));
+        }
+
+        private void toolStripMenuItemRemove_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you really want to remove this button?", "Remove button", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult = DialogResult.None;
+            if (result == DialogResult.Yes) soundboard.removeButton((SoundboardButton)(((Button)(contextMenuStripButton.SourceControl)).Tag));
+            updateButtons();
+        }
     }
 }

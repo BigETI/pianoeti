@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SoundboardButtonConfigForm));
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.labelLoadFile = new System.Windows.Forms.Label();
             this.groupBoxVolume = new System.Windows.Forms.GroupBox();
@@ -351,6 +352,7 @@
             this.Controls.Add(this.groupBoxVolume);
             this.Controls.Add(this.labelLoadFile);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SoundboardButtonConfigForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configurate soundboard button";

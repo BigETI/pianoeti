@@ -63,6 +63,16 @@ namespace PianoETI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_button {
+            get {
+                object obj = ResourceManager.GetObject("add_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PianoETI_large {
             get {
                 object obj = ResourceManager.GetObject("PianoETI_large", resourceCulture);
@@ -86,6 +96,16 @@ namespace PianoETI.Properties {
         internal static System.Drawing.Bitmap SoundboardButton {
             get {
                 object obj = ResourceManager.GetObject("SoundboardButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SoundboardButton_pressed {
+            get {
+                object obj = ResourceManager.GetObject("SoundboardButton_pressed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

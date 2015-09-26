@@ -4,59 +4,82 @@ using System.Windows.Forms;
 
 namespace PianoETI
 {
+    /// <summary>
+    /// <see cref="PianoForm"/> class
+    /// </summary>
     public partial class PianoForm : Form
     {
+        #region Enums
         /// <summary>
         /// Piano pitch type
         /// </summary>
         public enum PitchType
         {
             /// <summary>
-            /// CM1 - EM1
+            /// CM1 - EM1 <see cref="MIDI.Note"/>
             /// </summary>
             Lowest = -19,
 
             /// <summary>
-            /// FM1 - E1
+            /// FM1 - E1 <see cref="MIDI.Note"/>
             /// </summary>
             Lower = MIDI.Note.FM1,
 
             /// <summary>
-            /// F1 - E3
+            /// F1 - E3 <see cref="MIDI.Note"/>
             /// </summary>
             Low = MIDI.Note.F1,
 
             /// <summary>
-            /// F3 - E5
+            /// F3 - E5 <see cref="MIDI.Note"/>
             /// </summary>
             Medium = MIDI.Note.F3,
 
             /// <summary>
-            /// F5 - E7
+            /// F5 - E7 <see cref="MIDI.Note"/>
             /// </summary>
             High = MIDI.Note.F5,
 
             /// <summary>
-            /// F7 - E9
+            /// F7 - E9 <see cref="MIDI.Note"/>
             /// </summary>
             Higher = MIDI.Note.F7,
 
             /// <summary>
-            /// F9 - G9
+            /// F9 - G9 <see cref="MIDI.Note"/>
             /// </summary>
             Highest = MIDI.Note.F9
         };
+        #endregion
 
+        #region Attributes
+        /// <summary>
+        /// Pitch type <see cref="PitchType"/>
+        /// </summary>
         private PitchType pitch_type = PitchType.Medium;
 
+        /// <summary>
+        /// <see cref="ToolStripMenuItem"/>
+        /// </summary>
         private ToolStripMenuItem tool_strip_menu_item = null;
 
+        /// <summary>
+        /// Parent <see cref="MainForm"/>
+        /// </summary>
         private MainForm parent = null;
 
+        /// <summary>
+        /// PictureBox <see cref="PictureBox"/>
+        /// </summary>
         private PictureBox[] picture_box_arr = null;
 
+        /// <summary>
+        /// Showing
+        /// </summary>
         private bool showing = false;
+        #endregion
 
+        #region Constructors
         public PianoForm(PitchType pitch_type, ToolStripMenuItem tool_strip_menu_item, MainForm parent)
         {
             this.pitch_type = pitch_type;
@@ -64,7 +87,9 @@ namespace PianoETI
             this.parent = parent;
             InitializeComponent();
         }
+        #endregion
 
+        #region Getter/Setter
         public bool Showing
         {
             get
@@ -72,7 +97,14 @@ namespace PianoETI
                 return showing;
             }
         }
+        #endregion
 
+        #region Events
+        /// <summary>
+        /// <see cref="PianoForm"/> "Load" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="PianoForm"/></param>
+        /// <param name="e">Arguments</param>
         private void PianoForm_Load(object sender, EventArgs e)
         {
             string pitch_type_name = "Unknown";
@@ -135,12 +167,22 @@ namespace PianoETI
             note++;
         }
 
+        /// <summary>
+        /// <see cref="PianoForm"/> "Shown" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="PianoForm"/></param>
+        /// <param name="e">Arguments</param>
         private void PianoForm_Shown(object sender, EventArgs e)
         {
             tool_strip_menu_item.Checked = true;
             showing = true;
         }
 
+        /// <summary>
+        /// <see cref="PianoForm"/> "FormClosed" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="PianoForm"/></param>
+        /// <param name="e">Arguments <see cref="FormClosedEventArgs"/></param>
         private void PianoForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             int note = (int)pitch_type;
@@ -149,5 +191,6 @@ namespace PianoETI
             tool_strip_menu_item.Checked = false;
             showing = false;
         }
+        #endregion
     }
 }
