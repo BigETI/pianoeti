@@ -82,7 +82,7 @@
             this.toolStripMenuItemView});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip.Size = new System.Drawing.Size(784, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -334,7 +334,7 @@
             this.groupBoxMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxMain.Location = new System.Drawing.Point(200, 24);
             this.groupBoxMain.Name = "groupBoxMain";
-            this.groupBoxMain.Size = new System.Drawing.Size(600, 222);
+            this.groupBoxMain.Size = new System.Drawing.Size(584, 222);
             this.groupBoxMain.TabIndex = 2;
             this.groupBoxMain.TabStop = false;
             this.groupBoxMain.Text = "Soundboard";
@@ -342,7 +342,7 @@
             // buttonRefreshFilesList
             // 
             this.buttonRefreshFilesList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonRefreshFilesList.Location = new System.Drawing.Point(444, 77);
+            this.buttonRefreshFilesList.Location = new System.Drawing.Point(428, 77);
             this.buttonRefreshFilesList.Name = "buttonRefreshFilesList";
             this.buttonRefreshFilesList.Size = new System.Drawing.Size(150, 23);
             this.buttonRefreshFilesList.TabIndex = 3;
@@ -353,7 +353,7 @@
             // buttonLoadSoundboard
             // 
             this.buttonLoadSoundboard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonLoadSoundboard.Location = new System.Drawing.Point(444, 48);
+            this.buttonLoadSoundboard.Location = new System.Drawing.Point(428, 48);
             this.buttonLoadSoundboard.Name = "buttonLoadSoundboard";
             this.buttonLoadSoundboard.Size = new System.Drawing.Size(150, 23);
             this.buttonLoadSoundboard.TabIndex = 2;
@@ -364,7 +364,7 @@
             // buttonCreateNewSoundboard
             // 
             this.buttonCreateNewSoundboard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCreateNewSoundboard.Location = new System.Drawing.Point(444, 19);
+            this.buttonCreateNewSoundboard.Location = new System.Drawing.Point(428, 19);
             this.buttonCreateNewSoundboard.Name = "buttonCreateNewSoundboard";
             this.buttonCreateNewSoundboard.Size = new System.Drawing.Size(150, 23);
             this.buttonCreateNewSoundboard.TabIndex = 1;
@@ -381,7 +381,7 @@
             this.listViewFiles.LargeImageList = this.imageList;
             this.listViewFiles.Location = new System.Drawing.Point(6, 19);
             this.listViewFiles.Name = "listViewFiles";
-            this.listViewFiles.Size = new System.Drawing.Size(432, 197);
+            this.listViewFiles.Size = new System.Drawing.Size(416, 197);
             this.listViewFiles.SmallImageList = this.imageList;
             this.listViewFiles.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listViewFiles.TabIndex = 0;
@@ -441,12 +441,13 @@
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 246);
+            this.ClientSize = new System.Drawing.Size(784, 246);
             this.Controls.Add(this.groupBoxMain);
             this.Controls.Add(this.groupBoxSelectPiano);
             this.Controls.Add(this.menuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
+            this.MinimumSize = new System.Drawing.Size(800, 285);
             this.Name = "MainForm";
             this.Text = "PianoETI - Unknown Version";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
