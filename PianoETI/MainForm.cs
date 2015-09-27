@@ -29,6 +29,7 @@ namespace PianoETI
         /// </summary>
         public MainForm()
         {
+            Directory.CreateDirectory("./templates/");
             InitializeComponent();
         }
         #endregion
