@@ -10,21 +10,60 @@ namespace PianoETI
     public class MIDI
     {
         #region DLL imports
+        /// <summary>
+        /// mciSendString
+        /// </summary>
+        /// <param name="command">Command</param>
+        /// <param name="returnValue">Return value</param>
+        /// <param name="returnLength">Return length</param>
+        /// <param name="winHandle">Win handle</param>
+        /// <returns>Size</returns>
         [DllImport("winmm.dll")]
         private static extern long mciSendString(string command, StringBuilder returnValue, int returnLength, IntPtr winHandle);
 
+        /// <summary>
+        /// midiOutGetNumDevs
+        /// </summary>
+        /// <returns>Number of devices</returns>
         [DllImport("winmm.dll")]
         private static extern int midiOutGetNumDevs();
 
+        /// <summary>
+        /// midiOutGetDevCaps
+        /// </summary>
+        /// <param name="uDeviceID">Universal device ID</param>
+        /// <param name="lpMidiOutCaps">Long pointer MIDI out caps</param>
+        /// <param name="cbMidiOutCaps">Callback MIDI out caps</param>
+        /// <returns>Size</returns>
         [DllImport("winmm.dll")]
         private static extern int midiOutGetDevCaps(Int32 uDeviceID, ref MIDIOutCaps lpMidiOutCaps, UInt32 cbMidiOutCaps);
 
+        /// <summary>
+        /// midiOutOpen
+        /// </summary>
+        /// <param name="handle">MIDI handle</param>
+        /// <param name="deviceID">Device ID</param>
+        /// <param name="proc">Procedure <see cref="MidiCallBack"/></param>
+        /// <param name="instance">MIDI instance</param>
+        /// <param name="flags">MIDI flags</param>
+        /// <returns></returns>
         [DllImport("winmm.dll")]
         private static extern int midiOutOpen(ref int handle, int deviceID, MidiCallBack proc, int instance, int flags);
 
+        /// <summary>
+        /// midiOutShortMsg
+        /// </summary>
+        /// <param name="handle">MIDI handle</param>
+        /// <param name="message">MIDI message</param>
+        /// <returns></returns>
         [DllImport("winmm.dll")]
         protected static extern int midiOutShortMsg(int handle, int message);
 
+        /// <summary>
+        /// midiOutClose
+        /// </summary>
+        /// <param name="handle">MIDI handle</param>
+        /// <returns>MIDI handle</returns>
         [DllImport("winmm.dll")]
         protected static extern int midiOutClose(int handle);
         #endregion
@@ -35,6 +74,7 @@ namespace PianoETI
         /// </summary>
         public enum Instrument
         {
+#pragma warning disable CS1591
             PianoOffC1 = 0x80,
             PianoOffC2 = 0x81,
             PianoOffC3 = 0x82,
@@ -85,6 +125,7 @@ namespace PianoETI
             PianoAftertouchC14 = 0xAD,
             PianoAftertouchC15 = 0xAE,
             PianoAftertouchC16 = 0xAF,
+#pragma warning restore CS1591
         };
 
         /// <summary>
@@ -92,6 +133,7 @@ namespace PianoETI
         /// </summary>
         public enum Note
         {
+#pragma warning disable CS1591
             CM1, CFM1, DM1, DFM1, EM1, FM1, FFM1, GM1, GFM1, AM1, AFM1, BM1,
             C0, CF0, D0, DF0, E0, F0, FF0, G0, GF0, A0, AF0, B0,
             C1, CF1, D1, DF1, E1, F1, FF1, G1, GF1, A1, AF1, B1,
@@ -103,6 +145,7 @@ namespace PianoETI
             C7, CF7, D7, DF7, E7, F7, FF7, G7, GF7, A7, AF7, B7,
             C8, CF8, D8, DF8, E8, F8, FF8, G8, GF8, A8, AF8, B8,
             C9, CF9, D9, DF9, E9, F9, FF9, G9
+#pragma warning restore CS1591
         }
         #endregion
 

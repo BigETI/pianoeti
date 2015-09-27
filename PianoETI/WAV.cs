@@ -6,17 +6,43 @@ using System.Windows.Forms;
 
 namespace PianoETI
 {
+    /// <summary>
+    /// <see cref="WAV"/> class
+    /// </summary>
     public class WAV
     {
         #region Attributes
+        /// <summary>
+        /// Header data
+        /// </summary>
         public static readonly byte[] header_data = { (byte)'R', (byte)'I', (byte)'F', (byte)'F' };
+
+        /// <summary>
+        /// File size
+        /// </summary>
         private uint file_size = 0;
+
+        /// <summary>
+        /// Sample rate
+        /// </summary>
         private uint sample_rate = 0;
+
+        /// <summary>
+        /// Audio channels <see cref="AudioChannels"/>
+        /// </summary>
         private AudioChannels channels;
+
+        /// <summary>
+        /// PCM
+        /// </summary>
         private byte[] pcm;
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// Creates a <see cref="WAV"/> instance
+        /// </summary>
+        /// <param name="file_name">File name</param>
         public WAV(string file_name)
         {
             byte[] buf = new byte[4];
@@ -40,8 +66,6 @@ namespace PianoETI
                     fs.Seek(0x2C, SeekOrigin.Begin);
                     fs.Read(pcm, 0x0, (int)(fs.Length - 0x2C));
                 }
-                
-                
                 fs.Close();
             }
             catch (Exception e)
@@ -49,7 +73,11 @@ namespace PianoETI
                 MessageBox.Show(e.Message, "Runtime error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
+        /// <summary>
+        /// Creates a <see cref="WAV"/> instance
+        /// </summary>
+        /// <param name="wav"><see cref="WAV"/> instance</param>
         public WAV(WAV wav)
         {
             file_size = wav.file_size;
@@ -60,6 +88,9 @@ namespace PianoETI
         #endregion
 
         #region Getter/Setter
+        /// <summary>
+        /// File size
+        /// </summary>
         public uint FileSize
         {
             get
@@ -68,6 +99,9 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// Sample rate
+        /// </summary>
         public uint SampleRate
         {
             get
@@ -76,6 +110,9 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// Audio channels <see cref="AudioChannels"/>
+        /// </summary>
         public AudioChannels Channels
         {
             get
@@ -84,6 +121,9 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// PCM
+        /// </summary>
         public byte[] PCM
         {
             get

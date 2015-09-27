@@ -2,30 +2,60 @@
 
 namespace PianoETI
 {
+    /// <summary>
+    /// <see cref="Fraction"/> class
+    /// </summary>
     public class Fraction
     {
         #region Attributes
+        /// <summary>
+        /// Numerator
+        /// </summary>
         private int numerator = 0;
+
+        /// <summary>
+        /// Divisor
+        /// </summary>
         private uint divisor = 1;
+
+        /// <summary>
+        /// Delimiter
+        /// </summary>
         public static readonly char Delimiter = '|';
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// Creates a <see cref="Fraction"/> instance
+        /// </summary>
         public Fraction()
         {
             set(0, 1);
         }
 
+        /// <summary>
+        /// Creates a <see cref="Fraction"/> instance
+        /// </summary>
+        /// <param name="numerator">Numerator</param>
         public Fraction(int numerator)
         {
             set(numerator, 1);
         }
 
+        /// <summary>
+        /// Creates a <see cref="Fraction"/> instance
+        /// </summary>
+        /// <param name="numerator">Numerator</param>
+        /// <param name="divisor">Divisor</param>
         public Fraction(int numerator, uint divisor)
         {
             set(numerator, divisor);
         }
 
+        /// <summary>
+        /// Creates a <see cref="Fraction"/> instance
+        /// </summary>
+        /// <param name="fraction"><see cref="Fraction"/> instance</param>
         public Fraction(Fraction fraction)
         {
             if (fraction == null)
@@ -36,6 +66,11 @@ namespace PianoETI
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Converts <see cref="string"/> to <see cref="Fraction"/>
+        /// </summary>
+        /// <param name="fraction"><see cref="Fraction"/> instance</param>
+        /// <returns>A <see cref="Fraction"/> instance</returns>
         public static Fraction parse(string fraction)
         {
             Fraction ret = new Fraction();
@@ -52,11 +87,20 @@ namespace PianoETI
             return ret;
         }
 
+        /// <summary>
+        /// Converts <see cref="Fraction"/> to <see cref="string"/>
+        /// </summary>
+        /// <returns>Fraction string</returns>
         public override string ToString()
         {
             return numerator + (new string(Delimiter, 1)) + divisor;
         }
 
+        /// <summary>
+        /// Sets the numerator and dividor
+        /// </summary>
+        /// <param name="numerator">Numerator</param>
+        /// <param name="divisor">Divisor</param>
         public void set(int numerator, uint divisor)
         {
             if (divisor > 0)
@@ -71,6 +115,10 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// Gets the division of numerator and divisor
+        /// </summary>
+        /// <returns></returns>
         public double get()
         {
             return ((double)numerator) / ((double)divisor);
@@ -78,6 +126,9 @@ namespace PianoETI
         #endregion
 
         #region Getter/Setter
+        /// <summary>
+        /// Numerator
+        /// </summary>
         public int Numerator
         {
             get
@@ -90,6 +141,9 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// Divisor
+        /// </summary>
         public uint Divisor
         {
             get

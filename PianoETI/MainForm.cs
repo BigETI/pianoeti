@@ -98,7 +98,7 @@ namespace PianoETI
         {
             ListViewItem item;
             listViewFiles.Items.Clear();
-            string[] files = Directory.GetFiles("./templates/");
+            string[] files = Directory.GetFiles("./templates/", "*.pest", SearchOption.AllDirectories);
             foreach (string i in files)
             {
                 item = new ListViewItem(Path.GetFileNameWithoutExtension(i));
@@ -134,6 +134,16 @@ namespace PianoETI
         {
             SoundboardForm sbf = new SoundboardForm(false, file_name);
             sbf.Show();
+        }
+
+        /// <summary>
+        /// Deletes a soundboard
+        /// </summary>
+        /// <param name="file_name">File name</param>
+        private void deleteSoundboard(string file_name)
+        {
+            if (MessageBox.Show("Do you really want to delete \"" + file_name + "\"?", "Delete file", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                File.Delete(file_name);
         }
         #endregion
 
@@ -283,8 +293,109 @@ namespace PianoETI
         /// <param name="e">Arguments</param>
         private void listViewFiles_DoubleClick(object sender, EventArgs e)
         {
-            if (listViewFiles.Items.Count > 0)
+            if (listViewFiles.SelectedItems.Count > 0)
                 loadSoundboard((string)(listViewFiles.SelectedItems[0].Tag));
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripMenuItemLoadFile_Click(object sender, EventArgs e)
+        {
+            loadSoundboard();
+        }
+
+        /// <summary>
+        /// <see cref="FileSystemWatcher"/> fileSystemWatcher "Changed", "Created", "Deleted" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="FileSystemWatcher"/></param>
+        /// <param name="e">Arguments <see cref="FileSystemEventArgs"/></param>
+        private void fileSystemWatcher_Changed(object sender, FileSystemEventArgs e)
+        {
+            updateFileList();
+        }
+
+        /// <summary>
+        /// <see cref="FileSystemWatcher"/> fileSystemWatcher "Renamed" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="FileSystemWatcher"/></param>
+        /// <param name="e">Arguments <see cref="RenamedEventArgs"/></param>
+        private void fileSystemWatcher_Renamed(object sender, RenamedEventArgs e)
+        {
+            updateFileList();
+        }
+
+        /// <summary>
+        /// <see cref="ListView"/> listViewFiles "KeyUp" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="ListView"/></param>
+        /// <param name="e">Arguments <see cref="KeyEventArgs"/></param>
+        private void listViewFiles_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (listViewFiles.SelectedItems.Count > 0)
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Return:
+                        loadSoundboard((string)(listViewFiles.SelectedItems[0].Tag));
+                        break;
+                    case Keys.Delete:
+                        deleteSoundboard((string)(listViewFiles.SelectedItems[0].Tag));
+                        break;
+                }
+            }
+        }
+
+        /// <summary>
+        /// <see cref="ToolStripMenuItem"/> toolStripMenuItemLoad "Click" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="ToolStripMenuItem"/></param>
+        /// <param name="e">Arguments</param>
+        private void toolStripMenuItemLoad_Click(object sender, EventArgs e)
+        {
+            if (listViewFiles.SelectedItems.Count > 0)
+                loadSoundboard((string)(listViewFiles.SelectedItems[0].Tag));
+        }
+
+        /// <summary>
+        /// <see cref="ToolStripMenuItem"/> toolStripMenuItemDelete "Click" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="ToolStripMenuItem"/></param>
+        /// <param name="e">Arguments</param>
+        private void toolStripMenuItemDelete_Click(object sender, EventArgs e)
+        {
+            if (listViewFiles.Items.Count > 0)
+                deleteSoundboard((string)(listViewFiles.SelectedItems[0].Tag));
+        }
+
+        /// <summary>
+        /// <see cref="MainForm"/> "DragDrop" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="MainForm"/></param>
+        /// <param name="e">Arguments <see cref="DragEventArgs"/></param>
+        private void MainForm_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] file_names = (string[])(e.Data.GetData(DataFormats.FileDrop));
+                foreach (string i in file_names)
+                {
+                    if (Path.GetExtension(i) == ".pest")
+                        loadSoundboard(i);
+                }
+            }
+        }
+
+        /// <summary>
+        /// <see cref="MainForm"/> "DragEnter" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="MainForm"/></param>
+        /// <param name="e">Arguments <see cref="DragEventArgs"/></param>
+        private void MainForm_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = (e.Data.GetDataPresent(DataFormats.FileDrop) ? DragDropEffects.Copy : DragDropEffects.None);
         }
         #endregion
     }

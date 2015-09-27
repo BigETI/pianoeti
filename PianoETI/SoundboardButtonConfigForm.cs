@@ -3,28 +3,69 @@ using System.Windows.Forms;
 
 namespace PianoETI
 {
+    /// <summary>
+    /// <see cref="SoundboardButtonConfigForm"/> class
+    /// </summary>
     public partial class SoundboardButtonConfigForm : Form
     {
+        #region Attributes
+        /// <summary>
+        /// <see cref="PianoETI.Soundboard"/> instance
+        /// </summary>
         private Soundboard soundboard = null;
 
+        /// <summary>
+        /// <see cref="PianoETI.SoundboardButton"/> instance
+        /// </summary>
         private SoundboardButton soundboard_button = null;
 
+        /// <summary>
+        /// Backup file name
+        /// </summary>
         private string backup_file_name;
 
+        /// <summary>
+        /// Backup volume (factor)
+        /// </summary>
         private float backup_volume;
 
+        /// <summary>
+        /// Backup pitch (factor)
+        /// </summary>
         private float backup_pitch;
 
+        /// <summary>
+        /// Backup button mode <see cref="SoundboardButton.Mode"/>
+        /// </summary>
         private SoundboardButton.Mode backup_button_mode;
 
+        /// <summary>
+        /// Backup is looping
+        /// </summary>
         private bool backup_loop;
 
+        /// <summary>
+        /// Backup time fraction <see cref="Fraction"/>
+        /// </summary>
         private Fraction backup_fraction;
 
+        /// <summary>
+        /// Is newly created?
+        /// </summary>
         private bool create_new = false;
 
+        /// <summary>
+        /// Allow update?
+        /// </summary>
         private bool allow_update = true;
+        #endregion
 
+        #region Constructors
+        /// <summary>
+        /// Creates a <see cref="SoundboardButtonConfigForm"/> instance
+        /// </summary>
+        /// <param name="soundboard"><see cref="PianoETI.Soundboard"/> instance</param>
+        /// <param name="soundboard_button"><see cref="PianoETI.SoundboardButton"/> instance</param>
         public SoundboardButtonConfigForm(Soundboard soundboard, SoundboardButton soundboard_button = null)
         {
             this.soundboard = soundboard;
@@ -45,7 +86,12 @@ namespace PianoETI
             }
             InitializeComponent();
         }
+        #endregion
 
+        #region Methods
+        /// <summary>
+        /// Updates all controls
+        /// </summary>
         public void updateControls()
         {
             allow_update = false;
@@ -70,7 +116,12 @@ namespace PianoETI
             numericUpDownNumerator.Value = soundboard_button.Fraction.Numerator;
             allow_update = true;
         }
+        #endregion
 
+        #region Getter/Setter
+        /// <summary>
+        /// <see cref="PianoETI.Soundboard"/> instance
+        /// </summary>
         public Soundboard Soundboard
         {
             get
@@ -79,6 +130,9 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// <see cref="PianoETI.SoundboardButton"/> instance
+        /// </summary>
         public SoundboardButton SoundboardButton
         {
             get
@@ -86,7 +140,14 @@ namespace PianoETI
                 return soundboard_button;
             }
         }
+        #endregion
 
+        #region Events
+        /// <summary>
+        /// <see cref="SoundboardButtonConfigForm"/> "Load" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="SoundboardButtonConfigForm"/></param>
+        /// <param name="e">Arguments</param>
         private void SoundboardButtonConfigForm_Load(object sender, EventArgs e)
         {
             radioButtonModePressOnly.Tag = SoundboardButton.Mode.PressOnly;
@@ -95,11 +156,21 @@ namespace PianoETI
             updateControls();
         }
 
+        /// <summary>
+        /// <see cref="SoundboardButtonConfigForm"/> "Shown" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="SoundboardButtonConfigForm"/></param>
+        /// <param name="e">Arguments</param>
         private void SoundboardButtonConfigForm_Shown(object sender, EventArgs e)
         {
             //
         }
 
+        /// <summary>
+        /// <see cref="SoundboardButtonConfigForm"/> "FormClosed" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="SoundboardButtonConfigForm"/></param>
+        /// <param name="e">Arguments <see cref="FormClosedEventArgs"/></param>
         private void SoundboardButtonConfigForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (DialogResult != DialogResult.OK)
@@ -121,6 +192,11 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// <see cref="Button"/> "..." "Click" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="Button"/></param>
+        /// <param name="e">Arguments</param>
         private void buttonLoadFile_Click(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -130,18 +206,31 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// <see cref="Button"/> "Start" "Click" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="Button"/></param>
+        /// <param name="e">Arguments</param>
         private void buttonStartTest_Click(object sender, EventArgs e)
         {
-            // Start Test
             soundboard_button.play();
         }
 
+        /// <summary>
+        /// <see cref="Button"/> "Stop" "Click" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="Button"/></param>
+        /// <param name="e">Arguments</param>
         private void buttonStopTest_Click(object sender, EventArgs e)
         {
-            // Stop test
             soundboard_button.stop();
         }
 
+        /// <summary>
+        /// <see cref="Button"/> "OK" "Click" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="Button"/></param>
+        /// <param name="e">Arguments</param>
         private void buttonOK_Click(object sender, EventArgs e)
         {
             soundboard_button.stop();
@@ -149,6 +238,11 @@ namespace PianoETI
             Close();
         }
 
+        /// <summary>
+        /// <see cref="Button"/> "Cancel" "Click" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="Button"/></param>
+        /// <param name="e">Arguments</param>
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             soundboard_button.stop();
@@ -156,30 +250,55 @@ namespace PianoETI
             Close();
         }
 
+        /// <summary>
+        /// <see cref="TrackBar"/> volume "ValueChanged" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="TrackBar"/></param>
+        /// <param name="e">Arguments</param>
         private void trackBarVolume_ValueChanged(object sender, EventArgs e)
         {
             if (allow_update)
                 soundboard_button.Volume = ((float)(trackBarVolume.Value)) * 0.01f;
         }
 
+        /// <summary>
+        /// <see cref="TrackBar"/> pitch "ValueChanged" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="TrackBar"/></param>
+        /// <param name="e">Arguments</param>
         private void trackBarPitch_ValueChanged(object sender, EventArgs e)
         {
             if (allow_update)
                 soundboard_button.Pitch = ((float)(trackBarPitch.Value)) * 0.01f;
         }
 
+        /// <summary>
+        /// <see cref="RadioButton"/> "Click" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="RadioButton"/></param>
+        /// <param name="e">Arguments</param>
         private void radioButtonModeGeneric_Click(object sender, EventArgs e)
         {
             if (allow_update)
                 soundboard_button.ButtonMode = (SoundboardButton.Mode)(((RadioButton)sender).Tag);
         }
 
+        /// <summary>
+        /// <see cref="CheckBox"/> "Loop" "CheckedChanged" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="CheckBox"/></param>
+        /// <param name="e">Arguments</param>
         private void checkBoxLoop_CheckedChanged(object sender, EventArgs e)
         {
             if (allow_update)
                 soundboard_button.Loop = checkBoxLoop.Checked;
         }
 
+        /// <summary>
+        /// <see cref="NumericUpDown"/> numerator "ValueChanged" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="NumericUpDown"/></param>
+        /// <param name="e">Arguments</param>
         private void numericUpDownNumerator_ValueChanged(object sender, EventArgs e)
         {
             if (allow_update)
@@ -190,6 +309,11 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// <see cref="NumericUpDown"/> divisor "ValueChanged" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="NumericUpDown"/></param>
+        /// <param name="e">Arguments</param>
         private void numericUpDownDivisor_ValueChanged(object sender, EventArgs e)
         {
             if (allow_update)
@@ -200,6 +324,11 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// <see cref="ToolStripMenuItem"/> "Revert to default" "Click" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="ToolStripMenuItem"/></param>
+        /// <param name="e">Arguments</param>
         private void toolStripMenuItemRevert_Click(object sender, EventArgs e)
         {
             if (create_new)
@@ -222,5 +351,6 @@ namespace PianoETI
             }
             updateControls();
         }
+        #endregion
     }
 }

@@ -80,6 +80,12 @@ namespace PianoETI
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// Creates a <see cref="PianoForm"/> instance
+        /// </summary>
+        /// <param name="pitch_type">Pitch type <see cref="PitchType"/></param>
+        /// <param name="tool_strip_menu_item"><see cref="ToolStripMenuItem"/> instance</param>
+        /// <param name="parent">Parent <see cref="MainForm"/></param>
         public PianoForm(PitchType pitch_type, ToolStripMenuItem tool_strip_menu_item, MainForm parent)
         {
             this.pitch_type = pitch_type;
@@ -90,6 +96,9 @@ namespace PianoETI
         #endregion
 
         #region Getter/Setter
+        /// <summary>
+        /// Is showing?
+        /// </summary>
         public bool Showing
         {
             get

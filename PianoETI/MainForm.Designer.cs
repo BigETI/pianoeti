@@ -61,11 +61,17 @@
             this.buttonLoadSoundboard = new System.Windows.Forms.Button();
             this.buttonCreateNewSoundboard = new System.Windows.Forms.Button();
             this.listViewFiles = new System.Windows.Forms.ListView();
+            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemLoad = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.fileSystemWatcher = new System.IO.FileSystemWatcher();
             this.menuStrip.SuspendLayout();
             this.groupBoxSelectPiano.SuspendLayout();
             this.groupBoxMain.SuspendLayout();
+            this.contextMenuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -122,7 +128,7 @@
             this.toolStripMenuItemViewPianoHigher,
             this.toolStripMenuItemViewPianoHighest});
             this.toolStripMenuItemViewPiano.Name = "toolStripMenuItemViewPiano";
-            this.toolStripMenuItemViewPiano.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItemViewPiano.Size = new System.Drawing.Size(139, 22);
             this.toolStripMenuItemViewPiano.Text = "Piano";
             // 
             // toolStripMenuItemViewPianoLowest
@@ -188,7 +194,7 @@
             this.toolStripMenuItemSoundboardSeperator1,
             this.toolStripMenuItemLoadFile});
             this.toolStripMenuItemViewSoundboard.Name = "toolStripMenuItemViewSoundboard";
-            this.toolStripMenuItemViewSoundboard.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItemViewSoundboard.Size = new System.Drawing.Size(139, 22);
             this.toolStripMenuItemViewSoundboard.Text = "Soundboard";
             // 
             // toolStripMenuItemSoundboardNew
@@ -210,6 +216,7 @@
             this.toolStripMenuItemLoadFile.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F2)));
             this.toolStripMenuItemLoadFile.Size = new System.Drawing.Size(268, 22);
             this.toolStripMenuItemLoadFile.Text = "Load soundboard template";
+            this.toolStripMenuItemLoadFile.Click += new System.EventHandler(this.toolStripMenuItemLoadFile_Click);
             // 
             // toolStripMenuItemHelp
             // 
@@ -370,6 +377,7 @@
             this.listViewFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewFiles.ContextMenuStrip = this.contextMenuStrip;
             this.listViewFiles.LargeImageList = this.imageList;
             this.listViewFiles.Location = new System.Drawing.Point(6, 19);
             this.listViewFiles.Name = "listViewFiles";
@@ -380,6 +388,31 @@
             this.listViewFiles.UseCompatibleStateImageBehavior = false;
             this.listViewFiles.View = System.Windows.Forms.View.SmallIcon;
             this.listViewFiles.DoubleClick += new System.EventHandler(this.listViewFiles_DoubleClick);
+            this.listViewFiles.KeyUp += new System.Windows.Forms.KeyEventHandler(this.listViewFiles_KeyUp);
+            // 
+            // contextMenuStrip
+            // 
+            this.contextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemLoad,
+            this.toolStripMenuItemDelete});
+            this.contextMenuStrip.Name = "contextMenuStrip";
+            this.contextMenuStrip.Size = new System.Drawing.Size(108, 48);
+            // 
+            // toolStripMenuItemLoad
+            // 
+            this.toolStripMenuItemLoad.Name = "toolStripMenuItemLoad";
+            this.toolStripMenuItemLoad.Size = new System.Drawing.Size(107, 22);
+            this.toolStripMenuItemLoad.Text = "Load";
+            this.toolStripMenuItemLoad.Click += new System.EventHandler(this.toolStripMenuItemLoad_Click);
+            // 
+            // toolStripMenuItemDelete
+            // 
+            this.toolStripMenuItemDelete.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripMenuItemDelete.Name = "toolStripMenuItemDelete";
+            this.toolStripMenuItemDelete.Size = new System.Drawing.Size(107, 22);
+            this.toolStripMenuItemDelete.Text = "Delete";
+            this.toolStripMenuItemDelete.Click += new System.EventHandler(this.toolStripMenuItemDelete_Click);
             // 
             // imageList
             // 
@@ -392,8 +425,20 @@
             this.openFileDialog.Filter = "PianoETI soundboard template file (*.pest)|*.pest";
             this.openFileDialog.InitialDirectory = "./templates/";
             // 
+            // fileSystemWatcher
+            // 
+            this.fileSystemWatcher.EnableRaisingEvents = true;
+            this.fileSystemWatcher.Filter = "*.pest";
+            this.fileSystemWatcher.Path = "./templates/";
+            this.fileSystemWatcher.SynchronizingObject = this;
+            this.fileSystemWatcher.Changed += new System.IO.FileSystemEventHandler(this.fileSystemWatcher_Changed);
+            this.fileSystemWatcher.Created += new System.IO.FileSystemEventHandler(this.fileSystemWatcher_Changed);
+            this.fileSystemWatcher.Deleted += new System.IO.FileSystemEventHandler(this.fileSystemWatcher_Changed);
+            this.fileSystemWatcher.Renamed += new System.IO.RenamedEventHandler(this.fileSystemWatcher_Renamed);
+            // 
             // MainForm
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 246);
@@ -406,10 +451,14 @@
             this.Text = "PianoETI - Unknown Version";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainForm_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.MainForm_DragEnter);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.groupBoxSelectPiano.ResumeLayout(false);
             this.groupBoxMain.ResumeLayout(false);
+            this.contextMenuStrip.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -450,6 +499,10 @@
         private System.Windows.Forms.Button buttonCreateNewSoundboard;
         private System.Windows.Forms.ImageList imageList;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.IO.FileSystemWatcher fileSystemWatcher;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemLoad;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDelete;
     }
 }
 

@@ -4,17 +4,34 @@ using System.Windows.Forms;
 
 namespace PianoETI
 {
+    /// <summary>
+    /// <see cref="SoundboardWizardForm"/> class
+    /// </summary>
     public partial class SoundboardWizardForm : Form
     {
         #region Attributes
+        /// <summary>
+        /// Parent <see cref="SoundboardForm"/>
+        /// </summary>
         private SoundboardForm parent = null;
 
+        /// <summary>
+        /// <see cref="PianoETI.Soundboard"/> instance
+        /// </summary>
         private Soundboard soundboard = null;
 
+        /// <summary>
+        /// <see cref="Button"/> array
+        /// </summary>
         private Button[] button_arr = null;
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// Cretes a <see cref="SoundboardWizardForm"/> instance
+        /// </summary>
+        /// <param name="parent">Parent <see cref="SoundboardForm"/></param>
+        /// <param name="soundboard"><see cref="PianoETI.Soundboard"/> instance</param>
         public SoundboardWizardForm(SoundboardForm parent, Soundboard soundboard = null)
         {
             this.parent = parent;
@@ -24,6 +41,9 @@ namespace PianoETI
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Updates all buttons
+        /// </summary>
         private void updateButtons()
         {
             int count = 0;
@@ -57,6 +77,9 @@ namespace PianoETI
             pictureBoxNewButton.Location = new Point(6 + ((count % 10) * 46), 19 + ((count / 10) * 46));
         }
 
+        /// <summary>
+        /// Adds a new button
+        /// </summary>
         private void addNewButton()
         {
             (new SoundboardButtonConfigForm(soundboard)).ShowDialog();
@@ -64,6 +87,10 @@ namespace PianoETI
             updateButtons();
         }
 
+        /// <summary>
+        /// Edits the button
+        /// </summary>
+        /// <param name="button"></param>
         void editButton(Button button)
         {
             (new SoundboardButtonConfigForm(soundboard, (SoundboardButton)(button.Tag))).ShowDialog();
@@ -72,6 +99,9 @@ namespace PianoETI
         #endregion
 
         #region Getter/Setter
+        /// <summary>
+        /// <see cref="PianoETI.Soundboard"/> instance
+        /// </summary>
         public Soundboard Soundboard
         {
             get
@@ -82,9 +112,13 @@ namespace PianoETI
         #endregion
 
         #region Events
+        /// <summary>
+        /// <see cref="Button"/> "Load template" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="Button"/></param>
+        /// <param name="e">Arguments</param>
         private void buttonLoad_Click(object sender, EventArgs e)
         {
-            // Load
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 if (!soundboard.loadFromFile(openFileDialog.FileName))
@@ -97,9 +131,13 @@ namespace PianoETI
             DialogResult = DialogResult.None;
         }
 
+        /// <summary>
+        /// <see cref="Button"/> "Save template as..." event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="Button"/></param>
+        /// <param name="e">Arguments</param>
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            // Save
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 if (!soundboard.saveToFile(saveFileDialog.FileName))
@@ -110,28 +148,53 @@ namespace PianoETI
             DialogResult = DialogResult.None;
         }
 
+        /// <summary>
+        /// <see cref="Button"/> "OK" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="Button"/></param>
+        /// <param name="e">Arguments</param>
         private void buttonOK_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
             Close();
         }
 
+        /// <summary>
+        /// <see cref="Button"/> "Cancel" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="Button"/></param>
+        /// <param name="e">Arguments</param>
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
             Close();
         }
 
+        /// <summary>
+        /// <see cref="ToolStripMenuItem"/> "Add" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="ToolStripMenuItem"/></param>
+        /// <param name="e">Arguments</param>
         private void toolStripMenuItemEditNew_Click(object sender, EventArgs e)
         {
             addNewButton();
         }
 
+        /// <summary>
+        /// <see cref="ToolStripMenuItem"/> "Edit" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="ToolStripMenuItem"/></param>
+        /// <param name="e">Arguments</param>
         private void toolStripMenuItemMainNew_Click(object sender, EventArgs e)
         {
             addNewButton();
         }
 
+        /// <summary>
+        /// <see cref="SoundboardWizardForm"/> "FormClosed" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="SoundboardWizardForm"/></param>
+        /// <param name="e">Arguments <see cref="FormClosedEventArgs"/></param>
         private void SoundboardWizardForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (DialogResult != DialogResult.OK)
@@ -141,17 +204,32 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// <see cref="ToolStripMenuItem"/> "Cancel" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="ToolStripMenuItem"/></param>
+        /// <param name="e">Arguments</param>
         private void toolStripMenuItemCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
             Close();
         }
 
+        /// <summary>
+        /// <see cref="Button"/> "Click" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="Button"/></param>
+        /// <param name="e">Arguments</param>
         private void onButtonClick(object sender, EventArgs e)
         {
             editButton((Button)sender);
         }
 
+        /// <summary>
+        /// <see cref="TextBox"/> "TextChanged" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="TextBox"/></param>
+        /// <param name="e">Arguments</param>
         private void textBoxProfileName_TextChanged(object sender, EventArgs e)
         {
             soundboard.ProfileName = textBoxProfileName.Text;
@@ -163,23 +241,42 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// <see cref="SoundboardWizardForm"/> "Load" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="SoundboardWizardForm"/></param>
+        /// <param name="e">Arguments</param>
         private void SoundboardWizardForm_Load(object sender, EventArgs e)
         {
             updateButtons();
             textBoxProfileName.Text = soundboard.ProfileName;
         }
-        #endregion
 
+        /// <summary>
+        /// <see cref="PictureBox"/> "+" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="PictureBox"/></param>
+        /// <param name="e">Arguments</param>
         private void pictureBoxNewButton_Click(object sender, EventArgs e)
         {
             addNewButton();
         }
 
+        /// <summary>
+        /// <see cref="ToolStripMenuItem"/> "Edit" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="ToolStripMenuItem"/></param>
+        /// <param name="e">Arguments</param>
         private void toolStripMenuItemEdit_Click(object sender, EventArgs e)
         {
             editButton((Button)(contextMenuStripButton.SourceControl));
         }
 
+        /// <summary>
+        /// <see cref="ToolStripMenuItem"/> "Remove" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="ToolStripMenuItem"/></param>
+        /// <param name="e">Arguments</param>
         private void toolStripMenuItemRemove_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Do you really want to remove this button?", "Remove button", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -187,5 +284,6 @@ namespace PianoETI
             if (result == DialogResult.Yes) soundboard.removeButton((SoundboardButton)(((Button)(contextMenuStripButton.SourceControl)).Tag));
             updateButtons();
         }
+        #endregion
     }
 }

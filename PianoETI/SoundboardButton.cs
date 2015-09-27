@@ -6,32 +6,107 @@ using System.IO;
 
 namespace PianoETI
 {
+    /// <summary>
+    /// <see cref="SoundboardButton"/> class
+    /// </summary>
     public class SoundboardButton
     {
+        #region Enums
+        /// <summary>
+        /// Button mode
+        /// </summary>
         public enum Mode
         {
+            /// <summary>
+            /// Press only mode
+            /// </summary>
             PressOnly,
+
+            /// <summary>
+            /// Toggle mode
+            /// </summary>
             Toggle,
+
+            /// <summary>
+            /// Click mode
+            /// </summary>
             Click
         };
+        #endregion
 
         #region Attributes
+        /// <summary>
+        /// Parent <see cref="Soundboard"/>
+        /// </summary>
         private Soundboard parent = null;
+
+        /// <summary>
+        /// Button <see cref="PictureBox"/>
+        /// </summary>
         private PictureBox picture_box = null;
+
+        /// <summary>
+        /// Button mode <see cref="Mode"/>
+        /// </summary>
         private Mode button_mode = Mode.PressOnly;
+
+        /// <summary>
+        /// Pitch (factor)
+        /// </summary>
         private float pitch = 0.0f;
+
+        /// <summary>
+        /// Volume (factor)
+        /// </summary>
         private float volume = 1.0f;
+
+        /// <summary>
+        /// Is looping?
+        /// </summary>
         private bool loop = false;
+
+        /// <summary>
+        /// Time fraction <see cref="PianoETI.Fraction"/>
+        /// </summary>
         private Fraction fraction = null;
+
+        /// <summary>
+        /// Default image <see cref="Image"/>
+        /// </summary>
         private Image default_image = null;
+
+        /// <summary>
+        /// Pressed Image <see cref="Image"/>
+        /// </summary>
         private Image pressed_image = null;
+
+        /// <summary>
+        /// <see cref="Microsoft.Xna.Framework.Audio.SoundEffect"/> instance
+        /// </summary>
         private SoundEffect sound_effect = null;
+
+        /// <summary>
+        /// <see cref="SoundEffectInstance"/> instance
+        /// </summary>
         private SoundEffectInstance sound_effect_instance = null;
+
+        /// <summary>
+        /// File name
+        /// </summary>
         private string file_name = "";
+
+        /// <summary>
+        /// Is playing?
+        /// </summary>
         private bool playing = false;
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// Creates a <see cref="SoundboardButton"/> instance
+        /// </summary>
+        /// <param name="parent">Parent <see cref="Soundboard"/></param>
+        /// <param name="soundboard_button"><see cref="SoundboardButton"/> instance</param>
         public SoundboardButton(Soundboard parent, SoundboardButton soundboard_button)
         {
             this.parent = parent;
@@ -47,6 +122,18 @@ namespace PianoETI
             FileName = soundboard_button.file_name;
         }
 
+        /// <summary>
+        /// Creates a <see cref="SoundboardButton"/> instance
+        /// </summary>
+        /// <param name="parent">Parent <see cref="Soundboard"/></param>
+        /// <param name="button_mode">Button mode <see cref="Mode"/></param>
+        /// <param name="pitch">Pitch (fraction)</param>
+        /// <param name="volume">Volume (fraction)</param>
+        /// <param name="loop">Is looping?</param>
+        /// <param name="fraction">Fraction <see cref="PianoETI.Fraction"/></param>
+        /// <param name="pressed_image">Pressed image <see cref="Image"/></param>
+        /// <param name="file_name">File name</param>
+        /// <param name="picture_box"><see cref="PictureBox"/> instance</param>
         public SoundboardButton(Soundboard parent, Mode button_mode, float pitch, float volume, bool loop, Fraction fraction, Image pressed_image, string file_name, PictureBox picture_box)
         {
             this.parent = parent;
@@ -64,6 +151,11 @@ namespace PianoETI
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Gets name by button mode <see cref="Mode"/>
+        /// </summary>
+        /// <param name="mode">Button mode <see cref="Mode"/></param>
+        /// <returns>Button mode name</returns>
         public static string getNameByMode(Mode mode)
         {
             string ret = "unknown";
@@ -82,6 +174,11 @@ namespace PianoETI
             return ret;
         }
 
+        /// <summary>
+        /// Gets button mode <see cref="Mode"/> by button mode name
+        /// </summary>
+        /// <param name="mode_name">button mode name</param>
+        /// <returns>Button mode <see cref="Mode"/></returns>
         public static Mode getModeByName(string mode_name)
         {
             Mode ret = Mode.PressOnly;
@@ -100,6 +197,9 @@ namespace PianoETI
             return ret;
         }
 
+        /// <summary>
+        /// Plays the sound effect
+        /// </summary>
         public void play()
         {
             if (picture_box != null) picture_box.Image = pressed_image;
@@ -126,6 +226,9 @@ namespace PianoETI
             playing = true;
         }
 
+        /// <summary>
+        /// Stops the sound effect
+        /// </summary>
         public void stop()
         {
             if (sound_effect_instance != null)
@@ -134,6 +237,9 @@ namespace PianoETI
             playing = false;
         }
 
+        /// <summary>
+        /// Reloads sound effect
+        /// </summary>
         public void reloadSoundEffect()
         {
             if (sound_effect_instance != null)
@@ -164,6 +270,9 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// Disposes <see cref="SoundboardButton"/>
+        /// </summary>
         public void dispose()
         {
             if (picture_box != null)
@@ -179,6 +288,9 @@ namespace PianoETI
         #endregion
 
         #region Getter/Setter
+        /// <summary>
+        /// <see cref="System.Windows.Forms.PictureBox"/> instance
+        /// </summary>
         public PictureBox PictureBox
         {
             get
@@ -209,6 +321,9 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// Parent <see cref="Soundboard"/>
+        /// </summary>
         public Soundboard Parent
         {
             get
@@ -217,6 +332,9 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// Button mode <see cref="Mode"/>
+        /// </summary>
         public Mode ButtonMode
         {
             get
@@ -230,6 +348,9 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// Pitch (factor)
+        /// </summary>
         public float Pitch
         {
             get
@@ -244,6 +365,9 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// Volume (factor)
+        /// </summary>
         public float Volume
         {
             get
@@ -258,6 +382,9 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// Is looping?
+        /// </summary>
         public bool Loop
         {
             get
@@ -272,6 +399,9 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// Time fraction <see cref="PianoETI.Fraction"/>
+        /// </summary>
         public Fraction Fraction
         {
             get
@@ -287,6 +417,9 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// File name
+        /// </summary>
         public string FileName
         {
             get
@@ -300,6 +433,9 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// Default image <see cref="Image"/>
+        /// </summary>
         public Image DefaultImage
         {
             get
@@ -308,6 +444,9 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// Presse image <see cref="Image"/>
+        /// </summary>
         public Image PressedImage
         {
             get
@@ -316,6 +455,9 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// <see cref="Microsoft.Xna.Framework.Audio.SoundEffect"/> instance
+        /// </summary>
         public SoundEffect SoundEffect
         {
             get
@@ -326,6 +468,11 @@ namespace PianoETI
         #endregion
 
         #region Events
+        /// <summary>
+        /// <see cref="System.Windows.Forms.PictureBox"/> "MouseDown" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="System.Windows.Forms.PictureBox"/></param>
+        /// <param name="e">Arguments <see cref="MouseEventArgs"/></param>
         private void onButtonMouseDown(object sender, MouseEventArgs e)
         {
             switch(button_mode)
@@ -344,6 +491,11 @@ namespace PianoETI
             
         }
 
+        /// <summary>
+        /// <see cref="System.Windows.Forms.PictureBox"/> "MouseUo" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="System.Windows.Forms.PictureBox"/></param>
+        /// <param name="e">Arguments <see cref="MouseEventArgs"/></param>
         private void onButtonMouseUp(object sender, MouseEventArgs e)
         {
             switch (button_mode)
@@ -357,6 +509,11 @@ namespace PianoETI
             }
         }
 
+        /// <summary>
+        /// <see cref="System.Windows.Forms.PictureBox"/> "MouseLeave" event
+        /// </summary>
+        /// <param name="sender">Sender <see cref="System.Windows.Forms.PictureBox"/></param>
+        /// <param name="e">Arguments</param>
         private void onButtonMouseLeave(object sender, EventArgs e)
         {
             switch(button_mode)
