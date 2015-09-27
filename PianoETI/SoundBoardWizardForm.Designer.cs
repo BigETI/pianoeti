@@ -74,9 +74,11 @@
             // 
             // buttonSave
             // 
+            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSave.Location = new System.Drawing.Point(218, 27);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(200, 23);
+            this.buttonSave.Size = new System.Drawing.Size(260, 23);
             this.buttonSave.TabIndex = 1;
             this.buttonSave.Text = "Save template as...";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -94,7 +96,7 @@
             this.editToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(430, 24);
+            this.menuStrip.Size = new System.Drawing.Size(490, 24);
             this.menuStrip.TabIndex = 2;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -138,7 +140,7 @@
             this.groupBoxButtons.Controls.Add(this.pictureBoxNewButton);
             this.groupBoxButtons.Location = new System.Drawing.Point(12, 82);
             this.groupBoxButtons.Name = "groupBoxButtons";
-            this.groupBoxButtons.Size = new System.Drawing.Size(406, 338);
+            this.groupBoxButtons.Size = new System.Drawing.Size(466, 338);
             this.groupBoxButtons.TabIndex = 3;
             this.groupBoxButtons.TabStop = false;
             this.groupBoxButtons.Text = "Button configuration";
@@ -182,7 +184,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonOK.Location = new System.Drawing.Point(111, 426);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(307, 23);
+            this.buttonOK.Size = new System.Drawing.Size(367, 23);
             this.buttonOK.TabIndex = 5;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
@@ -216,9 +218,11 @@
             // 
             // textBoxProfileName
             // 
+            this.textBoxProfileName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxProfileName.Location = new System.Drawing.Point(54, 56);
             this.textBoxProfileName.Name = "textBoxProfileName";
-            this.textBoxProfileName.Size = new System.Drawing.Size(364, 20);
+            this.textBoxProfileName.Size = new System.Drawing.Size(424, 20);
             this.textBoxProfileName.TabIndex = 8;
             this.textBoxProfileName.TextChanged += new System.EventHandler(this.textBoxProfileName_TextChanged);
             // 
@@ -235,7 +239,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 461);
+            this.ClientSize = new System.Drawing.Size(490, 461);
             this.Controls.Add(this.labelProfileName);
             this.Controls.Add(this.textBoxProfileName);
             this.Controls.Add(this.buttonCancel);
@@ -247,7 +251,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
-            this.MinimumSize = new System.Drawing.Size(446, 300);
+            this.MinimumSize = new System.Drawing.Size(506, 500);
             this.Name = "SoundboardWizardForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Soundboard Wizard";
