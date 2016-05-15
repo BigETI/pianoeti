@@ -34,8 +34,16 @@
             this.toolStripMenuItemFileClose = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelMaster = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.trackBarVolume = new System.Windows.Forms.TrackBar();
+            this.labelVolume = new System.Windows.Forms.Label();
+            this.labelPitch = new System.Windows.Forms.Label();
+            this.trackBarPitch = new System.Windows.Forms.TrackBar();
             this.menuStrip.SuspendLayout();
+            this.panelMaster.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarVolume)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarPitch)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -76,17 +84,74 @@
             // 
             this.toolStripMenuItemSettings.Name = "toolStripMenuItemSettings";
             this.toolStripMenuItemSettings.ShortcutKeys = System.Windows.Forms.Keys.F4;
-            this.toolStripMenuItemSettings.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItemSettings.Size = new System.Drawing.Size(135, 22);
             this.toolStripMenuItemSettings.Text = "Settings";
             this.toolStripMenuItemSettings.Click += new System.EventHandler(this.toolStripMenuItemSettings_Click);
+            // 
+            // panelMaster
+            // 
+            this.panelMaster.Controls.Add(this.labelPitch);
+            this.panelMaster.Controls.Add(this.trackBarPitch);
+            this.panelMaster.Controls.Add(this.labelVolume);
+            this.panelMaster.Controls.Add(this.trackBarVolume);
+            this.panelMaster.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelMaster.Location = new System.Drawing.Point(548, 24);
+            this.panelMaster.Name = "panelMaster";
+            this.panelMaster.Size = new System.Drawing.Size(120, 406);
+            this.panelMaster.TabIndex = 3;
             // 
             // panelMain
             // 
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 24);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(668, 406);
-            this.panelMain.TabIndex = 1;
+            this.panelMain.Size = new System.Drawing.Size(548, 406);
+            this.panelMain.TabIndex = 4;
+            // 
+            // trackBarVolume
+            // 
+            this.trackBarVolume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.trackBarVolume.LargeChange = 1;
+            this.trackBarVolume.Location = new System.Drawing.Point(12, 27);
+            this.trackBarVolume.Maximum = 100;
+            this.trackBarVolume.Name = "trackBarVolume";
+            this.trackBarVolume.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBarVolume.Size = new System.Drawing.Size(45, 227);
+            this.trackBarVolume.TabIndex = 0;
+            this.trackBarVolume.TickStyle = System.Windows.Forms.TickStyle.Both;
+            // 
+            // labelVolume
+            // 
+            this.labelVolume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelVolume.Location = new System.Drawing.Point(12, 11);
+            this.labelVolume.Name = "labelVolume";
+            this.labelVolume.Size = new System.Drawing.Size(45, 13);
+            this.labelVolume.TabIndex = 1;
+            this.labelVolume.Text = "Volume";
+            this.labelVolume.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelPitch
+            // 
+            this.labelPitch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPitch.Location = new System.Drawing.Point(63, 11);
+            this.labelPitch.Name = "labelPitch";
+            this.labelPitch.Size = new System.Drawing.Size(45, 13);
+            this.labelPitch.TabIndex = 3;
+            this.labelPitch.Text = "Pitch";
+            this.labelPitch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // trackBarPitch
+            // 
+            this.trackBarPitch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.trackBarPitch.LargeChange = 1;
+            this.trackBarPitch.Location = new System.Drawing.Point(63, 27);
+            this.trackBarPitch.Maximum = 100;
+            this.trackBarPitch.Minimum = -100;
+            this.trackBarPitch.Name = "trackBarPitch";
+            this.trackBarPitch.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBarPitch.Size = new System.Drawing.Size(45, 227);
+            this.trackBarPitch.TabIndex = 2;
+            this.trackBarPitch.TickStyle = System.Windows.Forms.TickStyle.Both;
             // 
             // SoundboardForm
             // 
@@ -94,6 +159,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(668, 430);
             this.Controls.Add(this.panelMain);
+            this.Controls.Add(this.panelMaster);
             this.Controls.Add(this.menuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
@@ -104,6 +170,10 @@
             this.Shown += new System.EventHandler(this.SoundboardForm_Shown);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.panelMaster.ResumeLayout(false);
+            this.panelMaster.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarVolume)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarPitch)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,6 +186,11 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFileClose;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSettings;
+        private System.Windows.Forms.Panel panelMaster;
         private System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.Label labelPitch;
+        private System.Windows.Forms.TrackBar trackBarPitch;
+        private System.Windows.Forms.Label labelVolume;
+        private System.Windows.Forms.TrackBar trackBarVolume;
     }
 }
